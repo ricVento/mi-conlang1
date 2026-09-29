@@ -161,6 +161,20 @@
         window.lexiconData = [];
       }
       render();
+
+      // Cerrar modal al hacer clic fuera de él (en el fondo oscuro)
+      document.getElementById('modal-detail').addEventListener('click', (event) => {
+        if (event.target === event.currentTarget) {
+          closeModal();
+        }
+      });
+
+      // Cerrar modal al pulsar la tecla Escape
+      window.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          closeModal();
+        }
+      });
     });
 
     // Cambiar Tema Oscuro / Claro

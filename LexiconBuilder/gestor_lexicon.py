@@ -100,12 +100,52 @@ def verificar_existencia(lexicon, palabra_nueva):
   return False, ""
 
 
+def verificar_duplicados_completos(lexicon, palabra, alomorfos):
+  """Verifica duplicados en palabra y alomorfos (tanto internos como contra el léxico existente)."""
+  palabra_ingresada = palabra.strip()
+  
+  lista_alomorfos = []
+  if isinstance(alomorfos, list):
+    lista_alomorfos = [str(a).strip() for a in alomorfos if str(a).strip()]
+  elif isinstance(alomorfos, str):
+    lista_alomorfos = [a.strip() for a in alomorfos.split(",") if a.strip()]
+
+  # 1. Verificar duplicados internos en alomorfos
+  vistos_alos = set()
+  for a in lista_alomorfos:
+    if a in vistos_alos:
+      return True, f"⚠️ [AVISO] El alomorfo '{a}' está duplicado dentro de los alomorfos ingresados."
+    vistos_alos.add(a)
+
+  # 2. Verificar si la palabra coincide con alguno de sus propios alomorfos
+  if palabra_ingresada in lista_alomorfos:
+    return True, f"⚠️ [AVISO] La palabra '{palabra_ingresada}' no puede coincidir con ninguno de sus propios alomorfos."
+
+  # 3. Verificar contra el léxico existente
+  for item in lexicon:
+    p_actual = str(item.get("palabra", "")).strip()
+    
+    if palabra_ingresada == p_actual:
+      return True, f"⚠️ [AVISO] La palabra '{palabra_ingresada}' ya existe exactamente igual como entrada principal."
+    
+    alomorfos_actuales = [str(a).strip() for a in item.get("alomorfos", []) if str(a).strip()]
+    if palabra_ingresada in alomorfos_actuales:
+      return True, f"⚠️ [AVISO] La palabra '{palabra_ingresada}' ya existe dentro de los alomorfos de la entrada '{p_actual}'."
+
+    for a_nuevo in lista_alomorfos:
+      if a_nuevo == p_actual:
+        return True, f"⚠️ [AVISO] El alomorfo '{a_nuevo}' ya existe como entrada principal en '{p_actual}'."
+      if a_nuevo in alomorfos_actuales:
+        return True, f"⚠️ [AVISO] El alomorfo '{a_nuevo}' ya existe dentro de los alomorfos de la entrada '{p_actual}'."
+
+  return False, ""
+
+
 def principal():
   print("=== GESTOR DE LÉXICO CONLANG (PYTHON) ===")
   print("💡 Consejo: Presiona Enter sin escribir nada para salir del programa.\n")
 
   while True:
-    # Cargar el léxico en cada ciclo para asegurar que lea los cambios previos
     lexicon = cargar_lexicon()
 
     palabra_input = input(
@@ -127,7 +167,7 @@ def principal():
       )
       if opcion != "s":
         print("Operación cancelada para esta palabra.")
-        continue  # Salta al inicio del bucle para pedir otra palabra
+        continue
 
     print(
         "\n--- Introduce los datos para el nuevo registro (deja en blanco si"
@@ -178,6 +218,21 @@ def principal():
         ]
       else:
         nuevo_registro[extra_key] = extra_val
+
+    # Validación completa para evitar duplicados en palabra o alomorfos
+    existe_completo, mensaje_completo = verificar_duplicados_completos(
+        lexicon, palabra_input, nuevo_registro.get("alomorfos", [])
+    )
+    if existe_completo:
+      print(mensaje_completo)
+      opcion = (
+          input("¿Deseas agregarla de todos modos a la lista? (s/n): ")
+          .strip()
+          .lower()
+      )
+      if opcion != "s":
+        print("Operación cancelada para esta palabra.")
+        continue
 
     lexicon.append(nuevo_registro)
     guardar_lexicon(lexicon)
