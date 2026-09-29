@@ -1,0 +1,15 @@
+# Caché de Python
+__pycache__/
+*.pyc
+
+# Entornos virtuales
+.venv/
+env/
+
+# Archivos del sistema (Windows)
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Dependencias de JavaScript (por si las usas luego)
+node_modules/
