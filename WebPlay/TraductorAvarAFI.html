@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Traductor Avar a AFI</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; max-width: 800px; }
+        textarea { width: 100%; height: 150px; margin-bottom: 10px; font-size: 16px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h2>Transliterador de Avar a AFI (IPA)</h2>
+   
+    <label for="inputAvar">Texto en Avar (Cirílico):</label>
+    <textarea id="inputAvar" placeholder="Escribe o pega texto en Avar aquí..."></textarea>
+   
+    <button onclick="transliterar()">Convertir a AFI</button>
+   
+    <p><label for="outputAfi">Resultado en AFI:</label></p>
+    <textarea id="outputAfi" readonly placeholder="El resultado aparecerá aquí..."></textarea>
+
+<script>
+// DICCIONARIO EDITABLE
+// Modifica los valores de la derecha (entre comillas) para ajustar la fonética.
+// Se incluye la "гI" (palochka/I) común en el alfabeto actual.
+const mapaAvarAfi = {
+    // 1. Trígrafos y Dígrafos complejos (Se procesan primero)
+    "гъв": "ʁʷ", "гьв": "ɦʷ", "къв": "q'ʷ", "кьв": "tɬ'ʷ",
+    "хъв": "χʷ", "хьв": "xʷ", "цӀв": "ts'ʷ", "чӀв": "tʃ'ʷ",
+   
+    // 2. Dígrafos estándar
+    "гъ": "ʁ",  "гь": "ɦ",  "гӀ": "ʕ",
+    "кк": "k:", "къ": "q'", "кь": "tɬ'", "кӀ": "k'",
+    "лл": "ɬ:", "лъ": "ɬ", "лӀ": "l'",
+    "сс": "s:",
+    "хх": "χ:", "хъ": "χ",  "хь": "x",  "хӀ": "ħ",
+    "цц": "ts:", "цӀ": "ts'",
+    "чч": "tʃ:", "чӀ": "tʃ'",
+    "тт": "t:", "тӀ": "t'",
+   
+    // 3. Letras individuales (Mayúsculas y minúsculas se manejan abajo)
+    "а": "ä",  "б": "b",  "в": "w",  "г": "ɡ",  "д": "d",
+    "е": "e",  "ж": "ʒ",  "з": "z",  "и": "i",  "й": "j",
+    "к": "k",  "л": "l",  "м": "m",  "н": "n",  "о": "o",
+    "п": "p",  "р": "r",  "с": "s",  "т": "t",  "у": "u",
+    "ф": "f",  "х": "χ",  "ц": "ts", "ч": "tʃ", "ш": "ʃ",
+    "щ": "ʃː", "ъ": "ʔ",  "ы": "ɨ",  "э": "e",  "ю": "ju",
+    "я": "ja", "I": "ʕ"   // Palochka aislada
+};
+
+function transliterar() {
+    let texto = document.getElementById("inputAvar").value;
+   
+    // Generar combinaciones automáticas para mayúsculas
+    const mapaCompleto = {};
+    for (const [key, value] of Object.entries(mapaAvarAfi)) {
+        // Añadir regla minúscula original
+        mapaCompleto[key] = value;
+        // Añadir regla TODO MAYÚSCULAS (ej: ГЪ -> ʁ)
+        mapaCompleto[key.toUpperCase()] = value;
+        // Añadir regla Primera Mayúscula (ej: Гъ -> ʁ)
+        if (key.length > 1) {
+            const primeraMayus = key.charAt(0).toUpperCase() + key.slice(1);
+            mapaCompleto[primeraMayus] = value;
+        }
+    }
+
+    // Ordenar las llaves por longitud descendente (trígrafos -> dígrafos -> letras)
+    // Esto evita que "г" se reemplace antes que "гъ"
+    const llavesOrdenadas = Object.keys(mapaCompleto).sort((a, b) => b.length - a.length);
+
+    // Crear una expresión regular global que busque todas las coincidencias ordenadas
+    // Escapa caracteres especiales por seguridad en regex
+    const regexString = llavesOrdenadas.map(k => k.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')).join('|');
+    const regex = new RegExp(regexString, 'g');
+
+    // Reemplazar usando el mapa completo
+    const resultado = texto.replace(regex, (match) => {
+        return mapaCompleto[match] !== undefined ? mapaCompleto[match] : match;
+    });
+
+    document.getElementById("outputAfi").value = resultado;
+}
+</script>
+
+</body>
+</html>

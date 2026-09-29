@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransLit3 (ASCII -> IPA)</title>
+    <style>
+        :root {
+            --bg-color: #1e1e1e;
+            --panel-bg: #2d2d2d;
+            --text-color: #d4d4d4;
+            --accent: #007acc;
+            --border-color: #404040;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--panel-bg);
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        select, button {
+            background-color: #3c3c3c;
+            color: white;
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        select:hover, button:hover {
+            background-color: #4a4a4a;
+        }
+
+        button {
+            background-color: var(--accent);
+            border: none;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #005f9e;
+        }
+
+        .editor-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex-grow: 1;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            background-color: var(--panel-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .box-header {
+            background-color: #333;
+            padding: 8px 15px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        textarea {
+            flex-grow: 1;
+            background-color: transparent;
+            color: var(--text-color);
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            resize: none;
+            outline: none;
+        }
+
+        #output {
+            background-color: #252526;
+        }
+
+        /* Modal (Cheat Sheet) */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: var(--panel-bg);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            width: 80%;
+            max-width: 800px;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .close-btn {
+            background: transparent;
+            color: #888;
+            font-size: 24px;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .close-btn:hover { color: white; background: transparent;}
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            overflow-y: auto;
+            padding-right: 10px;
+            font-family: 'Consolas', monospace;
+        }
+
+        .grid-item {
+            background-color: #333;
+            padding: 8px 12px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #444;
+        }
+
+        .grid-item span.ascii { color: var(--accent); font-weight: bold; }
+        .grid-item span.ipa { color: #ce9178; }
+
+        a {
+            color: var(--text-color);
+			text-decoration:none;
+        }	
+        
+		a:hover {
+			color: var(--accent);
+			cursor: pointer;
+		}		
+		
+        /* Scrollbar custom */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-color); }
+        ::-webkit-scrollbar-thumb { background: #555; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #777; }
+    </style>
+</head>
+<body>
+
+    <div class="toolbar">
+        <div>
+            <label for="alphabet-select" style="margin-right: 10px; font-weight: bold;"><a href="index.html" title="Indice de Alfabetos">Alfabeto</a> de Salida:</label>
+            <select id="alphabet-select">
+                <option value="ipa">IPA (Fonetico)</option>
+                <option value="lat">Latino (Turco)</option>
+                <option value="cyr">Cirílico (Cáucaso)</option>
+                <option value="ame">Americanista</option>
+            </select>
+        </div>
+        <button id="btn-cheat-sheet">🛈 Ver Equivalencias</button>
+    </div>
+
+    <div class="editor-container">
+        <div class="box">
+            <div class="box-header">Entrada de Código (ASCII Monochar)</div>
+            <textarea id="input" placeholder="Escribe aquí tu raíz, ej: ?@4..."></textarea>
+        </div>
+
+        <div class="box">
+            <div class="box-header">Salida Transliterada</div>
+            <textarea id="output" readonly placeholder="La transliteración aparecerá aquí en tiempo real..."></textarea>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Tabla de Equivalencias</h2>
+                <button class="close-btn" id="close-modal">&times;</button>
+            </div>
+            <div class="grid-container" id="cheat-sheet-grid">
+                </div>
+        </div>
+    </div>
+
+    <script>
+        // La "Tabla de Arcilla": Diccionario Maestro, se importa desde script.js (ver al final de head)
+		const diccionario = {
+			'0': { ipa: 'kʷ', lat: 'kv', cyr: 'кв', ame: 'k°' },
+			'1': { ipa: 'ɡʷ', lat: 'gv', cyr: 'гв', ame: 'g°' },
+			'2': { ipa: 'χʷ', lat: 'xv', cyr: 'ҳв', ame: 'χ°' },
+			'3': { ipa: 'qχʷ', lat: 'qv', cyr: 'қв', ame: 'qχ°' },
+			'4': { ipa: 'ʁʷ', lat: 'ğv', cyr: 'ғв', ame: 'ʀ°' },
+			'5': { ipa: 'ʲ', lat: '', cyr: '', ame: '' },
+			'6': { ipa: 'ʡ', lat: '', cyr: '', ame: '' },
+			'7': { ipa: 'ʕ', lat: '', cyr: '', ame: '' },
+			'8': { ipa: 'æ', lat: '', cyr: '', ame: '' },
+			'9': { ipa: 'ʔ', lat: '', cyr: '', ame: '' },
+			'ª': { ipa: 'ɐ', lat: '', cyr: '', ame: '' },
+			'A': { ipa: 'ɑ', lat: 'a', cyr: 'а', ame: 'a' },
+			'a': { ipa: 'a', lat: 'ə', cyr: 'ӑ', ame: 'æ' },
+			'b': { ipa: 'b', lat: 'b', cyr: 'б', ame: 'b' },
+			'B': { ipa: 'β', lat: '', cyr: '', ame: '' },
+			'ç': { ipa: 'tʃ', lat: 'ç', cyr: 'ч', ame: 'č' },
+			'Ç': { ipa: 'tʃʼ', lat: 'çʼ', cyr: 'чъ', ame: 'čʼ' },
+			'c': { ipa: 'ts', lat: 'ts', cyr: 'ц', ame: 'c' },
+			'C': { ipa: 'tsʼ', lat: 'tsʼ', cyr: 'цъ', ame: 'cʼ' },
+			'd': { ipa: 'd', lat: 'd', cyr: 'д', ame: 'd' },
+			'D': { ipa: 'dz', lat: 'dz', cyr: 'дз', ame: 'dz' },
+			'E': { ipa: 'ə', lat: '', cyr: '', ame: '' },
+			'e': { ipa: 'e', lat: 'e', cyr: 'е', ame: 'e' },
+			'F': { ipa: 'f', lat: '', cyr: '', ame: '' },
+			'f': { ipa: 'ɸ', lat: 'f', cyr: 'ф', ame: '𝜑' },
+			'G': { ipa: 'ɣ', lat: '', cyr: '', ame: '' },
+			'g': { ipa: 'ɡ', lat: 'g', cyr: 'г', ame: 'g' },
+			'H': { ipa: 'ħ', lat: '', cyr: '', ame: '' },
+			'h': { ipa: 'h', lat: 'h', cyr: 'ӿ', ame: 'h' },
+			'I': { ipa: 'ɪ', lat: '', cyr: '', ame: '' },
+			'i': { ipa: 'i', lat: 'i', cyr: 'и', ame: 'i' },
+			'J': { ipa: 'dʒ', lat: 'c', cyr: 'ӂ', ame: 'ǰ' },
+			'j': { ipa: 'j', lat: 'y', cyr: 'й', ame: 'y' },
+			'k': { ipa: 'k', lat: 'k', cyr: 'к', ame: 'k' },
+			'K': { ipa: 'kʼ', lat: 'kʼ', cyr: 'къ', ame: 'kʼ' },
+			'l': { ipa: 'l', lat: 'l', cyr: 'л', ame: 'l' },
+			'L': { ipa: 'ɬ', lat: 'll', cyr: 'ԯ', ame: 'ł' },
+			'M': { ipa: 'ʼ', lat: '', cyr: '', ame: '' },
+			'm': { ipa: 'm', lat: 'm', cyr: 'м', ame: 'm' },
+			'ñ': { ipa: 'ˀ', lat: 'ʼ', cyr: 'ъ', ame: 'ʼ' },
+			'N': { ipa: 'ʰ', lat: '', cyr: '', ame: '' },
+			'n': { ipa: 'n', lat: 'n', cyr: 'н', ame: 'n' },
+			'Ñ': { ipa: 'q', lat: '', cyr: '', ame: '' },
+			'º': { ipa: 'ʷ', lat: '', cyr: '', ame: '' },
+			'O': { ipa: 'ɔ', lat: '', cyr: '', ame: '' },
+			'o': { ipa: 'o', lat: 'o', cyr: 'о', ame: 'o' },
+			'p': { ipa: 'p', lat: 'p', cyr: 'п', ame: 'p' },
+			'P': { ipa: 'pʼ', lat: 'pʼ', cyr: 'пъ', ame: 'pʼ' },
+			'q': { ipa: 'qχ', lat: 'q', cyr: 'кх', ame: 'qχ' },
+			'Q': { ipa: 'χʼ', lat: 'qʼ', cyr: 'қъ', ame: 'χʼ' },
+			'R': { ipa: 'ʁ', lat: 'ğ', cyr: 'ғ', ame: 'ʀ' },
+			'r': { ipa: 'ɾ', lat: 'r', cyr: 'р', ame: 'r' },
+			's': { ipa: 's', lat: 's', cyr: 'с', ame: 's' },
+			'S': { ipa: 'ʃ', lat: 'ş', cyr: 'ш', ame: 'š' },
+			't': { ipa: 't', lat: 't', cyr: 'т', ame: 't' },
+			'T': { ipa: 'tʼ', lat: 'tʼ', cyr: 'тъ', ame: 'tʼ' },
+			'U': { ipa: 'ʊ', lat: '', cyr: '', ame: '' },
+			'u': { ipa: 'u', lat: 'u', cyr: 'у', ame: 'u' },
+			'V': { ipa: 'ɤ', lat: '', cyr: '', ame: '' },
+			'v': { ipa: 'ʋ', lat: '', cyr: '', ame: '' },
+			'W': { ipa: 'ɒ', lat: '', cyr: '', ame: '' },			
+			'w': { ipa: 'w', lat: 'v', cyr: 'в', ame: 'w' },
+			'x': { ipa: 'x', lat: 'xh', cyr: 'х', ame: 'x' },
+			'X': { ipa: 'χ', lat: 'x', cyr: 'ҳ', ame: 'χ' },
+			'y': { ipa: 'tɬ', lat: 'tl', cyr: 'ҭ', ame: 'ƛ' },
+			'Y': { ipa: 'tɬʼ', lat: 'tlʼ', cyr: 'ҭъ', ame: 'ƛʼ' },
+			'z': { ipa: 'z', lat: 'z', cyr: 'з', ame: 'z' },
+			'Z': { ipa: 'ʒ', lat: 'j', cyr: 'ж', ame: 'ž' },
+		};
+		
+        // Referencias al DOM
+        const inputArea = document.getElementById('input');
+        const outputArea = document.getElementById('output');
+        const selector = document.getElementById('alphabet-select');
+        const modal = document.getElementById('modal');
+        const btnCheat = document.getElementById('btn-cheat-sheet');
+        const btnClose = document.getElementById('close-modal');
+        const grid = document.getElementById('cheat-sheet-grid');
+
+        // Generar la Cheat Sheet dinámicamente
+        function buildCheatSheet() {
+            grid.innerHTML = '';
+            for (const [ascii, values] of Object.entries(diccionario)) {
+                const div = document.createElement('div');
+                div.className = 'grid-item';
+                //div.innerHTML = `<span class="ascii">${ascii}</span> <span>=</span> <span class="ipa">${values.ipa}</span>`;
+				div.innerHTML = '<span class="ascii">' + ascii + '</span> <span>=</span> <span class="ipa">' + values.ipa + '</span>';
+
+                grid.appendChild(div);
+            }
+        }
+
+        // Motor de Transliteración Asíncrono
+        function transliterate() {
+            const text = inputArea.value;
+            const mode = selector.value; // 'ipa', 'lat', o 'cyr'
+            let result = '';
+
+            for (let i = 0; i < text.length; i++) {
+                const char = text[i];
+                if (diccionario[char]) {
+                    // Si el modo no está definido aún (ej. latino vacío), devuelve el original
+                    result += diccionario[char][mode] || char; 
+                } else {
+                    // Caracteres como espacios o saltos de línea se mantienen
+                    result += char;
+                }
+            }
+            outputArea.value = result;
+        }
+
+        // Lógica de Debounce para no saturar la memoria si tecleas muy rápido
+        let timeout;
+        inputArea.addEventListener('input', () => {
+            clearTimeout(timeout);
+            timeout = setTimeout(transliterate, 50); // 50ms de latencia imperceptible
+        });
+
+        // Recalcular todo al instante si cambias de alfabeto
+        selector.addEventListener('change', transliterate);
+
+        // Eventos del Modal
+        btnCheat.addEventListener('click', () => modal.style.display = 'flex');
+        btnClose.addEventListener('click', () => modal.style.display = 'none');
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) modal.style.display = 'none';
+        });
+
+        // Inicializar
+        buildCheatSheet();
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesador de Texto Automático</title>
+    <style>
+        /* Estilos generales para simular un procesador de texto */
+        body {
+            background-color: #f3f2f1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Barra de herramientas superior */
+        .toolbar {
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        button {
+            background-color: #f3f2f1;
+            border: 1px solid #c8c6c4;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: #323130;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #edebe9;
+            border-color: #8a8886;
+        }
+
+        button:active {
+            background-color: #e1dfdd;
+        }
+
+        /* Contenedor del área de escritura (fondo gris) */
+        .editor-container {
+            flex-grow: 1;
+            padding: 40px 20px;
+            overflow-y: auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* La "página" blanca */
+        textarea {
+            width: 100%;
+            max-width: 800px;
+            min-height: 1000px; /* Simula el largo de una página */
+            background-color: #ffffff;
+            border: 1px solid #d2d0ce;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 40px;
+            font-family: Charis, Georgia, 'Segoe UI', 'Times New Roman', Times, serif;
+            font-size: 22px;
+            line-height: 1.5;
+            resize: none; /* Evita que el usuario cambie el tamaño de la caja libremente */
+            outline: none;
+            overflow: hidden; /* Oculta la barra de desplazamiento interna si no es necesaria */
+        }
+        
+        /* Mensaje de notificación para el botón de copiar */
+        #notification {
+            margin-left: auto;
+            color: #107c10;
+            font-weight: bold;
+            display: none;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="toolbar">
+        <button onclick="copiarTexto()">Copiar Todo</button>
+        <button onclick="borrarTexto()">Borrar Todo</button>
+        <span id="notification">¡Texto copiado al portapapeles!</span>
+    </div>
+
+    <div class="editor-container">
+        <textarea id="editor" placeholder="Empieza a escribir aquí..."></textarea>
+    </div>
+
+    <script>
+        const editor = document.getElementById('editor');
+        const notification = document.getElementById('notification');
+
+        // 1. Diccionario de secuencias de reemplazo
+        // Puedes agregar más secuencias aquí siguiendo el mismo formato: "secuencia": "resultado"
+        const lat = {
+			"tt": "tł",	"TT": "Tł",
+			"ss": "ş",	"SS": "Ş",
+			"gg": "ğ",	"GG": "Ğ",
+			"aa": "ə",	"AA": "Ə",		
+			"ll": "ł",	"LL": "Ł",		
+			"'": "ʼ",
+			//  ăĂ
+        };
+		
+        const cyr = {
+			"b": "б",
+			"Z": "ж",
+			"S": "ш",
+			//  
+        };		
+		
+		/********************************** IMPORTANTE CAMBIAR AQUI ****************/
+		const reemplazos = lat;
+
+        // 2. Lógica para reemplazar caracteres automáticamente
+        editor.addEventListener('input', function(e) {
+            let cursorPosition = this.selectionStart;
+            let text = this.value;
+
+            // Recorremos el diccionario para buscar coincidencias justo antes del cursor
+            for (const [secuencia, resultado] of Object.entries(reemplazos)) {
+                let longitudSecuencia = secuencia.length;
+                
+                // Si el cursor está lo suficientemente adelante como para contener la secuencia
+                if (cursorPosition >= longitudSecuencia) {
+                    // Extraemos los caracteres justo antes de la posición actual del cursor
+                    let textoAntesDelCursor = text.substring(cursorPosition - longitudSecuencia, cursorPosition);
+                    
+                    // Si coincide con nuestra secuencia, hacemos el reemplazo
+                    if (textoAntesDelCursor === secuencia) {
+                        // Reconstruimos el texto con el nuevo carácter
+                        this.value = text.substring(0, cursorPosition - longitudSecuencia) + 
+                                     resultado + 
+                                     text.substring(cursorPosition);
+                        
+                        // Ajustamos la posición del cursor para que no salte al final del documento
+                        let nuevaPosicion = cursorPosition - longitudSecuencia + resultado.length;
+                        this.selectionStart = nuevaPosicion;
+                        this.selectionEnd = nuevaPosicion;
+                        
+                        break; // Salimos del bucle una vez que se hace un reemplazo
+                    }
+                }
+            }
+        });
+
+        // Función para ajustar la altura del textarea automáticamente según el contenido
+        editor.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+
+        // 3. Función para copiar el texto
+        function copiarTexto() {
+            editor.select();
+            editor.setSelectionRange(0, 99999); // Para dispositivos móviles
+            
+            navigator.clipboard.writeText(editor.value).then(() => {
+                // Mostrar notificación temporal
+                notification.style.display = 'flex';
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 2000); // Ocultar después de 2 segundos
+            }).catch(err => {
+                alert('No se pudo copiar el texto: ', err);
+            });
+            
+            // Quitar la selección visual para mayor comodidad
+            window.getSelection().removeAllRanges();
+        }
+
+        // 4. Función para borrar el texto
+        function borrarTexto() {
+            if(confirm('¿Estás seguro de que deseas borrar todo el texto?')) {
+                editor.value = '';
+                editor.focus(); // Devuelve el cursor al área de texto
+                editor.style.height = 'auto'; // Restablece el tamaño
+            }
+        }
+    </script>
+
+</body>
+</html>
