@@ -145,11 +145,113 @@ const lexiconData = [
     "ejemplo": "dgdfgdg",
     "traduccion": "ropiedad personalizada? (Nomb"
   },
-{"palabra": "hombre", "ipa": "dgfgdkjgf g", "alomorfos": ["fgshjgfjf"], "significados": ["fnhkjgdfg"], "gramatica": ["fgnhkgh"], "ejemplo": "fgnndgng", "traduccion": "jhdsjhdshds"},
-{"palabra": "mujer", "ipa": "gfdg gdf  ", "alomorfos": ["hgdhfh"], "significados": ["ghgjag"], "gramatica": ["fbghn"], "ejemplo": "fgghghhgfh", "traduccion": "dshjd sjhsj dsjhdsgd"},
-{"palabra": "animal", "ipa": " dff g ", "alomorfos": ["ghhthdhg"], "significados": ["hkhkfjgh"], "gramatica": ["smbf"], "ejemplo": "mjmjdn", "traduccion": "kjkjf sdjkhfjdsfh dsfjhjf"},
-{"palabra": "montaña", "ipa": " fgfgfg ", "alomorfos": ["ffghhth"], "significados": ["nghgjhmh"], "gramatica": ["nnmhgd"], "ejemplo": "ghkfnnn", "traduccion": "kjfjkj sdkjfkjdf dskjfhkjf"},
-{"palabra": "naturaleza", "ipa": " gfg gfd", "alomorfos": ["hgjhjfg"], "significados": ["hgnhmghmhg"], "gramatica": ["fgfgn"], "ejemplo": "jjdgbgndg", "traduccion": "kjdfhkdjhf djkjfhf"},
-{"palabra": "imagen", "ipa": " dfgdf gg", "alomorfos": ["hyjhgnn"], "significados": ["dhhhn"], "gramatica": ["ggjmhm"], "ejemplo": "fggfjdfhf", "traduccion": "lkjklldsk sdkjhkdfh"},
-
+  {
+    "palabra": "hombre",
+    "ipa": "dgfgdkjgf g",
+    "alomorfos": [
+      "fgshjgfjf"
+    ],
+    "significados": [
+      "fnhkjgdfg"
+    ],
+    "gramatica": [
+      "fgnhkgh"
+    ],
+    "ejemplo": "fgnndgng",
+    "traduccion": "jhdsjhdshds"
+  },
+  {
+    "palabra": "mujer",
+    "ipa": "gfdg gdf  ",
+    "alomorfos": [
+      "hgdhfh"
+    ],
+    "significados": [
+      "ghgjag"
+    ],
+    "gramatica": [
+      "fbghn"
+    ],
+    "ejemplo": "fgghghhgfh",
+    "traduccion": "dshjd sjhsj dsjhdsgd"
+  },
+  {
+    "palabra": "animal",
+    "ipa": " dff g ",
+    "alomorfos": [
+      "ghhthdhg"
+    ],
+    "significados": [
+      "hkhkfjgh"
+    ],
+    "gramatica": [
+      "smbf"
+    ],
+    "ejemplo": "mjmjdn",
+    "traduccion": "kjkjf sdjkhfjdsfh dsfjhjf"
+  },
+  {
+    "palabra": "montaña",
+    "ipa": " fgfgfg ",
+    "alomorfos": [
+      "ffghhth"
+    ],
+    "significados": [
+      "nghgjhmh"
+    ],
+    "gramatica": [
+      "nnmhgd"
+    ],
+    "ejemplo": "ghkfnnn",
+    "traduccion": "kjfjkj sdkjfkjdf dskjfhkjf"
+  },
+  {
+    "palabra": "naturaleza",
+    "ipa": " gfg gfd",
+    "alomorfos": [
+      "hgjhjfg"
+    ],
+    "significados": [
+      "hgnhmghmhg"
+    ],
+    "gramatica": [
+      "fgfgn"
+    ],
+    "ejemplo": "jjdgbgndg",
+    "traduccion": "kjdfhkdjhf djkjfhf"
+  },
+  {
+    "palabra": "imagen",
+    "ipa": " dfgdf gg",
+    "alomorfos": [
+      "hyjhgnn"
+    ],
+    "significados": [
+      "dhhhn"
+    ],
+    "gramatica": [
+      "ggjmhm"
+    ],
+    "ejemplo": "fggfjdfhf",
+    "traduccion": "lkjklldsk sdkjhkdfh"
+  },
+  {
+    "palabra": "gomelia",
+    "ipa": "gomeLua",
+    "alomorfos": [
+      "gomel",
+      "gumli"
+    ],
+    "significados": [
+      "montaña",
+      "colina"
+    ],
+    "gramatica": [
+      "sust",
+      "mas",
+      "inanim"
+    ],
+    "ejemplo": "gomelia Mahomani gadur",
+    "traduccion": "la montaña va a mahoma"
+  }
 ];
