@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcriptor Conlang</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="script.js"></script>	
+</head>
+<body>
+
+    <div class="toolbar">
+        <div class="toolbar-title"><a href="index.html" title="Indice de Alfabetos">Alfabeto</a> <span>Conlang</span></div>
+		<button id="btn-cheat-sheet">🛈 Ver Equivalencias</button>
+    </div>
+
+    <div class="editor-container">
+        <div class="box">
+            <div class="box-header">Código de Entrada</div>
+            <textarea id="input" placeholder="Escribe aquí... ae = æ, a-e = ae"></textarea>
+        </div>
+
+        <div class="box">
+            <div class="box-header">Transcripción</div>
+            <textarea id="output" readonly placeholder="La transliteración aparecerá aquí en tiempo real..."></textarea>
+        </div>
+    </div>
+
+    <dialog id="modal-cheat-sheet">
+        <div class="modal-header">
+            <h2>Tabla de Equivalencias</h2>
+            <button class="close-btn" id="btn-close-modal">&times;</button>
+        </div>
+        <div class="grid-container" id="grid-equivalencias"></div>
+    </dialog>
+
+    <script>
+        // Diccionario base editable (Soporta hasta 3 caracteres y UTF-8 nativo)
+        const diccionario = transcriptionMap;
+
+        function escaparRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        function debounce(func, wait) {
+            let timeout;
+            return function(...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        }
+
+        // Algoritmo del Analizador Léxico con Lookaheads dinámicos del Script A
+        function procesarTexto() {
+            const inputText = document.getElementById('input').value;
+            const clavesOrdenadas = Object.keys(diccionario).sort((a, b) => b.length - a.length);
+            
+            const partesPatron = clavesOrdenadas.map(k => {
+                const lookaheads = [];
+                for (const otraClave of clavesOrdenadas) {
+                    if (otraClave === k) continue;
+                    for (let i = 1; i < k.length; i++) {
+                        const sufijo = k.slice(i);
+                        if (otraClave.startsWith(sufijo)) {
+                            const restoClave = otraClave.slice(sufijo.length);
+                            if (restoClave) lookaheads.push(escaparRegExp(restoClave));
+                        }
+                    }
+                }
+                const lookaheadStr = lookaheads.length > 0 ? `(?!${[...new Set(lookaheads)].join('|')})` : '';
+                return escaparRegExp(k) + lookaheadStr;
+            });
+            
+            const patron = new RegExp(partesPatron.join('|'), 'g');
+            const texto = inputText.replace(patron, match => diccionario[match]);
+			
+			// 2. Eliminar el carácter de ruptura '/'
+			const RUPTURA = "ñ";
+			const outputText = texto.replace(new RegExp(RUPTURA, 'g'), "");			
+            
+            document.getElementById('output').value = outputText;
+        }
+
+        // --- Lógica de la Tabla de Equivalencias (Cheat Sheet) ---
+        const modal = document.getElementById('modal-cheat-sheet');
+        const grid = document.getElementById('grid-equivalencias');
+        const btnOpen = document.getElementById('btn-cheat-sheet');
+        const btnClose = document.getElementById('btn-close-modal');
+
+        function buildCheatSheet() {
+            grid.innerHTML = '';
+            for (const [ascii, values] of Object.entries(diccionario)) {
+                const div = document.createElement('div');
+                div.className = 'grid-item';
+                //div.innerHTML = `<span class="ascii">${ascii}</span> <span>=</span> <span class="ipa">${values}</span>`;
+                div.innerHTML = '<span class="ascii">' + ascii + '</span> <span>=</span> <span class="ipa">' + values + '</span>';
+                grid.appendChild(div);
+            }
+        }
+
+        // Control de Eventos del Modal Nativo
+        btnOpen.addEventListener('click', () => {
+            buildCheatSheet();
+            modal.showModal(); 
+        });
+
+        btnClose.addEventListener('click', () => {
+            modal.close();
+        });
+
+        // Escucha de entrada de texto optimizada
+        const inputElement = document.getElementById('input');
+        inputElement.addEventListener('input', debounce(procesarTexto, 50));
+
+		// Cierra el modal al hacer clic fuera de él (en el backdrop)
+        modal.addEventListener('click', (e) => {
+            const rect = modal.getBoundingClientRect();
+            // Comprueba si las coordenadas del clic están fuera de los límites de la caja del modal
+            const isInDialog = (
+                e.clientX >= rect.left &&
+                e.clientX <= rect.right &&
+                e.clientY >= rect.top &&
+                e.clientY <= rect.bottom
+            );
+
+            if (!isInDialog) {
+                modal.close();
+            }
+        });
+
+		
+    </script>
+</body>
+</html>

@@ -1,10 +1,10 @@
 const lexiconData = [
   {
-    "palabra": "chushek",
-    "ipa": "ˈtʃʊʃək",
+    "palabra": "çuSek",
+    "ipa": "chushek",
     "alomorfos": [
-      "chushka",
-      "chushk"
+      "çuSkE",
+      "çuSk"
     ],
     "significados": [
       "perro",
@@ -115,7 +115,7 @@ const lexiconData = [
     "significados": [
       "gdfgdgdgfg"
     ],
-    "gramatica": "dfgdfgdgdg",
+    "gramatica": ["dfgdfgdgdg"],
     "ejemplo": "dfgfggfg",
     "traduccion": "dffdgggfd"
   },
@@ -128,7 +128,7 @@ const lexiconData = [
     "significados": [
       "errgrg"
     ],
-    "gramatica": "gffdgdfg",
+    "gramatica": ["vrb + dat"],
     "ejemplo": "dfgdgdfgd",
     "traduccion": "dgfgfgdfg gfdg fg fdg"
   },
@@ -141,7 +141,7 @@ const lexiconData = [
     "significados": [
       "hgfkgjdfhk"
     ],
-    "gramatica": "fgdfgfg",
+    "gramatica": ["fgdfgfg"],
     "ejemplo": "dgdfgdg",
     "traduccion": "ropiedad personalizada? (Nomb"
   },

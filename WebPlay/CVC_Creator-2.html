@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor de Silabas CVC</title>
+	<style>
+        body, html {
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f6fa;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .main-grid {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .title-cell {
+            padding: 10px 0;
+        }
+
+        .title-cell h2 {
+            font-size: 1.2rem;
+            color: #2f3640;
+            margin: 0 0 15px 0;
+        }
+
+        .textarea-cell {
+            flex: 1;
+            overflow-y: auto;
+        }
+    </style>
+	<script src="script.js"></script>
+</head>
+<body>
+    <div class="main-grid">
+        <!-- FILA SUPERIOR: TÍTULOS -->
+        <div class="title-cell">
+            <h2 id="cvcTitle">Sílaba CVC</h2>
+        </div>
+
+        <!-- FILA INFERIOR: GRILLA DE CONTENEDORES POR ONSET -->
+        <div class="textarea-cell">
+            <div id="gridContainer"></div>
+        </div>
+    </div>
+	<script>
+        // Referencias al DOM
+        const titleCVC = document.getElementById('cvcTitle');
+        const gridContainer = document.getElementById('gridContainer');
+	
+		// Variables para Combinatoria
+		const onset = ['I','b','d','D','J','f','g','0','V','R','9','h','H','j','k','K','kN','1','l','L','m','n','p','P','pN','Ñ','Q','qN','3','r','rü','s','sN','5','S','SN','6','t','T','tN','7','c','C','cN','4','ç','Ç','çN','2','y','Y','v','w','X','XN','8','z','Z',];
+		const vowels = ['A','á','ä','êː','î','í','û','ú','ë','U','O','E','W'];
+		const coda = 'NGbfdDJpPtTcCçÇyYglLmnrsSzZkKxRqQXHwj0123456789V';
+		
+		// Reglas para CVC
+		const rules = [
+			/[kÑsStcçXfg0-9jRvwü]W/,
+			/N[áêíú]/
+		];	
+
+        // Configurar estilos de la grilla
+        gridContainer.style.display = 'grid';
+        gridContainer.style.gridTemplateColumns = 'repeat(auto-fill, minmax(180px, 1fr))';
+        gridContainer.style.gap = '15px';
+        gridContainer.style.paddingBottom = '20px';
+
+        let totalValidCount = 0;
+
+        // Iterar por cada onset para crear un contenedor independiente en la grilla
+        for(const c of onset){
+            const ascii_cv_array = [];
+            for(const v of vowels){
+                let cv = c + v;
+                ascii_cv_array.push(cv);                
+            }
+            
+            // Conserva la sílaba SOLO si NO activa ninguna regla prohibida
+            const valid_ascii_cv = ascii_cv_array.filter(str => !rules.some(regex => regex.test(str)));
+            
+            if (valid_ascii_cv.length === 0) continue;
+
+            totalValidCount += valid_ascii_cv.length;
+            
+            // Transcribe a IPA
+            const ipa_cv_array = valid_ascii_cv.map(str => transcribir_IPA(str));
+            const ipa_onset = transcribir_IPA(c);
+
+            // Crear el contenedor (tarjeta) para este onset
+            const box = document.createElement('div');
+            box.style.background = '#ffffff';
+            box.style.border = '1px solid #dcdde1';
+            box.style.borderRadius = '8px';
+            box.style.padding = '12px';
+            box.style.boxShadow = '0 2px 4px rgba(0,0,0,0.05)';
+
+            const boxTitle = document.createElement('h3');
+            boxTitle.style.margin = '0 0 8px 0';
+            boxTitle.style.fontSize = '1rem';
+            boxTitle.style.color = '#e84118';
+            boxTitle.style.borderBottom = '1px solid #f1f2f6';
+            boxTitle.style.paddingBottom = '6px';
+            boxTitle.textContent = `${c} (${ipa_onset}) [${ipa_cv_array.length}]`;
+
+            const boxContent = document.createElement('div');
+            boxContent.style.fontSize = '0.95rem';
+            boxContent.style.color = '#2f3640';
+            boxContent.innerHTML = ipa_cv_array.join("<br>");
+
+            box.appendChild(boxTitle);
+            box.appendChild(boxContent);
+            gridContainer.appendChild(box);
+        }
+		
+		titleCVC.innerHTML = `${totalValidCount} sílabas CVC totales`;
+	</script>
+</body>
+</html>

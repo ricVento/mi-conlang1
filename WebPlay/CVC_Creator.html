@@ -5,37 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Constructor de Silabas CVC</title>
 	<style>
-        /* Reseteo básico y control de caja */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
         body, html {
             height: 100%;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f5f6fa;
-            overflow: hidden; /* Evita barras de desplazamiento en la pantalla principal */
         }
-
-        /* Contenedor Grid Principal: 3 columnas idénticas y 2 filas */
-        .main-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr; /* Tres columnas exactamente iguales (un tercio cada una) */
-            grid-template-rows: auto 1fr;       /* Fila de títulos adaptativa, fila inferior toma el resto */
-            height: 100vh;                      /* Ocupa el 100% del alto de la pantalla */
-            gap: 0 15px;                        /* Separación de 15px solo entre las columnas */
-            padding: 15px;
-        }
-
-        /* Estilo común para los títulos (Fila Superior) */
         .title-cell {
             padding: 10px 0;
-            
-            /* Flexbox para alinear el texto de forma limpia */
-            display: flex;
-            align-items: center;
         }
 
         .title-cell h2 {
@@ -43,31 +19,8 @@
             color: #2f3640;
         }
 
-        /* Estilo común para los contenedores de los divs (Fila Inferior) */
-        .textarea-cell {
-            /* Flexbox para forzar al div a ocupar todo el espacio disponible */
-            display: flex; 
-            flex-direction: column;
-            height: 100%; 
-            min-height: 0; /* Previene que el contenedor se estire más allá del grid por contenido largo */
-        }
 
-        .full-textarea {
-            width: 100%;
-            height: 100%;
-            padding: 15px;
-            font-size: 1rem;
-            line-height: 1.5;
-            color: #333;
-            border: 1px solid #dcdde1;
-            border-radius: 6px;
-            background-color: #ffffff;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
-            
-            /* Control del scroll: solo aparece barra si el texto desborda verticalmente */
-            overflow-y: auto; 
-            word-break: break-word; /* Evita que palabras largas rompan el diseño horizontalmente */
-        }
+
     </style>
 	<script src="script.js"></script>
 </head>
@@ -75,50 +28,33 @@
     <div class="main-grid">
         <!-- FILA SUPERIOR: TÍTULOS -->
         <div class="title-cell">
-            <h2 id="cvTitle"></h2>
-        </div>
-
-        <div class="title-cell">
-            <h2 id="vcTitle">Sílaba VC</h2>
-        </div>
-
-        <div class="title-cell">
             <h2 id="cvcTitle">Sílaba CVC</h2>
         </div>
 
         <!-- FILA INFERIOR: DIVS (Reemplazando los textareas anteriores) -->
-        <div class="textarea-cell">
-            <div id="outputCV" class="full-textarea">Contenido de la columna izquierda...</div>
-        </div>
-
-        <div class="textarea-cell">
-            <div id="outputVC" class="full-textarea">Contenido de la columna central...</div>
-        </div>
-
         <div class="textarea-cell">
             <div id="outputCVC" class="full-textarea">Contenido de la columna derecha...</div>
         </div>
     </div>
 	<script>
         // Referencias al DOM
-        const outputCV = document.getElementById('outputCV');
-        const outputVC = document.getElementById('outputVC');
         const outputCVC = document.getElementById('outputCVC');
-        const titleCV = document.getElementById('cvTitle');
-        const titleVC = document.getElementById('vcTitle');
         const titleCVC = document.getElementById('cvcTitle');
 	
 		// Variables para Combinatoria
-		const onset = 'NGbfdDJpPtTcCçÇyYglLmnrsSzZkKxRqQXHwj0123456789V';
-		const vowels = 'aiuAeoE';
+		const onset = ['k','p','q','s','S','t','c','ç','X','b','d','D','J','f','g','0','h','H','j','K','1','l','L','m','n','pʼ','Q','3','r','R','9','5','6','T','y','Y','C','Ç','4','2','7','v','w','z','Z','I','V','8','kN','pN','qN','sN','SN','tN','cN','çN','XN'];
+		const vowels = ['A','á','ä','E','êː','ë','í','î','O','ôː','U','ú','û','W'];
 		const coda = 'NGbfdDJpPtTcCçÇyYglLmnrsSzZkKxRqQXHwj0123456789V';
 		
 		// Arrays resultantes
-		const ascii_cv_array = [];
 		const ascii_cvc_array = [];
 		
 		// Reglas para CVC
 		const rules = [
+			/[gkçqcsStXRp0-9N]W/,
+		
+		
+/*		
 			/[XQqR][ai]/, // uvulares + anteriores
 			/[234][Aou]/, // labiouvular + posteriores
 			/[01][ou]/, // labiovelar + redondeada
@@ -127,27 +63,14 @@
 			/(.)[Aaeiou]\1/, // consonante duplicada
 			/[fD01234qKxmPQsTCçÇYyZ]$/, // finales no permitidas	
 			/[ou]w$/, // labial final 
+*/			
 		];	
 		
 		// Creamos CV
 		for(const c of onset){
 			for(const v of vowels){
 				let cv = c + v;
-				ascii_cv_array.push(cv);				
-			}			
-		}
-		
-		// Conserva la sílaba SOLO si NO activa ninguna regla prohibida
-		const valid_ascii_cv_array = ascii_cv_array.filter(str => !rules.some(regex => regex.test(str)));
-		
-		// Transcribe a IPA
-		const ipa_cv_array = valid_ascii_cv_array.map(str => transcribir_IPA(str));
-
-		// Creamos CVC
-		for(const cv of valid_ascii_cv_array){
-			for(const f of coda){
-				let cvc = cv + f;
-				ascii_cvc_array.push(cvc);				
+				ascii_cvc_array.push(cv);				
 			}			
 		}
 		
@@ -155,18 +78,11 @@
 		const valid_ascii_cvc_array = ascii_cvc_array.filter(str => !rules.some(regex => regex.test(str)));
 		
 		// Transcribe a IPA
-		const ipa_cvc_array = valid_ascii_cvc_array.map(str => transcribir_IPA(str));		
+		const ipa_cvc_array = valid_ascii_cvc_array.map(str => transcribir_IPA(str));
 		
+		titleCVC.innerHTML = `${ipa_cvc_array.length} CV`;
+		outputCVC.innerHTML = ipa_cvc_array.join("<br>");
 		
-		
-		titleCV.innerHTML = `${ipa_cv_array.length} CV`;
-		outputCV.innerHTML = ipa_cv_array.join("<br>");
-		
-		titleVC.innerHTML = `${valid_ascii_cvc_array.length} CVC`;		
-		outputVC.innerHTML = ipa_cvc_array.join("<br>");
-		
-		titleCVC.innerHTML = `${ipa_cv_array.length} CV`;				
-		outputCVC.innerHTML = onset[6] + vowels[4] + onset[11];
 	</script>
 </body>
 </html>
