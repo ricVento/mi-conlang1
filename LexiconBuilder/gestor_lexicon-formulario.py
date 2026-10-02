@@ -11,9 +11,9 @@ ARCHIVO_JS = os.path.join(DIRECTORIO_SCRIPT, "lexicon-data.js")
 
 
 def normalizar_lexicon(lexicon):
-  """Asegura que las keys 'alomorfos' y 'significados' sean listas de cadenas."""
+  """Asegura que las keys 'alomorfos', 'significados' y 'gramatica' sean listas de cadenas."""
   for item in lexicon:
-    for key in ["alomorfos", "significados"]:
+    for key in ["alomorfos", "significados", "gramatica"]:
       if key in item:
         val = item[key]
         if isinstance(val, str):
@@ -27,7 +27,7 @@ def normalizar_lexicon(lexicon):
 
 
 def cargar_lexicon():
-  """Lee el archivo lexicon-data.js extrayendo y parseando el arreglo[cite: 1]."""
+  """Lee el archivo lexicon-data.js extrayendo y parseando el arreglo."""
   if not os.path.exists(ARCHIVO_JS):
     return []
 
@@ -64,7 +64,7 @@ def guardar_lexicon(lexicon):
 
 
 def verificar_duplicados_completos(lexicon, palabra, alomorfos):
-  """Verifica duplicados en palabra y alomorfos[cite: 1]."""
+  """Verifica duplicados en palabra y alomorfos."""
   palabra_ingresada = palabra.strip()
 
   lista_alomorfos = []

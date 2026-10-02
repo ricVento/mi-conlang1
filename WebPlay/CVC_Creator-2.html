@@ -53,14 +53,17 @@
         const gridContainer = document.getElementById('gridContainer');
 	
 		// Variables para Combinatoria
-		const onset = ['I','b','d','D','J','f','g','0','V','R','9','h','H','j','k','K','kN','1','l','L','m','n','p','P','pN','Ñ','Q','qN','3','r','rü','s','sN','5','S','SN','6','t','T','tN','7','c','C','cN','4','ç','Ç','çN','2','y','Y','v','w','X','XN','8','z','Z',];
-		const vowels = ['A','á','ä','êː','î','í','û','ú','ë','U','O','E','W'];
+		const onset = ['N','b','d','ñ','D','J','f','g','0','G','R','9','h','H','j','k','à','K','1','l','L','m','n','p','â','P','F','Q','3','r','s','ä','5','B','S','è','6','t','ê','T','7','Ñ','c','ë','C','4','ç','í','Ç','2','y','Y','X','ì','8','w','z','Z',
+		//'q','ù','V','v','x',		
+		];
+		const vowels = ['A','a','á','e','é','I','i','o','O','ó','u','U','ú',];
 		const coda = 'NGbfdDJpPtTcCçÇyYglLmnrsSzZkKxRqQXHwj0123456789V';
 		
 		// Reglas para CVC
 		const rules = [
-			/[kÑsStcçXfg0-9jRvwü]W/,
-			/N[áêíú]/
+			/[0-9][áoOóuUúeéi]/, // labial + redondeada/larga
+			/[àâêëíìäè][áeéiOóú]/, // geminada + larga
+			/[BÑñ][^AáIéuú]/, // intensas solo con faringeales
 		];	
 
         // Configurar estilos de la grilla

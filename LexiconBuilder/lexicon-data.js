@@ -115,7 +115,9 @@ const lexiconData = [
     "significados": [
       "gdfgdgdgfg"
     ],
-    "gramatica": ["dfgdfgdgdg"],
+    "gramatica": [
+      "dfgdfgdgdg"
+    ],
     "ejemplo": "dfgfggfg",
     "traduccion": "dffdgggfd"
   },
@@ -128,7 +130,9 @@ const lexiconData = [
     "significados": [
       "errgrg"
     ],
-    "gramatica": ["vrb + dat"],
+    "gramatica": [
+      "vrb + dat"
+    ],
     "ejemplo": "dfgdgdfgd",
     "traduccion": "dgfgfgdfg gfdg fg fdg"
   },
@@ -141,7 +145,9 @@ const lexiconData = [
     "significados": [
       "hgfkgjdfhk"
     ],
-    "gramatica": ["fgdfgfg"],
+    "gramatica": [
+      "fgdfgfg"
+    ],
     "ejemplo": "dgdfgdg",
     "traduccion": "ropiedad personalizada? (Nomb"
   },
@@ -253,5 +259,23 @@ const lexiconData = [
     ],
     "ejemplo": "gomelia Mahomani gadur",
     "traduccion": "la montaña va a mahoma"
+  },
+  {
+    "palabra": "lunax",
+    "ipa": "lUnnAe",
+    "alomorfos": [
+      "nunaxi",
+      "lunaxisti"
+    ],
+    "significados": [
+      "espectacular"
+    ],
+    "gramatica": [
+      "sust",
+      "inanim",
+      "mas"
+    ],
+    "ejemplo": "grufaque lumaxi chumalashte",
+    "traduccion": "miro a la cara del abismo"
   }
 ];
