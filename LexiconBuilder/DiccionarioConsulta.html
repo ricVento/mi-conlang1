@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diccionario Conlang - Vista Simplificada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 0 20px;
+            color: #333;
+            line-height: 1.5;
+        }
+        h1 {
+            font-size: 1.4rem;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+        }
+        dl {
+            margin-top: 20px;
+        }
+        dt {
+            font-weight: bold;
+            margin-top: 10px;
+            color: #1a0dab;
+        }
+        dd {
+            margin-left: 20px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Léxico en Estilo Diccionario</h1>
+    <dl id="diccionario"></dl>
+
+    <!-- Carga de los datos externos -->
+    <script src="lexicon-data.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const diccionarioMap = {};
+
+            // Procesar el arreglo lexiconData
+            lexiconData.forEach(item => {
+                const palabra = item.palabra || "";
+                const alomorfos = item.alomorfos && item.alomorfos.length > 0 
+                    ? item.alomorfos.join(", ") 
+                    : "";
+
+                if (Array.isArray(item.significados)) {
+                    item.significados.forEach(sig => {
+                        const sigTrim = sig.trim();
+                        if (!sigTrim) return;
+
+                        // Si el significado ya existe, agregamos la nueva palabra y alomorfos a la lista
+                        if (!diccionarioMap[sigTrim]) {
+                            diccionarioMap[sigTrim] = [];
+                        }
+                        diccionarioMap[sigTrim].push({ palabra, alomorfos });
+                    });
+                }
+            });
+
+            const dlElement = document.getElementById("diccionario");
+
+            // Ordenar alfabéticamente los significados para una mejor visualización tipo diccionario
+            const significadosOrdenados = Object.keys(diccionarioMap).sort();
+
+            significadosOrdenados.forEach(sig => {
+                const entradas =cionarioMap = diccionarioMap[sig];
+                
+                // Formatear palabra y alomorfos de cada entrada asociada a este significado
+                const contenidoEntradas = entradas.map(e => {
+                    return e.alomorfos ? `${e.palabra} (${e.alomorfos})` : e.palabra;
+                }).join("; ");
+
+                // Crear elementos <dt> y <dd>
+                const dt = document.createElement("dt");
+                dt.textContent = `${sig}:`;
+
+                const dd = document.createElement("dd");
+                dd.textContent = contenidoEntradas;
+
+                dlElement.appendChild(dt);
+                dlElement.appendChild(dd);
+            });
+        });
+    </script>
+</body>
+</html>
