@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Constructor de Silabas CVC</title>
+    <title>Constructor de Silabas CV</title>
 	<style>
         body, html {
             height: 100%;
@@ -39,7 +39,7 @@
     <div class="main-grid">
         <!-- FILA SUPERIOR: TÍTULOS -->
         <div class="title-cell">
-            <h2 id="cvcTitle">Sílaba CVC</h2>
+            <h2 id="cvTitle">Sílaba CV</h2>
         </div>
 
         <!-- FILA INFERIOR: GRILLA DE CONTENEDORES POR ONSET -->
@@ -49,7 +49,7 @@
     </div>
 	<script>
         // Referencias al DOM
-        const titleCVC = document.getElementById('cvcTitle');
+        const titleCV = document.getElementById('cvTitle');
         const gridContainer = document.getElementById('gridContainer');
 	
 		// Variables para Combinatoria
@@ -57,9 +57,8 @@
 		//'q','ù','V','v','x',		
 		];
 		const vowels = ['a','I','A','u','á','é','i','ú','e','O','o','U','ó',];
-		const coda = 'NGbfdDJpPtTcCçÇyYglLmnrsSzZkKxRqQXHwj0123456789V';
 		
-		// Reglas para CVC
+		// Reglas para CV
 		const rules = [
 			/[0-9][áoOóuUúeéi]/, // labial + redondeada/larga
 			/[àâêëíìäè][áeéiOóú]/, // geminada + larga
@@ -119,7 +118,7 @@
             gridContainer.appendChild(box);
         }
 		
-		titleCVC.innerHTML = `${totalValidCount} sílabas CVC totales`;
+		titleCV.innerHTML = `${totalValidCount} sílabas CV totales`;
 	</script>
 </body>
 </html>
