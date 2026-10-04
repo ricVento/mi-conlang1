@@ -52,19 +52,6 @@
         const titleCV = document.getElementById('cvTitle');
         const gridContainer = document.getElementById('gridContainer');
 	
-		// Variables para Combinatoria
-		const onset = ['N','b','d','ñ','D','J','f','g','0','G','R','9','h','H','j','k','à','K','1','l','L','m','n','p','â','P','F','Q','3','r','s','ä','5','B','S','è','6','t','ê','T','7','Ñ','c','ë','C','4','ç','í','Ç','2','y','Y','X','ì','8','w','z','Z',
-		//'q','ù','V','v','x',		
-		];
-		const vowels = ['a','I','A','u','á','é','i','ú','e','O','o','U','ó',];
-		
-		// Reglas para CV
-		const rules = [
-			/[0-9][áoOóuUúeéi]/, // labial + redondeada/larga
-			/[àâêëíìäè][áeéiOóú]/, // geminada + larga
-			/[BÑñ][^AáIéuú]/, // intensas solo con faringeales
-		];	
-
         // Configurar estilos de la grilla
         gridContainer.style.display = 'grid';
         gridContainer.style.gridTemplateColumns = 'repeat(auto-fill, minmax(180px, 1fr))';
@@ -75,23 +62,19 @@
 
         // Iterar por cada onset para crear un contenedor independiente en la grilla
         for(const c of onset){
-            const ascii_cv_array = [];
+            const cv_array = [];
             for(const v of vowels){
                 let cv = c + v;
-                ascii_cv_array.push(cv);                
+                cv_array.push(cv);                
             }
             
             // Conserva la sílaba SOLO si NO activa ninguna regla prohibida
-            const valid_ascii_cv = ascii_cv_array.filter(str => !rules.some(regex => regex.test(str)));
+            const valid_cv = cv_array.filter(str => !rules.some(regex => regex.test(str)));
             
-            if (valid_ascii_cv.length === 0) continue;
+            if (valid_cv.length === 0) continue;
 
-            totalValidCount += valid_ascii_cv.length;
+            totalValidCount += valid_cv.length;
             
-            // Transcribe a IPA
-            const ipa_cv_array = valid_ascii_cv.map(str => transcribir_IPA(str));
-            const ipa_onset = transcribir_IPA(c);
-
             // Crear el contenedor (tarjeta) para este onset
             const box = document.createElement('div');
             box.style.background = '#ffffff';
@@ -106,12 +89,12 @@
             boxTitle.style.color = '#e84118';
             boxTitle.style.borderBottom = '1px solid #f1f2f6';
             boxTitle.style.paddingBottom = '6px';
-            boxTitle.textContent = `${c} (${ipa_onset}) [${ipa_cv_array.length}]`;
+            boxTitle.textContent = `${c} [${valid_cv.length}]`;
 
             const boxContent = document.createElement('div');
             boxContent.style.fontSize = '0.95rem';
             boxContent.style.color = '#2f3640';
-            boxContent.innerHTML = ipa_cv_array.join("<br>");
+            boxContent.innerHTML = valid_cv.join("<br>");
 
             box.appendChild(boxTitle);
             box.appendChild(boxContent);
