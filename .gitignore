@@ -13,3 +13,6 @@ desktop.ini
 
 # Dependencias de JavaScript (por si las usas luego)
 node_modules/
+
+# Archivos compilados de Typst u otros documentos
+*.pdf

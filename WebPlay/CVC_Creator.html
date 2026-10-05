@@ -5,11 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Constructor de Silabas CVC</title>
 	<style>
-        body, html {
-            height: 100%;
+        :root {
+            --bg-color: #1e1e1e;
+            --text-color: #d4d4d4;
+        }	
+	
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f6fa;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            box-sizing: border-box;
         }
+		
         .title-cell {
             padding: 10px 0;
         }
@@ -41,47 +53,24 @@
         const outputCVC = document.getElementById('outputCVC');
         const titleCVC = document.getElementById('cvcTitle');
 	
-		// Variables para Combinatoria
-		const onset = ['k','p','q','s','S','t','c','ç','X','b','d','D','J','f','g','0','h','H','j','K','1','l','L','m','n','pʼ','Q','3','r','R','9','5','6','T','y','Y','C','Ç','4','2','7','v','w','z','Z','I','V','8','kN','pN','qN','sN','SN','tN','cN','çN','XN'];
-		const vowels = ['A','á','ä','E','êː','ë','í','î','O','ôː','U','ú','û','W'];
-		const coda = 'NGbfdDJpPtTcCçÇyYglLmnrsSzZkKxRqQXHwj0123456789V';
-		
 		// Arrays resultantes
-		const ascii_cvc_array = [];
-		
-		// Reglas para CVC
-		const rules = [
-			/[gkçqcsStXRp0-9N]W/,
-		
-		
-/*		
-			/[XQqR][ai]/, // uvulares + anteriores
-			/[234][Aou]/, // labiouvular + posteriores
-			/[01][ou]/, // labiovelar + redondeada
-			/^[wj]./, // marcas de clase iniciales
-			
-			/(.)[Aaeiou]\1/, // consonante duplicada
-			/[fD01234qKxmPQsTCçÇYyZ]$/, // finales no permitidas	
-			/[ou]w$/, // labial final 
-*/			
-		];	
+		const cvc_array = [];
 		
 		// Creamos CV
-		for(const c of onset){
+		for(const o of onset){
 			for(const v of vowels){
-				let cv = c + v;
-				ascii_cvc_array.push(cv);				
+				for(const c of coda){
+					let cvc = o + v + c;
+					cvc_array.push(cvc);				
+				}			
 			}			
 		}
 		
 		// Conserva la sílaba SOLO si NO activa ninguna regla prohibida
-		const valid_ascii_cvc_array = ascii_cvc_array.filter(str => !rules.some(regex => regex.test(str)));
+		const valid_cvc_array = cvc_array.filter(str => !rules.some(regex => regex.test(str)));
 		
-		// Transcribe a IPA
-		const ipa_cvc_array = valid_ascii_cvc_array.map(str => transcribir_IPA(str));
-		
-		titleCVC.innerHTML = `${ipa_cvc_array.length} CV`;
-		outputCVC.innerHTML = ipa_cvc_array.join("<br>");
+		titleCVC.innerHTML = `${valid_cvc_array.length} CV`;
+		outputCVC.innerHTML = valid_cvc_array.join("<br>");
 		
 	</script>
 </body>

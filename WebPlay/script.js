@@ -94,13 +94,27 @@ function transcribir_IPA(cadenaASCII) {
 }
 
 // Variables para Combinatoria
-const onset = ['ʔ','b','d','dˁ','dz','dʒ','f','ɡ','gʷ','ʕ','ɣ','h','ħ','j','k','kː','kʼ','kʷ','l','ɬ','m','n','p','pː','pʼ','qχ','qχʼ','qχʷ','ɾ','s','sː','sʷ','sˁ','ʃ','ʃː','ʃʷ','t','tː','tˁ','tʷ','tʼ','ts','tsː','tsʼ','tsʷ','tʃ','tʃː','tʃʼ','tʃʷ','tɬ','tɬʼ','x','χ','χː','χʷ','ʁ','ʁʷ','v','w','z','ʒ'];
+const onset = [
+	'ʔ','ʕ',
+	'b','p','pː','pʼ','dˁ',
+	'd','t','tː','tʷ','tʼ','tˁ',
+	'ɡ','gʷ','k','kː','kʼ','kʷ',	
+	'z','s','sː','sʷ','sˁ',
+	'ʒ','ʃ','ʃː','ʃʷ',		
+	'dz','ts','tsː','tsʼ','tsʷ',
+	'dʒ','tʃ','tʃː','tʃʼ','tʃʷ',
+	'tɬ','tɬʼ',
+	'qχ','qχʼ','qχʷ',
+	'χ','χː','χʷ','h','ħ',
+	'ʁ','ʁʷ',
+	'ɾ','l','ɬ','m','n','f','w','j',		
+];
 
 const vowels = ['ɑ','æ','je','ɛː','ɪ','iː','œ','wo','ɥœ','ʊ','y','uː'];
+
+const coda = onset;
 		
 // Reglas para CV
 const rules = [
-	/ʷ.*[wœɥyujʊː]/, // labial + redondeada/larga
-	/ː.+ː/, // geminada + larga
-	//, // intensas solo con faringeales
+//,
 ];	
