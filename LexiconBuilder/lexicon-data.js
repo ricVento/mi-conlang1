@@ -110,7 +110,7 @@ const lexiconData = [
     "palabra": "perrea",
     "ipa": "gdfgdg",
     "alomorfos": [
-      "dfgdfg"
+      "dfgdfgt"
     ],
     "significados": [
       "gdfgdgdgfg"
@@ -261,7 +261,7 @@ const lexiconData = [
     "traduccion": "la montaña va a mahoma"
   },
   {
-    "palabra": "lunax",
+    "palabra": "lunaz",
     "ipa": "lUnnAe",
     "alomorfos": [
       "nunaxi",
@@ -277,5 +277,23 @@ const lexiconData = [
     ],
     "ejemplo": "grufaque lumaxi chumalashte",
     "traduccion": "miro a la cara del abismo"
-  }
+  },
+  {
+    "palabra": "lunax",
+    "ipa": "luuna",
+    "alomorfos": [
+      "lunitas"
+    ],
+    "significados": [
+      "lunay",
+      "satélites"
+    ],
+    "gramatica": [
+      "sust",
+      "fem",
+      "inanim"
+    ],
+    "ejemplo": "luna shining star",
+    "traduccion": "la luna brilla"
+  },  
 ];

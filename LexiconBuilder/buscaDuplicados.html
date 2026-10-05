@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Duplicados - Léxico</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --border-color: #e2e8f0;
+            --danger-bg: #fef2f2;
+            --danger-border: #fecaca;
+            --danger-text: #991b1b;
+            --success-bg: #f0fdf4;
+            --success-border: #bbf7d0;
+            --success-text: #166534;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        p.subtitle {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Banner de Estado */
+        .status-banner {
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border: 1px solid transparent;
+        }
+
+        .status-banner.safe {
+            background-color: var(--success-bg);
+            border-color: var(--success-border);
+            color: var(--success-text);
+        }
+
+        .status-banner.danger {
+            background-color: var(--danger-bg);
+            border-color: var(--danger-border);
+            color: var(--danger-text);
+        }
+
+        /* Tabla Estilo Formulario */
+        .table-container {
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr.row-duplicate {
+            background-color: #fff1f2;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-danger {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🔍 Validador Externo de Duplicados</h1>
+        <p class="subtitle">Analizando los campos <code>palabra</code> y <code>alomorfos</code> desde el archivo externo <code>lexicon-data.js</code>.</p>
+
+        <!-- Banner de Estado Global -->
+        <div id="statusBanner" class="status-banner">
+            <!-- Dinámico -->
+        </div>
+
+        <!-- Tabla de Registros -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fila</th>
+                        <th>Palabra</th>
+                        <th>Alomorfos</th>
+                        <th>Evaluación</th>
+                    </tr>
+                </thead>
+                <tbody id="lexiconTableBody">
+                    <!-- Dinámico -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Importación del archivo JS externo -->
+    <script src="lexicon-data.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const tableBody = document.getElementById("lexiconTableBody");
+            const statusBanner = document.getElementById("statusBanner");
+
+            let hayDuplicados = false;
+            let htmlContent = "";
+
+            // Validación por si el archivo externo no carga o no define la variable
+            if (typeof lexiconData === 'undefined') {
+                statusBanner.className = "status-banner danger";
+                statusBanner.innerHTML = "❌ Error: No se pudo cargar o encontrar el archivo externo <code>lexicon-data.js</code>.";
+                return;
+            }
+
+            // Paso 1: Recopilar y contar las ocurrencias exclusivamente en las claves `palabra` y `alomorfos`
+            const conteoTerminos = {};
+
+            lexiconData.forEach((item) => {
+                const palabra = item.palabra ? item.palabra.trim() : "";
+                if (palabra) {
+                    conteoTerminos[palabra] = (conteoTerminos[palabra] || 0) + 1;
+                }
+                
+                if (Array.isArray(item.alomorfos)) {
+                    item.alomorfos.forEach(alomorfo => {
+                        const alo = alomorfo ? alomorfo.trim() : "";
+                        if (alo) {
+                            conteoTerminos[alo] = (conteoTerminos[alo] || 0) + 1;
+                        }
+                    });
+                }
+            });
+
+            // Paso 2: Filtrar y evaluar solo los registros que son duplicados
+            lexiconData.forEach((item, index) => {
+                const fila = index + 1;
+                const palabra = item.palabra || "";
+                const alomorfos = Array.isArray(item.alomorfos) ? item.alomorfos : [];
+                
+                const esPalabraDuplicada = conteoTerminos[palabra] > 1;
+                const tieneAlomorfoDuplicado = alomorfos.some(alomorfo => conteoTerminos[alomorfo] > 1);
+                const esDuplicado = esPalabraDuplicada || tieneAlomorfoDuplicado;
+
+                // SOLO incluir en la lista si es duplicado
+                if (esDuplicado) {
+                    hayDuplicados = true;
+                    htmlContent += `
+                        <tr class="row-duplicate">
+                            <td>#${fila}</td>
+                            <td><strong>${palabra}</strong></td>
+                            <td>[${alomorfos.join(", ")}]</td>
+                            <td>
+                                <span class="badge badge-danger">⚠ Alerta: Duplicado encontrado</span>
+                            </td>
+                        </tr>
+                    `;
+                }
+            });
+
+            // Actualización de la interfaz según los resultados
+            if (hayDuplicados) {
+                tableBody.innerHTML = htmlContent;
+                statusBanner.className = "status-banner danger";
+                statusBanner.innerHTML = "⚠ ¡Atención! Se muestran únicamente los registros duplicados detectados en las claves <code>palabra</code> o <code>alomorfos</code>.";
+            } else {
+                tableBody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: #64748b; padding: 1.5rem;">No hay registros duplicados que mostrar.</td></tr>`;
+                statusBanner.className = "status-banner safe";
+                statusBanner.innerHTML = "✅ No hay peligro: Todos los datos son correctos y no existen duplicados en las claves indicadas.";
+            }
+        });
+    </script>
+</body>
+</html>
