@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Combinar Todo</title>
+</head>
+<body>
+
+    <!-- Contenedor para la lista total -->
+    <div id="arrLength"></div>
+    <div id="arrTotal"></div>
+
+    <script>
+        const arr1 = ['ʔ','ʕ','b','p','d','t','ɡ','k','z','s','dz','ts','q','χ','h','ʁ','ɾ','l','m','n','w','j'];
+		
+        const arrAdd = ['əʔ','əʕ','əw','əj','əl'];
+		
+        const arr2 = arrAdd;
+        
+        const resultado = [];
+
+        // Dos bucles para emparejar CADA elemento de arr1 con CADA elemento de arr2
+        for (let i = 0; i < arr1.length; i++) {
+            for (let j = 0; j < arr2.length; j++) {
+                resultado.push(`${arr1[i]}${arr2[j]}`);
+            }
+        }
+
+        // Mostrar en pantalla separados por un salto de línea
+        document.getElementById('arrLength').innerHTML = resultado.length;
+        document.getElementById('arrTotal').innerHTML = resultado.join('<br>');
+    </script>
+
+</body>
+</html>

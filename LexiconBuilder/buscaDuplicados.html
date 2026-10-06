@@ -123,7 +123,7 @@
 <body>
 
     <div class="container">
-        <h1>🔍 Validador Externo de Duplicados</h1>
+        <h1>🔍 Buscador de Duplicados</h1>
         <p class="subtitle">Analizando los campos <code>palabra</code> y <code>alomorfos</code> desde el archivo externo <code>lexicon-data.js</code>.</p>
 
         <!-- Banner de Estado Global -->
@@ -215,11 +215,11 @@
             if (hayDuplicados) {
                 tableBody.innerHTML = htmlContent;
                 statusBanner.className = "status-banner danger";
-                statusBanner.innerHTML = "⚠ ¡Atención! Se muestran únicamente los registros duplicados detectados en las claves <code>palabra</code> o <code>alomorfos</code>.";
+                statusBanner.innerHTML = "⚠ ¡Atención! Registros duplicados detectados en las claves <code>palabra</code> o <code>alomorfos</code>.";
             } else {
                 tableBody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: #64748b; padding: 1.5rem;">No hay registros duplicados que mostrar.</td></tr>`;
                 statusBanner.className = "status-banner safe";
-                statusBanner.innerHTML = "✅ No hay peligro: Todos los datos son correctos y no existen duplicados en las claves indicadas.";
+                statusBanner.innerHTML = "✅ No hay peligro: No existen duplicados";
             }
         });
     </script>
