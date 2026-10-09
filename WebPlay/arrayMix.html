@@ -15,7 +15,8 @@
 		
         const arrAdd = ['əʔ','əʕ','əw','əj','əl'];
 		
-        const arr2 = arrAdd;
+        // Decide con cual arreglo se empareja arr1
+		const arr2 = arrAdd;
         
         const resultado = [];
 
@@ -25,7 +26,7 @@
                 resultado.push(`${arr1[i]}${arr2[j]}`);
             }
         }
-
+		
         // Mostrar en pantalla separados por un salto de línea
         document.getElementById('arrLength').innerHTML = resultado.length;
         document.getElementById('arrTotal').innerHTML = resultado.join('<br>');
