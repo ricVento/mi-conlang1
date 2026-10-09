@@ -9,7 +9,7 @@ CARPETA_ORIGEN = os.path.dirname(os.path.abspath(__file__))
 ARCHIVO_CSV = os.path.join(CARPETA_ORIGEN, "lexicon.csv") 
 ARCHIVO_JS = os.path.join(CARPETA_ORIGEN, "lexiconData.js")
 
-# ... (El resto del código se queda exactamente igual)
+# ASIGNA CLAVES Y VALORES
 COLUMNAS = ["palabra", "ipa", "alomorfos", "significados", "gramatica", "ejemplo", "traduccion"]
 COLUMNAS_ARREGLO = {"alomorfos", "significados", "gramatica"}
 

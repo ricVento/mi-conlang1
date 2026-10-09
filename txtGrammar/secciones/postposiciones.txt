@@ -1,3 +1,6 @@
+// Importar todo desde config (que ya expone el paquete eggs)
+#import "../config.typ": *
+
 0.1.5	Posposiciones
 Existen una serie de postposiciones a las que tradicionalmente se les incluye dentro de los casos gramaticales, aunque en realidad se comporten de manera muy diferente. Tienen la caracteristica de:
 (1)	Unirse al sustantivo, adjetivo o pronombre mediante un caso distinto al absolutivo o ergativo, 
