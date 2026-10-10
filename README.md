@@ -1,10 +1,9 @@
 # mi-conlang1
-**Sp**
-Conlang con las estrategias más comunes y frecuentes en la creacion de idiomas, solo para practicar y divertirme
-Conlang flexivo con inspiración armenia e irania. Componentes fonologicos de varias familias IE y otras curiosidades.
-Un festín de diversion.
+Este repositorio contiene mis avances en la creacion de un conlang que llevo desarrollando hace varios años. 
 
-**En**
-Conlang with the most common and frequent strategies in language creation, just for practice and fun.
-An inflected conlang with Armenian and Iranian inspiration. Phonological components from various Indo-European families and other curiosities.
-A feast of fun
+Iré subiendo las herramientas de código que he creado para facilitar la creacion de vocabulario asi como la gramatica que luego publicaré en Typst.
+
++ La carpeta `LexiconBuilder` contiene comandos en Python y Javascript, así como una colección de palabras en formato csv y objetos js para desplegar en forma de diccionario a traves de una interfaz web.
++ La carpeta `WebPlay` es más para uso personal y contiene generadores de sílabas y transcriptores de caracteres.
++ La carpeta `txtGrammar` es la carpeta principal de lo que será el archivo pdf en Typst de mi gramática.
++ Se puede acceder al sitio web a través del enlace https://ricvento.github.io/mi-conlang1/ que lleva directamente a `index.html`.
