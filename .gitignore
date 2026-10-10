@@ -16,25 +16,7 @@ node_modules/
 
 # Archivos compilados de Typst u otros documentos
 *.pdf
+*.odt
 
 # Ignorar la carpeta segura
 ms/
-
-# Archivos de Microsoft Excel
-*.xlsx
-*.xls
-*.xlsm
-*.xltx
-*.xltm
-
-# Archivos de Microsoft Word
-*.docx
-*.doc
-*.dotx
-*.docm
-
-# Archivos temporales ocultos de Office (evita que se suban mientras están abiertos)
-~$*.docx
-~$*.doc
-~$*.xlsx
-~$*.xls
