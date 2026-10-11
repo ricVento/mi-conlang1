@@ -83,6 +83,18 @@ const lexiconData = [
     "ipa": "",
     "alomorfos": [],
     "significados": [
+      "doctor",
+      "médico"
+    ],
+    "gramatica": [],
+    "ejemplo": "",
+    "traduccion": ""
+  },
+  {
+    "palabra": "",
+    "ipa": "",
+    "alomorfos": [],
+    "significados": [
       "escoba"
     ],
     "gramatica": [],
@@ -116,6 +128,32 @@ const lexiconData = [
     "ipa": "",
     "alomorfos": [],
     "significados": [
+      "golpear"
+    ],
+    "gramatica": [
+      "khw86"
+    ],
+    "ejemplo": "",
+    "traduccion": ""
+  },
+  {
+    "palabra": "",
+    "ipa": "",
+    "alomorfos": [],
+    "significados": [
+      "hacer",
+      "fabricar",
+      "crear"
+    ],
+    "gramatica": [],
+    "ejemplo": "",
+    "traduccion": ""
+  },
+  {
+    "palabra": "",
+    "ipa": "",
+    "alomorfos": [],
+    "significados": [
       "hacha"
     ],
     "gramatica": [],
@@ -127,7 +165,54 @@ const lexiconData = [
     "ipa": "",
     "alomorfos": [],
     "significados": [
+      "hijo",
+      "niño"
+    ],
+    "gramatica": [],
+    "ejemplo": "",
+    "traduccion": ""
+  },
+  {
+    "palabra": "",
+    "ipa": "",
+    "alomorfos": [],
+    "significados": [
+      "ir (andando)",
+      "caminar"
+    ],
+    "gramatica": [],
+    "ejemplo": "",
+    "traduccion": ""
+  },
+  {
+    "palabra": "",
+    "ipa": "",
+    "alomorfos": [],
+    "significados": [
       "lobo"
+    ],
+    "gramatica": [],
+    "ejemplo": "",
+    "traduccion": ""
+  },
+  {
+    "palabra": "",
+    "ipa": "",
+    "alomorfos": [],
+    "significados": [
+      "madre",
+      "mamá"
+    ],
+    "gramatica": [],
+    "ejemplo": "",
+    "traduccion": ""
+  },
+  {
+    "palabra": "",
+    "ipa": "",
+    "alomorfos": [],
+    "significados": [
+      "mano"
     ],
     "gramatica": [],
     "ejemplo": "",
@@ -185,6 +270,42 @@ const lexiconData = [
     "ipa": "",
     "alomorfos": [],
     "significados": [
+      "morder"
+    ],
+    "gramatica": [],
+    "ejemplo": "",
+    "traduccion": ""
+  },
+  {
+    "palabra": "",
+    "ipa": "",
+    "alomorfos": [],
+    "significados": [
+      "mordisquear"
+    ],
+    "gramatica": [
+      "iterativo de morder"
+    ],
+    "ejemplo": "",
+    "traduccion": ""
+  },
+  {
+    "palabra": "",
+    "ipa": "",
+    "alomorfos": [],
+    "significados": [
+      "mujer",
+      "esposa"
+    ],
+    "gramatica": [],
+    "ejemplo": "",
+    "traduccion": ""
+  },
+  {
+    "palabra": "",
+    "ipa": "",
+    "alomorfos": [],
+    "significados": [
       "niño",
       "chico"
     ],
@@ -198,6 +319,29 @@ const lexiconData = [
     "alomorfos": [],
     "significados": [
       "noche"
+    ],
+    "gramatica": [],
+    "ejemplo": "",
+    "traduccion": ""
+  },
+  {
+    "palabra": "",
+    "ipa": "",
+    "alomorfos": [],
+    "significados": [
+      "padre",
+      "papá"
+    ],
+    "gramatica": [],
+    "ejemplo": "",
+    "traduccion": ""
+  },
+  {
+    "palabra": "",
+    "ipa": "",
+    "alomorfos": [],
+    "significados": [
+      "palo"
     ],
     "gramatica": [],
     "ejemplo": "",
@@ -257,6 +401,17 @@ const lexiconData = [
       "plegaria",
       "oración",
       "rezo"
+    ],
+    "gramatica": [],
+    "ejemplo": "",
+    "traduccion": ""
+  },
+  {
+    "palabra": "",
+    "ipa": "",
+    "alomorfos": [],
+    "significados": [
+      "pobre"
     ],
     "gramatica": [],
     "ejemplo": "",
@@ -403,161 +558,6 @@ const lexiconData = [
     "ipa": "",
     "alomorfos": [],
     "significados": [
-      "ir (andando)",
-      "caminar"
-    ],
-    "gramatica": [],
-    "ejemplo": "",
-    "traduccion": ""
-  },
-  {
-    "palabra": "",
-    "ipa": "",
-    "alomorfos": [],
-    "significados": [
-      "madre",
-      "mamá"
-    ],
-    "gramatica": [],
-    "ejemplo": "",
-    "traduccion": ""
-  },
-  {
-    "palabra": "",
-    "ipa": "",
-    "alomorfos": [],
-    "significados": [
-      "mano"
-    ],
-    "gramatica": [],
-    "ejemplo": "",
-    "traduccion": ""
-  },
-  {
-    "palabra": "",
-    "ipa": "",
-    "alomorfos": [],
-    "significados": [
-      "hijo",
-      "niño"
-    ],
-    "gramatica": [],
-    "ejemplo": "",
-    "traduccion": ""
-  },
-  {
-    "palabra": "",
-    "ipa": "",
-    "alomorfos": [],
-    "significados": [
-      "pobre"
-    ],
-    "gramatica": [],
-    "ejemplo": "",
-    "traduccion": ""
-  },
-  {
-    "palabra": "",
-    "ipa": "",
-    "alomorfos": [],
-    "significados": [
-      "padre",
-      "papá"
-    ],
-    "gramatica": [],
-    "ejemplo": "",
-    "traduccion": ""
-  },
-  {
-    "palabra": "",
-    "ipa": "",
-    "alomorfos": [],
-    "significados": [
-      "hacer",
-      "fabricar",
-      "crear"
-    ],
-    "gramatica": [],
-    "ejemplo": "",
-    "traduccion": ""
-  },
-  {
-    "palabra": "",
-    "ipa": "",
-    "alomorfos": [],
-    "significados": [
-      "mujer",
-      "esposa"
-    ],
-    "gramatica": [],
-    "ejemplo": "",
-    "traduccion": ""
-  },
-  {
-    "palabra": "",
-    "ipa": "",
-    "alomorfos": [],
-    "significados": [
-      "doctor",
-      "médico"
-    ],
-    "gramatica": [],
-    "ejemplo": "",
-    "traduccion": ""
-  },
-  {
-    "palabra": "",
-    "ipa": "",
-    "alomorfos": [],
-    "significados": [
-      "golpear"
-    ],
-    "gramatica": [
-      "khw86"
-    ],
-    "ejemplo": "",
-    "traduccion": ""
-  },
-  {
-    "palabra": "",
-    "ipa": "",
-    "alomorfos": [],
-    "significados": [
-      "palo"
-    ],
-    "gramatica": [],
-    "ejemplo": "",
-    "traduccion": ""
-  },
-  {
-    "palabra": "",
-    "ipa": "",
-    "alomorfos": [],
-    "significados": [
-      "mordisquear"
-    ],
-    "gramatica": [
-      "iterativo de morder"
-    ],
-    "ejemplo": "",
-    "traduccion": ""
-  },
-  {
-    "palabra": "",
-    "ipa": "",
-    "alomorfos": [],
-    "significados": [
-      "morder"
-    ],
-    "gramatica": [],
-    "ejemplo": "",
-    "traduccion": ""
-  },
-  {
-    "palabra": "",
-    "ipa": "",
-    "alomorfos": [],
-    "significados": [
       "robar"
     ],
     "gramatica": [
@@ -596,6 +596,62 @@ const lexiconData = [
     "significados": [
       "hermano",
       "hermana"
+    ],
+    "gramatica": [],
+    "ejemplo": "",
+    "traduccion": ""
+  },
+  {
+    "palabra": "",
+    "ipa": "",
+    "alomorfos": [],
+    "significados": [
+      "hermano"
+    ],
+    "gramatica": [],
+    "ejemplo": "",
+    "traduccion": ""
+  },
+  {
+    "palabra": "",
+    "ipa": "",
+    "alomorfos": [],
+    "significados": [
+      "hermana"
+    ],
+    "gramatica": [],
+    "ejemplo": "",
+    "traduccion": ""
+  },
+  {
+    "palabra": "",
+    "ipa": "",
+    "alomorfos": [],
+    "significados": [
+      "niña",
+      "hija"
+    ],
+    "gramatica": [],
+    "ejemplo": "",
+    "traduccion": ""
+  },
+  {
+    "palabra": "",
+    "ipa": "",
+    "alomorfos": [],
+    "significados": [
+      "frente"
+    ],
+    "gramatica": [],
+    "ejemplo": "",
+    "traduccion": ""
+  },
+  {
+    "palabra": "",
+    "ipa": "",
+    "alomorfos": [],
+    "significados": [
+      "cabeza"
     ],
     "gramatica": [],
     "ejemplo": "",
