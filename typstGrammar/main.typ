@@ -6,10 +6,10 @@
 // Portada
 #align(center)[
   #v(5cm)
-  #text(size: 26pt, weight: "bold")[Gramática de la Lengua Aghwar] \
+  #text(size: 26pt, weight: "bold")[Gramática de la Lengua Aghvar] \
   #v(1cm)
-  #text(size: 18pt)[_Ricardo Ventosinos_]
-  #align(bottom)[#text(size: 14pt)[Draw: Junio 2026]]
+  #text(size: 16pt)[_Ricardo Ventosinos_]
+  #align(bottom)[#text(size: 12pt)[Borrador: Octubre 2026]]
 ]
 #pagebreak()
 
@@ -44,3 +44,5 @@
 #include "secciones/02_fonologia.typ"
 #pagebreak()
 #include "secciones/03_sustantivos.typ"
+#pagebreak()
+#include "secciones/04_adjetivos.typ"

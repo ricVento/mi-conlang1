@@ -1,135 +1,137 @@
-;;;abeja;;;
-;;;alcohol;;;
-;;;alto;;;
-;;;amarillo;ratón;;
-;;;anciano;;;
-;;;antiguo;;;
-;;;arcilla;;;
-;;;arma;;;
-;;;arroz;;;
-;;;asno;;;
-;;;azul;;;
-;;;bajo;;;
-;;;bebida;;;
-;;;blanco;;;
-;;;blando;;;
-;;;buey;;;
-;;;buho;;;
-;;;burro;;;
-;;;cabeza;;;
-;;;caliente;;;
-;;;caminar;;;
-;;;cebolla;;;
-;;;chico;;;
-;;;ciego;;;
-;;;ciudad;;;
-;;;claro;;;
-;;;cojo;;;
-;;;crear;;;
-;;;crepe;;;
-;;;cubierta;;;
-;;;cuenco;;;
-;;;culebra;;;
-;;;curvado;;;
-;;;delgado;;;
-;;;denso;;;
-;;;desnudo;;;
-;;;día;;;
-;;;dinero;;;
-;;;doctor;;;
-;;;enfadado;;;
-;;;escoba;;;
-;;;esfuerzo;;;
-;;;espinaca;;;
-;;;esposa;;;
-;;;fabricar;;;
-;;;frente;;;
-;;;gastado;;;
-;;;gato;;;
-;;;golpear;;;
-;;;grande;;;
-;;;gris;paloma;;
-;;;grueso;;;
-;;;hacer;;;
-;;;hacha;;;
-;;;hambre;;;
-;;;hambriento;hambre;;
-;;;hembra;;;
-;;;hermana;;;
-;;;hermano;;;
-;;;hija;;;
-;;;hijo;;;
-;;;húmedo;;;
-;;;inclinado;;;
-;;;inmaduro;;;
-;;;ir_andando;;;
-;;;jóven;;;
-;;;límpido;;;
-;;;lluvia;;;
-;;;lobo;;;
-;;;luna;;;
-;;;macho;;;
-;;;madre;;;
-;;;mamá;;;
-;;;mano;;;
-;;;mantequilla;;;
-;;;masa;;;
-;;;médico;;;
-;;;mes;;;
-;;;mojado;;;
-;;;montón;;;
-;;;morder;;;
-;;;mordisquear;;;
-;;;mujer;;;
-;;;negro;;;
-;;;niña;;;
-;;;niño;;;
-;;;noche;;;
-;;;nueva;;;
-;;;oración;;;
-;;;oscuro;;;
-;;;padre;;;
-;;;palo;;;
-;;;paloma;;;
-;;;pan;;;
-;;;papá;;;
-;;;pastor;;;
-;;;pequeño;;;
-;;;perro;;;
-;;;pescado;;;
-;;;pez;;;
-;;;pila;;;
-;;;plata;;;
-;;;plegaria;;;
-;;;pobre;;;
-;;;ratón;;;
-;;;recipiente;;;
-;;;redondo;;;
-;;;remedio;;;
-;;;rezo;;;
-;;;rico;;;
-;;;río;;;
-;;;robar;;;
-;;;rojo;sangre;;
-;;;rubio;;;
-;;;salado;;;
-;;;salvaje;;;
-;;;sangre;;;
-;;;serpiente;;;
-;;;sol;;;
-;;;sordo;;;
-;;;tapa;;;
-;;;techo;;;
-;;;tiñoso;;;
-;;;tío;;;
-;;;toro;;;
-;;;tortilla;;;
-;;;trabajo;;;
-;;;trigo;;;
-;;;triste;;;
-;;;usado;;;
-;;;vaca;;;
-;;;verde;;;
-;;;víbora;;;
-;;;viejo;;;
-;;;zorro;;;
+﻿palabra;ipa;alomorfos;significado;gramatica;ejemplo;traduccion
+ʔæn;ʕæl;bæʔ, pːʊn;abeja;;pwoʃ;pːwoq
+ʔæɾ;ʕæɬ;bjen, pːʊɾ;alcohol;bebida;pwots;pːwoħ
+ʔæz;ʕæk;bjeɾ, pːʊz;alto;;pwodʒ;pːwoʁ
+ʔæʃ;ʕæq;bjez, pːʊʃ;amarillo;de ratón;pwol;pːwoʔ
+ʔæts;ʕæħ;bjeʃ, pːʊts;anciano;viejo;pwoɬ;pːɪn
+ʔædʒ;ʕæʁ;bjets, pːʊdʒ;antiguo;viejo;pwok;pːɪɾ
+ʔæl;ʕæʔ;bjedʒ, pːʊl;arcilla;;pwoq;pːɪz
+ʔæɬ;ʕjen;bjel, pːʊɬ;arma;;pwoħ;pːɪʃ
+ʔæk;ʕjeɾ;bjeɬ, pːʊk;arroz;;pwoʁ;pːɪts
+ʔæq;ʕjez;bjek, pːʊq;asno;burro;pwoʔ;pːɪdʒ
+ʔæħ;ʕjeʃ;bjeq, pːʊħ;azul;;pɪn;pːɪl
+ʔæʁ;ʕjets;bjeħ, pːʊʁ;bajo;;pɪɾ;pːɪɬ
+ʔæʔ;ʕjedʒ;bjeʁ, pːʊʔ;bebida;;pɪz;pːɪk
+ʔjen;ʕjel;bjeʔ, pːuən;blanco;;pɪʃ;pːɪq
+ʔjeɾ;ʕjeɬ;bɑn, pːuəɾ;blando;;pɪts;pːɪħ
+ʔjez;ʕjek;bɑɾ, pːuəz;buey;;pɪdʒ;pːɪʁ
+ʔjeʃ;ʕjeq;bɑz, pːuəʃ;buho;;pɪl;pːɪʔ
+ʔjets;ʕjeħ;bɑʃ, pːuəts;burro;;pɪɬ;pːiən
+ʔjedʒ;ʕjeʁ;bɑts, pːuədʒ;cabeza;;pɪk;pːiəɾ
+ʔjel;ʕjeʔ;bɑdʒ, pːuəl;caliente;;pɪq;pːiəz
+ʔjeɬ;ʕɑn;bɑl, pːuəɬ;caminar;;pɪħ;pːiəʃ
+ʔjek;ʕɑɾ;bɑɬ, pːuək;cebolla;;pɪʁ;pːiəts
+ʔjeq;ʕɑz;bɑk, pːuəq;chico;;pɪʔ;pːiədʒ
+ʔjeħ;ʕɑʃ;bɑq, pːuəħ;ciego;;piən;pːiəl
+ʔjeʁ;ʕɑts;bɑħ, pːuəʁ;ciudad;;piəɾ;pːiəɬ
+ʔjeʔ;ʕɑdʒ;bɑʁ, pːuəʔ;claro;;piəz;pːiək
+ʔɑn;ʕɑl;bɑʔ, pːœn;cojo;;piəʃ;pːiəq
+ʔɑɾ;ʕɑɬ;bwon, pːœɾ;crear;;piəts;pːiəħ
+ʔɑz;ʕɑk;bwoɾ, pːœz;crepe;panqueca;piədʒ;pːiəʁ
+ʔɑʃ;ʕɑq;bwoz, pːœʃ;cubierta;de barco;piəl;pːiəʔ
+ʔɑts;ʕɑħ;bwoʃ, pːœts;cuenco;;piəɬ;
+ʔɑdʒ;ʕɑʁ;bwots, pːœdʒ;culebra;;piək;
+ʔɑl;ʕɑʔ;bwodʒ, pːœl;curvo;;piəq;
+ʔɑɬ;ʕwon;bwol, pːœɬ;delgado;;piəħ;
+ʔɑk;ʕwoɾ;bwoɬ, pːœk;denso;;piəʁ;
+ʔɑq;ʕwoz;bwok, pːœq;desnudo;;piəʔ;
+ʔɑħ;ʕwoʃ;bwoq, pːœħ;día;;pʊn;
+ʔɑʁ;ʕwots;bwoħ, pːœʁ;dinero;;pʊɾ;
+ʔɑʔ;ʕwodʒ;bwoʁ, pːœʔ;doctor;;pʊz;
+ʔwon;ʕwol;bwoʔ, pːɥœn;enfadado;;pʊʃ;
+ʔwoɾ;ʕwoɬ;bɪn, pːɥœɾ;escoba;;pʊts;
+ʔwoz;ʕwok;bɪɾ, pːɥœz;esfuerzo;;pʊdʒ;
+ʔwoʃ;ʕwoq;bɪz, pːɥœʃ;espinaca;;pʊl;
+ʔwots;ʕwoħ;bɪʃ, pːɥœts;esposa;;pʊɬ;
+ʔwodʒ;ʕwoʁ;bɪts, pːɥœdʒ;fabricar;;pʊk;
+ʔwol;ʕwoʔ;bɪdʒ, pːɥœl;frente;;pʊq;
+ʔwoɬ;ʕɪn;bɪl, pːɥœɬ;gastado;;pʊħ;
+ʔwok;ʕɪɾ;bɪɬ, pːɥœk;gato;;pʊʁ;
+ʔwoq;ʕɪz;bɪk, pːɥœq;golpe;;pʊʔ;
+ʔwoħ;ʕɪʃ;bɪq, pːɥœħ;golpear;;puən;
+ʔwoʁ;ʕɪts;bɪħ, pːɥœʁ;grande;;puəɾ;
+ʔwoʔ;ʕɪdʒ;bɪʁ, pːɥœʔ;gris;de paloma;puəz;
+ʔɪn;ʕɪl;bɪʔ, pʼæn;grueso;;puəʃ;
+ʔɪɾ;ʕɪɬ;biən, pʼæɾ;hacer;;puəts;
+ʔɪz;ʕɪk;biəɾ, pʼæz;hacha;;puədʒ;
+ʔɪʃ;ʕɪq;biəz, pʼæʃ;hambre;;puəl;
+ʔɪts;ʕɪħ;biəʃ, pʼæts;hambriento;de hambre;puəɬ;
+ʔɪdʒ;ʕɪʁ;biəts, pʼædʒ;hembra;;puək;
+ʔɪl;ʕɪʔ;biədʒ, pʼæl;hermana;;puəq;
+ʔɪɬ;ʕiən;biəl, pʼæɬ;hermano;;puəħ;
+ʔɪk;ʕiəɾ;biəɬ, pʼæk;hija;;puəʁ;
+ʔɪq;ʕiəz;biək, pʼæq;hijo;;puəʔ;
+ʔɪħ;ʕiəʃ;biəq, pʼæħ;húmedo;;pœn;
+ʔɪʁ;ʕiəts;biəħ, pʼæʁ;inclinado;;pœɾ;
+ʔɪʔ;ʕiədʒ;biəʁ, pʼæʔ;inmaduro;de fruta;pœz;
+ʔiən;ʕiəl;biəʔ, pʼjen;ir_andando;;pœʃ;
+ʔiəɾ;ʕiəɬ;bʊn, pʼjeɾ;jóven;;pœts;
+ʔiəz;ʕiək;bʊɾ, pʼjez;límpido;;pœdʒ;
+ʔiəʃ;ʕiəq;bʊz, pʼjeʃ;lluvia;;pœl;
+ʔiəts;ʕiəħ;bʊʃ, pʼjets;lobo;;pœɬ;
+ʔiədʒ;ʕiəʁ;bʊts, pʼjedʒ;luna;;pœk;
+ʔiəl;ʕiəʔ;bʊdʒ, pʼjel;macho;;pœq;
+ʔiəɬ;ʕʊn;bʊl, pʼjeɬ;madre;;pœħ;
+ʔiək;ʕʊɾ;bʊɬ, pʼjek;mamá;;pœʁ;
+ʔiəq;ʕʊz;bʊk, pʼjeq;mano;;pœʔ;
+ʔiəħ;ʕʊʃ;bʊq, pʼjeħ;mantequilla;;pɥœn;
+ʔiəʁ;ʕʊts;bʊħ, pʼjeʁ;masa;;pɥœɾ;
+ʔiəʔ;ʕʊdʒ;bʊʁ, pʼjeʔ;médico;;pɥœz;
+ʔʊn;ʕʊl;bʊʔ, pʼɑn;mes;;pɥœʃ;
+ʔʊɾ;ʕʊɬ;buən, pʼɑɾ;mojado;;pɥœts;
+ʔʊz;ʕʊk;buəɾ, pʼɑz;montón;;pɥœdʒ;
+ʔʊʃ;ʕʊq;buəz, pʼɑʃ;morder;;pɥœl;
+ʔʊts;ʕʊħ;buəʃ, pʼɑts;mordisquear;iterativo de morder;pɥœɬ;
+ʔʊdʒ;ʕʊʁ;buəts, pʼɑdʒ;mujer;;pɥœk;
+ʔʊl;ʕʊʔ;buədʒ, pʼɑl;negro;;pɥœq;
+ʔʊɬ;ʕuən;buəl, pʼɑɬ;niña;;pɥœħ;
+ʔʊk;ʕuəɾ;buəɬ, pʼɑk;niño;;pɥœʁ;
+ʔʊq;ʕuəz;buək, pʼɑq;noche;;pɥœʔ;
+ʔʊħ;ʕuəʃ;buəq, pʼɑħ;nueva;;pːæn;
+ʔʊʁ;ʕuəts;buəħ, pʼɑʁ;oración;;pːæɾ;
+ʔʊʔ;ʕuədʒ;buəʁ, pʼɑʔ;oscuro;;pːæz;
+ʔuən;ʕuəl;buəʔ, pʼwon;padre;;pːæʃ;
+ʔuəɾ;ʕuəɬ;bœn, pʼwoɾ;palo;;pːæts;
+ʔuəz;ʕuək;bœɾ, pʼwoz;paloma;;pːædʒ;
+ʔuəʃ;ʕuəq;bœz, pʼwoʃ;pan;;pːæl;
+ʔuəts;ʕuəħ;bœʃ, pʼwots;papá;;pːæɬ;
+ʔuədʒ;ʕuəʁ;bœts, pʼwodʒ;pastor;;pːæk;
+ʔuəl;ʕuəʔ;bœdʒ, pʼwol;pequeño;;pːæq;
+ʔuəɬ;ʕœn;bœl, pʼwoɬ;perro;;pːæħ;
+ʔuək;ʕœɾ;bœɬ, pʼwok;pescado;;pːæʁ;
+ʔuəq;ʕœz;bœk, pʼwoq;pez;;pːæʔ;
+ʔuəħ;ʕœʃ;bœq, pʼwoħ;pila;;pːjen;
+ʔuəʁ;ʕœts;bœħ, pʼwoʁ;plata;;pːjeɾ;
+ʔuəʔ;ʕœdʒ;bœʁ, pʼwoʔ;plegaria;;pːjez;
+ʔœn;ʕœl;bœʔ, pʼɪn;pobre;;pːjeʃ;
+ʔœɾ;ʕœɬ;bɥœn, pʼɪɾ;ratón;;pːjets;
+ʔœz;ʕœk;bɥœɾ, pʼɪz;recipiente;;pːjedʒ;
+ʔœʃ;ʕœq;bɥœz, pʼɪʃ;redondo;;pːjel;
+ʔœts;ʕœħ;bɥœʃ, pʼɪts;remedio;;pːjeɬ;
+ʔœdʒ;ʕœʁ;bɥœts, pʼɪdʒ;rezo;;pːjek;
+ʔœl;ʕœʔ;bɥœdʒ, pʼɪl;rico;;pːjeq;
+ʔœɬ;ʕɥœn;bɥœl, pʼɪɬ;río;;pːjeħ;
+ʔœk;ʕɥœɾ;bɥœɬ, pʼɪk;robar;;pːjeʁ;
+ʔœq;ʕɥœz;bɥœk, pʼɪq;rojo;de sangre;pːjeʔ;
+ʔœħ;ʕɥœʃ;bɥœq, pjel;rubio;;pːɑn;
+ʔœʁ;ʕɥœts;bɥœħ, pjeɬ;salado;;pːɑɾ;
+ʔœʔ;ʕɥœdʒ;bɥœʁ, pjek;salvaje;;pːɑz;
+ʔɥœn;ʕɥœl;bɥœʔ, pjeq;sangre;;pːɑʃ;
+ʔɥœɾ;ʕɥœɬ;pæn, pjeħ;serpiente;;pːɑts;
+ʔɥœz;ʕɥœk;pæɾ, pjeʁ;sol;;pːɑdʒ;
+ʔɥœʃ;ʕɥœq;pæz, pjeʔ;sordo;;pːɑl;
+ʔɥœts;ʕɥœħ;pæʃ, pɑn;tapa;;pːɑɬ;
+ʔɥœdʒ;ʕɥœʁ;pæts, pɑɾ;techo;;pːɑk;
+ʔɥœl;ʕɥœʔ;pædʒ, pɑz;tiñoso;;pːɑq;
+ʔɥœɬ;bæn;pæl, pɑʃ;tío;;pːɑħ;
+ʔɥœk;bæɾ;pæɬ, pɑts;toro;;pːɑʁ;
+ʔɥœq;bæz;pæk, pɑdʒ;tortilla;;pːɑʔ;
+ʔɥœħ;bæʃ;pæq, pɑl;trabajo;;pːwon;
+ʔɥœʁ;bæts;pæħ, pɑɬ;trigo;;pːwoɾ;
+ʔɥœʔ;bædʒ;pæʁ, pɑk;triste;;pːwoz;
+ʕæn;bæl;pæʔ, pɑq;usado;;pːwoʃ;
+ʕæɾ;bæɬ;pjen, pɑħ;vaca;;pːwots;
+ʕæz;bæk;pjeɾ, pɑʁ;verde;;pːwodʒ;
+ʕæʃ;bæq;pjez, pɑʔ;víbora;;pːwol;
+ʕæts;bæħ;pjeʃ, pwon;viejo;;pːwoɬ;
+ʕædʒ;bæʁ;pjets, pwoɾ;zorro;;pːwok;
