@@ -18,6 +18,7 @@ node_modules/
 *.pdf
 *.odt
 *.ods
+*.exe
 
 # Ignorar la carpeta segura
 ms/

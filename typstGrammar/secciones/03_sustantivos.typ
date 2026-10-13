@@ -7,188 +7,68 @@
 ]
 
 = Sustantivos y Flexión Nominal
-Khwarshi nouns bear the categories of gender, case, and number. The category of gender is a covert category, i.e. the gender is not shown on nouns. The category of gender is one of the main categories that condition the organization of the grammatical system in the language.
+Reconoce género, número y caso
 
-Khwarshi has seven concordant noun gender numbers that are identified by the gender/number agreement patterns on verbs, adjectives, adverbs, postpositions, and demonstrative pronouns. Five genders are distinguished in the singular and two genders in the plural, where masculine and feminine are neutralized to human plural vs. nonhuman plural.
+== Género y Número
+La signacion de género responde a varios criterios.
+Hay cuatro letras asignadas a los generos: i/j, u/v, b/p, d/t.
+Hay nombres que tienen asignada mas de una concordancia.
+Los pronombres tienen una concordancia débil con n, d/t, b/p. solamente
 
-The following Table 3.1 shows the distribution of gender/number affixes.
+== Raices Oblicuas
+El punto crucial de la declinación nominal es la formación del ergativo singular y el absolutivo plural; su formación distingue muchas clases basadas en criterios fonológicos y semanticos. 
 
-- The agreement marker for Gender 1 is a zero ending (ø) when it is a prefixal slot and the suffix -w when there is an infixal or suffixal slot.
-- The agreement marker for Gender 2 is y, which can take prefixal, infixal, or suffixal slots.
-- Gender 3 has an affixal marker band a prefixal marker m-, the latter marker occurring before nasalized vowels.
-- Gender 4 has a prefixal and suffixal marker l, an infixal marker -r-, and a prefixal marker n-, which occurs before nasalized vowels.
-- The marker for Gender 5 is an affixal marker y.The gender/number agreement marker for human plural is an affixal b and prefixal m- before nasalized vowels and for non-human plural is either the affixal marker -l and prefixal n- before nasalized vowels or the infixal marker -r
-
-Agreement is shown with the help of prefixes in verb forms and prefixes, infixes and suffixes in pronouns (1), postpositions (3), adverbs (4), and adjectives (4, 6, 7). Only verbs (1, 2, 4, 5, 6, 7) beginning with a vowel show prefixal gender/number agreement, but there are also some exceptions (cf. 3.7.1).
-
-60-61
-
-== Género
-Assignment may depend on two basic types of information about the noun: its meaning (semantics) and its form. Information about the form may be of two kinds word structure comprising derivation and inflection (morphology) and sound structure (phonology). 
-
-Khwarshi like many other Daghestanian languages uses the semantic factor to a greater degree than morphological and phonological factors. The number of genders ranges from three to eight within the Nakh-Daghestanian group of languages. The languages with a larger number of genders all have male and female human genders, whereas the principle of assignment of nouns to other genders is not obvious, and it depends on semantic and formal criteria which vary from language to language.
-
-In Khwarshi, there is a distinction between the male and female genders, Gender 1 and Gender 2 respectively. To this extent the system is semantic. The assignment of the remaining three genders is not clear.  
-
-There is one word q’ala ‘child’ that takes Gender 3 when in the singular, treated as a non-human object (8), and it takes the human plural when used as a plural noun (9). In addition, this noun can attach the plural suffix when referring to the human plural (10). So it constitutes ‘inquorate gender’, where a few members do not make a quorum. 
-
-62
-
-Gender 1 includes nouns denoting male humans, e.g. obu ‘father, grandfather’, dada ‘father’, uže ‘boy, son’, žik’o ‘man’, bet’erhan ‘husband’, muzo ‘son-in-law’, xol ‘husband’, baža ‘brother-in-law’, etc., and all nouns referring to most supernatural beings (but not ‘devil’) visualized as males like Allah ‘god’, malaik ‘angel’, awarag ‘prophet’.
-
-Gender 2 includes nouns that denote female humans, e.g. išu ‘mother, grandmother’, kad ‘girl, daughter’, baba ‘mother’, ine ‘woman, wife’, etc.; and nouns denoting supernatural beings visualized as females like \urulaen ‘goddess’, LiLuk’a ‘witch’, qodo ‘witch’, etc.  There are other words that belong both to Gender 1 and 2, depending on the context referent, such as Sar ‘guest’, toxtur ‘doctor’, Is ‘sibling’, tušman ‘enemy’, h^am^a^e ‘friend’ and others. The nouns indicating professions that are traditionally practiced by men can also refer to females, e.g. q’ebed ‘smith’, ustar ‘craftsman’, kulak ‘farmer’, dibir ‘mullah’, iho ‘herdsman’; nouns that end in -qan meaning professions can also be considered as male and female nouns, such as \alt’uqan ‘worker’, keU’iqan ‘singer’, etc.  There are some nouns, e.g. w-acaha-w ‘cousin (male)’ and y-acaha-y ‘cousin (female)’, where the gender/number markers seem to be expressed in the nouns, but such nouns are loan words from Avar, and these Avar gender/number markers coincide with Khwarshi gender/number markers. Also, unlike Avar words, Khwarshi has a zero marker in the prefixal position for Gender 1 and the marker w only for infixal and suffixal positions.   Thus, these two genders have clear-cut semantics, i.e. Gender 1 is for male humans, and Gender 2 is for female humans.
-
-The nouns that constitute Gender 3 have varied semantics. The basic words are nouns denoting animals, except for the young of animals, e.g. be ‘dog’, zihe ‘cow’, boc’o ‘wolf’, buhu ‘owl’, soyro ‘horse’, ze ‘bear’, zor ‘fox’, etc.; body parts, e.g. U’eU’en ‘chin’, koko ‘breast’, kode ‘hair’, etc.; tools, e.g. qarisa ‘scythe’, mangal ‘sickle ’etc.; abstract notions, e.g. adab ‘respect’, mIc ‘language’; and others. The noun šayt’an ‘devil’, which is a supernatural noun, is treated as an animal and is of Gender 3.
-
-Gender 4 also includes nouns denoting body parts, e.g. riq’be ‘collar-bone’, geša ‘shoulder’, liS’a ‘arm, hand’, het’on ‘lung’, lok’o ‘heart’, Sozol ‘bone’, zImar ‘gum’, ho[S’o ‘cheek’; utensils, e.g. Uaydan ‘kettle’, t’uq^ ‘knife’, šog ‘pan’; tools, e.g. xerex ‘saw’, o[g ‘axe’, geram ‘hammer’, rexne ‘spade’. Gender 4 can be considered as the gender of abstract notions and liquids. All verbal nouns (or masdars) with the suffix -nu are assigned to this gender (such nouns as oqoSnu ‘appearance’ from the verb oqoSa ‘to appear’; mokonu ‘hunger’ from the verb mokoya ‘to be hungry’, etc.). Nouns ending in -Li, which is the suffix of abstract notions, are also in Gender 4, e.g. q’adarLi ‘meanness’, karamaLi ‘magic’,etc.16 Another layer of words in Gender 4 comprises nouns denoting liquids (such as Lo ‘water’, UanUal ‘waterfall’, l_oL ‘oil’, odo ‘rain’, etc.), though nouns such as raLad ‘sea’, k’ara ‘lake’ are found in Gender 3.
-
-All nouns denoting animals’ young are in Gender 5. Though there are exceptions like kuc’a ‘bird’, aant’u ‘butterfly’ which are found in this gender as well. There are also small groups of nouns denoting body parts, e.g. U’ontu ‘bones’, gurtu ‘knee’, k’ak’a ‘leg’, etc., utensils, e.g. zonok’ ‘mug’, munu ‘fork’, etc., tools, e.g. ešen ‘mattock’, eškel ‘shovel’, etc., clothes, e.g. gId ‘dress’, etc.
-
-In the plural the distinction is made between human plural, which includes plural nouns of Gender 1 and Gender 2, and non-human plural, which comprises plural nouns of Gender 3, Gender 4, and Gender 5. 
-
-=== Géneros Fosilizados
-In some Daghestanian languages, like Avar, Andic, and Lezgic languages, there are several nouns which still have gender-indicating prefixes within the words (for example, in Avar, w-as ‘boy’, y-as ‘girl’, and others). In Khwarshi, there are no petrified gender markers on nouns, except for some Avar loans that can designate gender by their form: 
-
-64
-
-=== Préstamos
-Words which are borrowed from other languages exhibit some principles of gender assignment even if not fully productive.
-
-Gender 3 includes most loans ultimately from Arabic and Persian that are of early origin such as askar ‘troops, army’, žawab ‘answer’, zaman ‘time’, tarix ‘history’, dunnal ‘life’, q’alam ‘pencil’, ustar ‘craftsman’, ru\ ‘soul’, etc. And there are also religious loans like q’uraan ‘the Koran’, din ‘religion’, \aram ‘sin’, imam ‘imam’, naib ‘Muslim leader’, mažit ‘mosque’.
-
-Gender 4 includes most international and Russian borrowings: komputer ‘computer’, restoran ‘restaurant’, radio ‘radio’, rukzak ‘rucksack’, koncert ‘concert’, institut ‘institute’, temperatura ‘temperature’, krosword ‘crossword’, samowar ‘samovar’, dieta ‘diet’, telewizor ’television set’, fontan ‘fountain’, etc.
-
-Words borrowed in the early period of the language are assigned to the third gender (most Arabic words), while loans of the late period and neologisms tend to go into the fourth gender. This can be evidence that there was a shift of default gender from the third to the forth gender.  
-
-=== Analogía Semántica
-Another interesting factor is the assignment of gender by semantic analogy, according to which the loanword takes the gender of a noun of similar meaning already in the language. Table 3.2 shows the assignment of borrowed words to the appropriate genders. Russian words end up in the gender where the original noun with the same meaning already exists.
-
-This approach to the assignment of loans to a certain gender is also important for finding out which gender comprises most loans, or which gender is the default one. About two hundred loans denoting non-human objects were analyzed, and most of them appeared to be in the third and the fourth rather than in the fifth gender. According to the analysis, the fourth gender seems to be the default gender since most of the stock of loans, about 60%, was assigned to this gender, about 30% of nouns were assigned to the third gender, and about 10% of nouns were assigned to the fifth gender.
-
-== Número
-The category of number is an overt category in Khwarshi. Singular and plural are morphologically distinguished. The singular is unmarked. The plural has the suffix -bo /-ba which marks plural Absolutive. This plural suffix is attached to the oblique stem of two-stem inflection nouns and to the base stem of one-stem inflection nouns.
-
-There is also the plural suffix -za, which always marks the plural oblique stem of a noun (cf. 3.1.3). There is one plural suffix, -no/-na, which is used in the Absolutive and oblique stem formation but it is restricted to a small number of nouns, e.g. Is ‘sibling’ and Is-na-ba ‘sibling-PL-PL.ABS’.
-
-The choice of Absolutive plural suffixes -bo/-ba is phonologically conditioned: the suffix -bo is the basic suffix, i.e. it is used when the noun’s final syllable has any vowel besides a, and the suffix -ba is used when the noun’s final syllable has the vowel 
-
-66
-
-Almost all nouns, including loans, can be used with a plural suffix even though such nouns may denote abstract notions. Words such as names of traditional holidays, days of the week, seasons, months, heavenly bodies, etc. can receive a plural suffix.  
-
-67
-
-In Khwarshi there are also collective nouns. Collective nouns refer to the group of nouns which are of similar meaning, i.e. refer to a group of similar entities. These are nouns denoting fruits, vegetables, berries, plants, liquids, grains, metals, and other entities. Such collective nouns can also be used in plural. When used in the plural form, these nouns obtain an individual specific meaning, and they can receive the following interpretations: 
-
-67
-
-There are some polysematic nouns that form a plural, but due to pragmatic factors one of the plural meanings can be less distinct.  
-
-68
-
-Some nouns can obtain additional meanings when used in plural: 
-
-68
-
-The plural formation is also possible with onomatopoetic nouns:
-
-69
-
-There are some nouns that do not form plural, and they have a collective meaning: 
-
-69
-
-Borrowed nouns can also have collective and individual meanings. When the loan noun kartoška ‘potato’ is used in the singular it has the meaning of individual singular and collective plural and when used in the plural the noun receives the interpretation of the individual plural:  
-
-69
-
-Russian loans can be used with the plural suffix: 
-
-70
-
-There is one noun that only has a plural form: 
-
-70
-
-Some dvandva nouns (also known as copulative compounds) do not form a plural and have a collective meaning:
-
-70
-
-Some other dvandva nouns do form plural, i.e. they distinguish between collective and individual meanings:
-
-70
-
-== Raices Oblicuas / Formación del Ergativo
-El punto crucial de la declinación nominal es la formación del genitivo, el cual distingue muchas clases basadas en criterios fonológicos y semanticos. Existen seis mecanismos morfológicos : el genitivo en vocal, el sufijo oblicuo, la apofonía, la elisión, la metátesis y la epentesis. Algunos nombres hacen uso de mecanismos mixtos.
-
-Khwarshi declension can follow one-stem inflection and two-stem inflection paradigms as in other Daghestanian languages, the two-stem pattern being the most widespread. The one-stem inflection pattern consists of the base stem, which is used in the Absolutive case as well as in the formation of the oblique cases. The two-stem inflection is an opposition of the base stem, which coincides with the Absolutive case (which is also used as citation form) and the oblique stem used in the formation of other cases. The Khwarshi declension paradigm mostly follows the two-stem pattern (cf. Table 3.3). 
-
-The following example illustrates the one-stem inflection paradigm. The base stem hadam ‘people’ is used throughout in the formation of the oblique cases. In the one-stem inflection the Ergative suffix -i is added directly to the base stem.
-
-In the one-stem inflection noun with a final consonant, the epenthetic vowel I/u is used before a syllable with C structure, e.g. zor ‘fox’ and zor-I-l ‘fox-EP-LAT’, and no epenthetic vowel is used before a syllable with CV structure, e.g. zor ‘fox’ and zor S’o ‘fox-SUP’.
-
-The Ergative suffix -i is regularly attached to nouns with final consonants, e.g. zor ‘fox’ – zor-i ‘fox-ERG’. There are also a few one-stem inflection nouns of monosyllabic structure that end in a vowel, for which the epenthetic semivowel -y- is used before the Ergative suffix -i, e.g. ze ‘bear’ – ze-y-i ‘bear-EP-ERG’, where -y- is epenthetic: 
-
-=== Genitivo en Vocal
+=== Ergativo en Vocal
 Un grupo grande de palabras terminadas en consonante sencillamente añaden una vocal armónica al final de la terminación de absolutivo, sin modificación de la estructura basica de la palabra.
-zor	fuz	k’ur	mir	iq’
-zor-u	fuz-u	k’ur-u	mir-i	iq’-i
+fuz fuzu
 
-En sustantivos terminados en vocal , se usa una aproximante -y-. 
-zi	gubu	maşka	iva	
-zi-yi	gubu-yu	maşka-yi	iva-y-i
+En sustantivos terminados en vocal, se usa una aproximante _j_. 
+gubu gubuju
 
-Un subgrupo de sustantivos terminados en consonate que se refieren a seres animados, tanto humanos como no humanos recurren a una vocal no armónica de timbre -a. Esta vocal determina la armonía para el resto de la declinación.
-q’al	vits	fur
-q’al-a	vits-a	fur-a
+Un subgrupo de sustantivos terminados en consonate que se refieren a seres animados, tanto humanos como no humanos recurren a una vocal no armónica de timbre _a_. Esta vocal determina la armonía para el resto de la declinación.
+q’al q’ala
 
 === Sufijación
-La gran mayoría de las palabras forman el genitivo añadiendo un sufijo a la forma básica. El repertorio de sufijos oblicuos es limitado pero cada sufijo no es intercambiable de una palabra a otra, y cuando lo es, modifica el significado. El sufijo oblicuo posee un nucleo consonantico construido por una sonante seguida de obstructiva en casi todos los casos. Si la palabra termina en consonante, se apoya de una vocal armónica.
-jum	kiz 
-jum-urd-u	kiz-ind-i
+La gran mayoría de las palabras forman el ergativo añadiendo un sufijo a la forma básica. 
+jum	 jumurdu
+kiz	kizindi
 
-Los nombres terminados en vocal usan sufijos oblicuos de nucleo sonante; el tema es básicamente sonante - obstructiva. Los nombres terminados en vocal que forman el genitivo así son:
-zi	kubu	mişa 	ivi
-zi-rd-i	kubu-rd-u	mişa-nd-i 	ivi-nd-i
+Los nombres terminados en vocal usan sufijos oblicuos de nucleo sonante-obstructiva. Los nombres terminados en vocal que forman el genitivo así son:
+zi	zirdi
+kubu	kuburdu
+mişa 	mişandi
+ivi	ivindi
 
-Otros sustantivos de sufijos oblicuos que no cumplen con la formación sonante - obstructiva son todos referidos a humanos:
-ğudam	adam
-ğudam-ç-i	adam-ar-i
+Otros sustantivos de sufijos oblicuos que no cumplen con la formación sonante-obstructiva:
+ğudam	ğudamçi
+adam	adamari
 
 === Apofonía
-Un cierto numero de palabras se limita a cambiar la vocal radical antes de añadir la vocal armónica o el sufijo oblicuo. Es un mecanismo no productivo y limitado a un grupo cerrado de palabras. Etiológicamente se trata de una desfaringealización de la vocal radical /e/ (históricas [aˁ] y [iˁ]) en /a/ o /i/, que en el dialecto aghvari se expresa mediante las siguientes transformaciones:
-der [daˁr]	zer [zaˁr]	meç [miˁç]	tel [tiˁl]
-dar-i	zar-i	miç-i	til-i
-
-Este fenómeno tambien ocurre en la vocal /u/, pero puesto que su faringelizacion se perdió, estas palabras están incluidas en el grupo de los genitivos en vocal. Se pueden rastrear en los otros dialectos que si conservan esa distinción.
-zud [zuˁd]	muc [muˁc]
-zud-u	muc-u
+Un cierto numero de palabras se limita a cambiar la vocal radical antes de añadir la vocal armónica o el sufijo oblicuo. Es un mecanismo no productivo y limitado a un grupo cerrado de palabras.
+tel til-i
 
 === Elisión
-Para formar el genitivo algunos sustantivos cambian la base consonante del absolutivo antes de añadir los sufijos de genitivo. La forma base es generalmente -RVC, siendo V una vocal epentética en absolutivo que desaparece en genitivo. 
-q’iliş	iraç	
-q’ilş-i	irç-i
+Para formar el ergativo algunos sustantivos cambian la base consonante del absolutivo antes de añadir los sufijos. La forma base es generalmente -RVC, siendo V una vocal epentética en absolutivo que desaparece en genitivo. 
+q’iliş	q’ilşi
+iraç	irçi	
 	
 En casos donde el grupo consonante dé como resultado una doble sonante, tambien se recurre a elisión. No obstante, existen excepciones, como la de la palabra qulur (véase METATESIS más adelante).
-selim 
-selm-i
-
-Por lo general los nombres con elisión no recurren al sufijo oblicuo, aunque hay excepciones, especialmente si el absolutivo es monosílabo. 
-ker 
-kr-ind-i 
+selim selmi
 
 === Metátesis
 En palabras con estructura -CVR, se recurre a metátesis de la sonante. Observese que la palabra qulur no hace solo elisión, sino tambien metátesis para evitar el grupo -lr. Esto ocurre sobre todo cuando la sonante es -r, para evitar en ergativo la cercania de ambas vibrantes.
-ibir	akir 	qulur
-irb-i	ark-i	qurl-u
+ibir	irbi
+akir	arki
+qulur	qurlu
 
 === Epentesis
 Muchos sustantivos monosílabos terminados en consonante, especialmente si la consonante final es una obstructiva, insertan una sonante antes de la consonante final. Esta sonante presenta formas distintas en -n y en -r. 
-ked	ts’ek	vut 	
-kend-i	ts’enk-i	vurt-u	
+ked	kendi
+ts’ek	ts’enki
+vut vurtu
 
 == Plural de los Sustantivos
-El plural utiliza un sufijo invariable _-b_. Absolutivo y ergativo poseen un mismo sufijo plural unido a bases plurales diferentes; del plural de ergativo se forman los plurales del resto de los casos, análogo a lo que sucede en singular.
+El plural utiliza un sufijo variable _b_ sobre una raiz supletiva. Absolutivo y ergativo poseen un mismo sufijo plural unido a bases plurales diferentes; del plural de ergativo se forman los plurales del resto de los casos, análogo a lo que sucede en singular.
 
 === Plural de Absolutivo
 Utilizan el sufijo -b apoyado en vocal armónica sobre la forma basal de absolutivo. Los plurales de absolutivo siempre terminan en -b. Los nombres terminados en vocal no añaden vocal de apoyo.
@@ -243,20 +123,6 @@ Existe un octavo caso VOC solo en nombres propios y algunos sustantivos animados
 Además de los casos gramaticales, existen otras desinencias que indican localización y movimiento llamados casos espaciales. Se forman mediante ocho sufijos que indican orientación y seis sufijos que indican dirección. Esto da como resultado XX casos espaciales conjugados. 
 
 Los casos espaciales simples o conjugados se sufijan a la raiz oblicua (ergativo) directamente; pero si la palabra forma el ergativo con vocal armónica, se suele omitir esta vocal en los casos conjugados si la consonante final de absolutivo es una sonante.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 === Absolutivo 
 Caso básico de la enunciación. Es el sujeto de un verbo intransitivo o el objeto de un verbo transitivo.
@@ -453,8 +319,6 @@ Valor de adverbio temporal, expresa duración, periodo por el que se extiende la
  Viajé a la ciudad este mes-CAUSAL
 ]
 
-
-
 == Orientaciones
 Las ocho orientaciones [posiciones] espaciales son:
 + IN: en un lugar, dentro de algo o alguien, el interior de un espacio o una masa, en contacto con el contenedor, espacio cerrado.
@@ -514,20 +378,6 @@ En las palabras con ergativo en _-a_, la armonía es con esta vocal y no con la 
 
 A continuación, un ejemplo completo de la declinación de los casos espaciales con raices de ambas vocales armónicas con los sustantivos zor y dar. Nótese que en la confluencia de sonante más obstructiva suele omitirse la vocal de apoyo de ergativo entre el nombre y la declinación , excepto en los nombres con ergativo en _-a_.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 === Otros Usos de los Casos Espaciales
 Además de su valor estrictamente locativo y movimiento; los casos espaciales se usan en otros predicados para cumplir con roles semanticos en diversos tipos de proposiciones adverbiales mediante sustantivos, adjetivos y formando converbos con sustantivos verbales (masdar) y participios. 
 + Valor Temporal
@@ -552,8 +402,7 @@ Además de su valor estrictamente locativo y movimiento; los casos espaciales se
  - Gracias a
  - A cambio de 
  - Ir tras
-
-
+ 
 #example[
  - This is a proper numbered item
  - Este es un propio numerado elemento
