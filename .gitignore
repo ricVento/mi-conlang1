@@ -17,6 +17,7 @@ node_modules/
 # Archivos compilados de Typst u otros documentos
 *.pdf
 *.odt
+*.ods
 
 # Ignorar la carpeta segura
 ms/

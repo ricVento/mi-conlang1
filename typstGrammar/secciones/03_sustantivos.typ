@@ -1,23 +1,133 @@
 // Importar todo desde config (que ya expone el paquete eggs)
 #import "../config.typ": *
 
+#example[
+ - x
+ x
+]
+
 = Sustantivos y Flexión Nominal
-Los sustantivos distinguen la categoría de género, número y caso. El género es una categoría cubierta que no se muestra abiertamente en la morfología de los sustantivos. Por otro lado, las otras dos categorías, número y caso, están intimamente relacionadas. Para declinar correctamente un sustantivo debe conocerse su ergativo, el cual constituye la raiz oblicua a la que se sufijan el resto de los casos.
+Khwarshi nouns bear the categories of gender, case, and number. The category of gender is a covert category, i.e. the gender is not shown on nouns. The category of gender is one of the main categories that condition the organization of the grammatical system in the language.
 
-== Casos Abstractos
-Existen siete casos gramaticales básicos. No indican posición ni direccion; indican función sintactica argumental de la accion verbal. Estan formados por diversos sufijos unidos al ergativo, el cual constituye la raiz oblicua y es la base de toda la declinación.
+Khwarshi has seven concordant noun gender numbers that are identified by the gender/number agreement patterns on verbs, adjectives, adverbs, postpositions, and demonstrative pronouns. Five genders are distinguished in the singular and two genders in the plural, where masculine and feminine are neutralized to human plural vs. nonhuman plural.
 
-Los siete casos gramaticales básicos: ABS, ERG, DAT, GEN, PART, INST, DUR siempre cumplen función argumental o de complemento no espacial cuando están unidos directamente al sustantivo, adjetivo o pronombre. Adquieren significado espacial cuando están delante de un caso de dirección espacial.
+The following Table 3.1 shows the distribution of gender/number affixes.
 
-Existe un octavo caso VOC solo en nombres propios y algunos sustantivos animados. 
+- The agreement marker for Gender 1 is a zero ending (ø) when it is a prefixal slot and the suffix -w when there is an infixal or suffixal slot.
+- The agreement marker for Gender 2 is y, which can take prefixal, infixal, or suffixal slots.
+- Gender 3 has an affixal marker band a prefixal marker m-, the latter marker occurring before nasalized vowels.
+- Gender 4 has a prefixal and suffixal marker l, an infixal marker -r-, and a prefixal marker n-, which occurs before nasalized vowels.
+- The marker for Gender 5 is an affixal marker y.The gender/number agreement marker for human plural is an affixal b and prefixal m- before nasalized vowels and for non-human plural is either the affixal marker -l and prefixal n- before nasalized vowels or the infixal marker -r
 
-== Casos Gramaticales Espaciales
-Además de los casos gramaticales, existen otras desinencias que indican localización y movimiento llamados casos espaciales. Se forman mediante ocho sufijos que indican orientación y seis sufijos que indican dirección. Esto da como resultado XX casos espaciales conjugados. 
+Agreement is shown with the help of prefixes in verb forms and prefixes, infixes and suffixes in pronouns (1), postpositions (3), adverbs (4), and adjectives (4, 6, 7). Only verbs (1, 2, 4, 5, 6, 7) beginning with a vowel show prefixal gender/number agreement, but there are also some exceptions (cf. 3.7.1).
 
-Los casos espaciales simples o conjugados se sufijan a la raiz oblicua (ergativo) directamente; pero si la palabra forma el ergativo con vocal armónica, se suele omitir esta vocal en los casos conjugados si la consonante final de absolutivo es una sonante.
+60-61
 
-== Formación del Ergativo
+== Género
+Assignment may depend on two basic types of information about the noun: its meaning (semantics) and its form. Information about the form may be of two kinds word structure comprising derivation and inflection (morphology) and sound structure (phonology). 
+
+Khwarshi like many other Daghestanian languages uses the semantic factor to a greater degree than morphological and phonological factors. The number of genders ranges from three to eight within the Nakh-Daghestanian group of languages. The languages with a larger number of genders all have male and female human genders, whereas the principle of assignment of nouns to other genders is not obvious, and it depends on semantic and formal criteria which vary from language to language.
+
+In Khwarshi, there is a distinction between the male and female genders, Gender 1 and Gender 2 respectively. To this extent the system is semantic. The assignment of the remaining three genders is not clear.  
+
+There is one word q’ala ‘child’ that takes Gender 3 when in the singular, treated as a non-human object (8), and it takes the human plural when used as a plural noun (9). In addition, this noun can attach the plural suffix when referring to the human plural (10). So it constitutes ‘inquorate gender’, where a few members do not make a quorum. 
+
+62
+
+Gender 1 includes nouns denoting male humans, e.g. obu ‘father, grandfather’, dada ‘father’, uže ‘boy, son’, žik’o ‘man’, bet’erhan ‘husband’, muzo ‘son-in-law’, xol ‘husband’, baža ‘brother-in-law’, etc., and all nouns referring to most supernatural beings (but not ‘devil’) visualized as males like Allah ‘god’, malaik ‘angel’, awarag ‘prophet’.
+
+Gender 2 includes nouns that denote female humans, e.g. išu ‘mother, grandmother’, kad ‘girl, daughter’, baba ‘mother’, ine ‘woman, wife’, etc.; and nouns denoting supernatural beings visualized as females like \urulaen ‘goddess’, LiLuk’a ‘witch’, qodo ‘witch’, etc.  There are other words that belong both to Gender 1 and 2, depending on the context referent, such as Sar ‘guest’, toxtur ‘doctor’, Is ‘sibling’, tušman ‘enemy’, h^am^a^e ‘friend’ and others. The nouns indicating professions that are traditionally practiced by men can also refer to females, e.g. q’ebed ‘smith’, ustar ‘craftsman’, kulak ‘farmer’, dibir ‘mullah’, iho ‘herdsman’; nouns that end in -qan meaning professions can also be considered as male and female nouns, such as \alt’uqan ‘worker’, keU’iqan ‘singer’, etc.  There are some nouns, e.g. w-acaha-w ‘cousin (male)’ and y-acaha-y ‘cousin (female)’, where the gender/number markers seem to be expressed in the nouns, but such nouns are loan words from Avar, and these Avar gender/number markers coincide with Khwarshi gender/number markers. Also, unlike Avar words, Khwarshi has a zero marker in the prefixal position for Gender 1 and the marker w only for infixal and suffixal positions.   Thus, these two genders have clear-cut semantics, i.e. Gender 1 is for male humans, and Gender 2 is for female humans.
+
+The nouns that constitute Gender 3 have varied semantics. The basic words are nouns denoting animals, except for the young of animals, e.g. be ‘dog’, zihe ‘cow’, boc’o ‘wolf’, buhu ‘owl’, soyro ‘horse’, ze ‘bear’, zor ‘fox’, etc.; body parts, e.g. U’eU’en ‘chin’, koko ‘breast’, kode ‘hair’, etc.; tools, e.g. qarisa ‘scythe’, mangal ‘sickle ’etc.; abstract notions, e.g. adab ‘respect’, mIc ‘language’; and others. The noun šayt’an ‘devil’, which is a supernatural noun, is treated as an animal and is of Gender 3.
+
+Gender 4 also includes nouns denoting body parts, e.g. riq’be ‘collar-bone’, geša ‘shoulder’, liS’a ‘arm, hand’, het’on ‘lung’, lok’o ‘heart’, Sozol ‘bone’, zImar ‘gum’, ho[S’o ‘cheek’; utensils, e.g. Uaydan ‘kettle’, t’uq^ ‘knife’, šog ‘pan’; tools, e.g. xerex ‘saw’, o[g ‘axe’, geram ‘hammer’, rexne ‘spade’. Gender 4 can be considered as the gender of abstract notions and liquids. All verbal nouns (or masdars) with the suffix -nu are assigned to this gender (such nouns as oqoSnu ‘appearance’ from the verb oqoSa ‘to appear’; mokonu ‘hunger’ from the verb mokoya ‘to be hungry’, etc.). Nouns ending in -Li, which is the suffix of abstract notions, are also in Gender 4, e.g. q’adarLi ‘meanness’, karamaLi ‘magic’,etc.16 Another layer of words in Gender 4 comprises nouns denoting liquids (such as Lo ‘water’, UanUal ‘waterfall’, l_oL ‘oil’, odo ‘rain’, etc.), though nouns such as raLad ‘sea’, k’ara ‘lake’ are found in Gender 3.
+
+All nouns denoting animals’ young are in Gender 5. Though there are exceptions like kuc’a ‘bird’, aant’u ‘butterfly’ which are found in this gender as well. There are also small groups of nouns denoting body parts, e.g. U’ontu ‘bones’, gurtu ‘knee’, k’ak’a ‘leg’, etc., utensils, e.g. zonok’ ‘mug’, munu ‘fork’, etc., tools, e.g. ešen ‘mattock’, eškel ‘shovel’, etc., clothes, e.g. gId ‘dress’, etc.
+
+In the plural the distinction is made between human plural, which includes plural nouns of Gender 1 and Gender 2, and non-human plural, which comprises plural nouns of Gender 3, Gender 4, and Gender 5. 
+
+=== Géneros Fosilizados
+In some Daghestanian languages, like Avar, Andic, and Lezgic languages, there are several nouns which still have gender-indicating prefixes within the words (for example, in Avar, w-as ‘boy’, y-as ‘girl’, and others). In Khwarshi, there are no petrified gender markers on nouns, except for some Avar loans that can designate gender by their form: 
+
+64
+
+=== Préstamos
+Words which are borrowed from other languages exhibit some principles of gender assignment even if not fully productive.
+
+Gender 3 includes most loans ultimately from Arabic and Persian that are of early origin such as askar ‘troops, army’, žawab ‘answer’, zaman ‘time’, tarix ‘history’, dunnal ‘life’, q’alam ‘pencil’, ustar ‘craftsman’, ru\ ‘soul’, etc. And there are also religious loans like q’uraan ‘the Koran’, din ‘religion’, \aram ‘sin’, imam ‘imam’, naib ‘Muslim leader’, mažit ‘mosque’.
+
+Gender 4 includes most international and Russian borrowings: komputer ‘computer’, restoran ‘restaurant’, radio ‘radio’, rukzak ‘rucksack’, koncert ‘concert’, institut ‘institute’, temperatura ‘temperature’, krosword ‘crossword’, samowar ‘samovar’, dieta ‘diet’, telewizor ’television set’, fontan ‘fountain’, etc.
+
+Words borrowed in the early period of the language are assigned to the third gender (most Arabic words), while loans of the late period and neologisms tend to go into the fourth gender. This can be evidence that there was a shift of default gender from the third to the forth gender.  
+
+=== Analogía Semántica
+Another interesting factor is the assignment of gender by semantic analogy, according to which the loanword takes the gender of a noun of similar meaning already in the language. Table 3.2 shows the assignment of borrowed words to the appropriate genders. Russian words end up in the gender where the original noun with the same meaning already exists.
+
+This approach to the assignment of loans to a certain gender is also important for finding out which gender comprises most loans, or which gender is the default one. About two hundred loans denoting non-human objects were analyzed, and most of them appeared to be in the third and the fourth rather than in the fifth gender. According to the analysis, the fourth gender seems to be the default gender since most of the stock of loans, about 60%, was assigned to this gender, about 30% of nouns were assigned to the third gender, and about 10% of nouns were assigned to the fifth gender.
+
+== Número
+The category of number is an overt category in Khwarshi. Singular and plural are morphologically distinguished. The singular is unmarked. The plural has the suffix -bo /-ba which marks plural Absolutive. This plural suffix is attached to the oblique stem of two-stem inflection nouns and to the base stem of one-stem inflection nouns.
+
+There is also the plural suffix -za, which always marks the plural oblique stem of a noun (cf. 3.1.3). There is one plural suffix, -no/-na, which is used in the Absolutive and oblique stem formation but it is restricted to a small number of nouns, e.g. Is ‘sibling’ and Is-na-ba ‘sibling-PL-PL.ABS’.
+
+The choice of Absolutive plural suffixes -bo/-ba is phonologically conditioned: the suffix -bo is the basic suffix, i.e. it is used when the noun’s final syllable has any vowel besides a, and the suffix -ba is used when the noun’s final syllable has the vowel 
+
+66
+
+Almost all nouns, including loans, can be used with a plural suffix even though such nouns may denote abstract notions. Words such as names of traditional holidays, days of the week, seasons, months, heavenly bodies, etc. can receive a plural suffix.  
+
+67
+
+In Khwarshi there are also collective nouns. Collective nouns refer to the group of nouns which are of similar meaning, i.e. refer to a group of similar entities. These are nouns denoting fruits, vegetables, berries, plants, liquids, grains, metals, and other entities. Such collective nouns can also be used in plural. When used in the plural form, these nouns obtain an individual specific meaning, and they can receive the following interpretations: 
+
+67
+
+There are some polysematic nouns that form a plural, but due to pragmatic factors one of the plural meanings can be less distinct.  
+
+68
+
+Some nouns can obtain additional meanings when used in plural: 
+
+68
+
+The plural formation is also possible with onomatopoetic nouns:
+
+69
+
+There are some nouns that do not form plural, and they have a collective meaning: 
+
+69
+
+Borrowed nouns can also have collective and individual meanings. When the loan noun kartoška ‘potato’ is used in the singular it has the meaning of individual singular and collective plural and when used in the plural the noun receives the interpretation of the individual plural:  
+
+69
+
+Russian loans can be used with the plural suffix: 
+
+70
+
+There is one noun that only has a plural form: 
+
+70
+
+Some dvandva nouns (also known as copulative compounds) do not form a plural and have a collective meaning:
+
+70
+
+Some other dvandva nouns do form plural, i.e. they distinguish between collective and individual meanings:
+
+70
+
+== Raices Oblicuas / Formación del Ergativo
 El punto crucial de la declinación nominal es la formación del genitivo, el cual distingue muchas clases basadas en criterios fonológicos y semanticos. Existen seis mecanismos morfológicos : el genitivo en vocal, el sufijo oblicuo, la apofonía, la elisión, la metátesis y la epentesis. Algunos nombres hacen uso de mecanismos mixtos.
+
+Khwarshi declension can follow one-stem inflection and two-stem inflection paradigms as in other Daghestanian languages, the two-stem pattern being the most widespread. The one-stem inflection pattern consists of the base stem, which is used in the Absolutive case as well as in the formation of the oblique cases. The two-stem inflection is an opposition of the base stem, which coincides with the Absolutive case (which is also used as citation form) and the oblique stem used in the formation of other cases. The Khwarshi declension paradigm mostly follows the two-stem pattern (cf. Table 3.3). 
+
+The following example illustrates the one-stem inflection paradigm. The base stem hadam ‘people’ is used throughout in the formation of the oblique cases. In the one-stem inflection the Ergative suffix -i is added directly to the base stem.
+
+In the one-stem inflection noun with a final consonant, the epenthetic vowel I/u is used before a syllable with C structure, e.g. zor ‘fox’ and zor-I-l ‘fox-EP-LAT’, and no epenthetic vowel is used before a syllable with CV structure, e.g. zor ‘fox’ and zor S’o ‘fox-SUP’.
+
+The Ergative suffix -i is regularly attached to nouns with final consonants, e.g. zor ‘fox’ – zor-i ‘fox-ERG’. There are also a few one-stem inflection nouns of monosyllabic structure that end in a vowel, for which the epenthetic semivowel -y- is used before the Ergative suffix -i, e.g. ze ‘bear’ – ze-y-i ‘bear-EP-ERG’, where -y- is epenthetic: 
 
 === Genitivo en Vocal
 Un grupo grande de palabras terminadas en consonante sencillamente añaden una vocal armónica al final de la terminación de absolutivo, sin modificación de la estructura basica de la palabra.
@@ -121,6 +231,20 @@ Nótese que en el último ejemplo el sustantivo adam puede tener dos genitivos p
 ze-rd-i-b-i (gen-plu1)	ze-b-i (gen-plu2)
 
 A continuación, un ejemplo completo de la declinación de los casos espaciales en plural con raices de ambas vocales armónicas con los sustantivos zor y dar. Nótese que en la confluencia de sonante más obstructiva suele omitirse la vocal de apoyo de genitivo entre el nombre y la declinación, excepto en los nombres con genitivo en -a.
+
+== Casos Abstractos
+Existen siete casos gramaticales básicos. No indican posición ni direccion; indican función sintactica argumental de la accion verbal. Estan formados por diversos sufijos unidos al ergativo, el cual constituye la raiz oblicua y es la base de toda la declinación.
+
+Los siete casos gramaticales básicos: ABS, ERG, DAT, GEN, PART, INST, DUR siempre cumplen función argumental o de complemento no espacial cuando están unidos directamente al sustantivo, adjetivo o pronombre. Adquieren significado espacial cuando están delante de un caso de dirección espacial.
+
+Existe un octavo caso VOC solo en nombres propios y algunos sustantivos animados. 
+
+== Casos Gramaticales Espaciales
+Además de los casos gramaticales, existen otras desinencias que indican localización y movimiento llamados casos espaciales. Se forman mediante ocho sufijos que indican orientación y seis sufijos que indican dirección. Esto da como resultado XX casos espaciales conjugados. 
+
+Los casos espaciales simples o conjugados se sufijan a la raiz oblicua (ergativo) directamente; pero si la palabra forma el ergativo con vocal armónica, se suele omitir esta vocal en los casos conjugados si la consonante final de absolutivo es una sonante.
+
+
 
 
 

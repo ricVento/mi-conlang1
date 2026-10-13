@@ -11,12 +11,29 @@
     <div id="arrTotal"></div>
 
     <script>
-        const arr1 = ['ʔ','ʕ','b','p','d','t','ɡ','k','z','s','dz','ts','q','χ','h','ʁ','ɾ','l','m','n','w','j'];
+        const onset = [
+	'ʔ','ʕ',
+	'b','p','pː','pʼ',
+	'd','t','tː','tʷ','tʼ',
+	'ɡ','gʷ','k','kː','kʼ','kʷ',	
+	'z','s','sː','sʷ',
+	'ʒ','ʃ','ʃː','ʃʷ',		
+	'dz','ts','tsː','tsʼ','tsʷ',
+	'dʒ','tʃ','tʃː','tʃʼ','tʃʷ',
+	'tɬ','tɬʼ',
+	'qχ','qχʼ','qχʷ',
+	'χ','χː','χʷ','h','ħ',
+	'ʁ','ʁʷ',
+	'ɾ','l','ɬ',
+	'm','n',
+	'w','v','f','j'		
+];
 		
-        const arrAdd = ['əʔ','əʕ','əw','əj','əl'];
+        const vowels = ['ɑ','a','i','u','ə','ɑː','aː','iː','uː','əː'];
 		
         // Decide con cual arreglo se empareja arr1
-		const arr2 = arrAdd;
+		const arr1 = vowels;
+		const arr2 = [''];
         
         const resultado = [];
 

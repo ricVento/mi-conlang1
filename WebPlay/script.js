@@ -89,28 +89,47 @@ function transcribir_IPA(cadenaASCII) {
 		.map(letra => transcriptionMap[letra] !== undefined ? transcriptionMap[letra] : letra)
 		.join('');
 		
-            // Transcribe a IPA
-            // const ipa_array = valid_array.map(str => transcribir_IPA(str));		
+	// Transcribe a IPA
+	// const ipa_array = valid_array.map(str => transcribir_IPA(str));		
 }
 
 // Variables para Combinatoria
 const onset = [
 	'ʔ','ʕ',
-	'b','p','pː','pʼ','dˁ',
-	'd','t','tː','tʷ','tʼ','tˁ',
+	'b','p','pː','pʼ',
+	'd','t','tː','tʷ','tʼ',
 	'ɡ','gʷ','k','kː','kʼ','kʷ',	
-	'z','s','sː','sʷ','sˁ',
-	'ʒ','ʃ','ʃː','ʃʷ',		
+	'z','zʷ',
+	's','sː','sʷ',
+	'ʒ','ʒʷ',
+	'ʃ','ʃː','ʃʷ',		
 	'dz','ts','tsː','tsʼ','tsʷ',
 	'dʒ','tʃ','tʃː','tʃʼ','tʃʷ',
 	'tɬ','tɬʼ',
 	'qχ','qχʼ','qχʷ',
 	'χ','χː','χʷ','h','ħ',
 	'ʁ','ʁʷ',
-	'ɾ','l','ɬ','m','n','f','w','j'		
+	'ɾ','l','ɬ',
+	'm','n',
+	'w','v','f','j'		
 ];
 
-const vowels = ['æ','je','ɑ','wo','ɪ','iə','ʊ','uə','œ','ɥœ'];
+// z: = dz y Z: = dZ
+// rr, ll posibles entre vocales como geminacion enfatica
+
+//const vowels = ['ɑ','æ','ɪ','ʊ','iə','je','uə','wo','œ','ɥœ'];ː
+const vowels = ['ɑ','a','i','u','ə','ɑː','aː','iː','uː','əː'];
+
+/*
+	S	LH	HL
+	bɑ	bwɔ	bʌə
+	bæ	bjɛ	bea
+	bɪ	biː	bɪə
+	bʊ	buː	bʊə
+	by	bɥœ	byə
+
+	ə = y = œ
+*/
 
 const coda = ['n','ɾ','z','ʃ','ts','dʒ','l','ɬ','k','q','ħ','ʁ','ʔ'];
 		
