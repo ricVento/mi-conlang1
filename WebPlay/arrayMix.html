@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Combinar Todo</title>
+	<script src="script.js"></script>
 </head>
 <body>
 
@@ -11,36 +12,21 @@
     <div id="arrTotal"></div>
 
     <script>
-        const onset = [
-	'ʔ','ʕ',
-	'b','p','pː','pʼ',
-	'd','t','tː','tʷ','tʼ',
-	'ɡ','gʷ','k','kː','kʼ','kʷ',	
-	'z','s','sː','sʷ',
-	'ʒ','ʃ','ʃː','ʃʷ',		
-	'dz','ts','tsː','tsʼ','tsʷ',
-	'dʒ','tʃ','tʃː','tʃʼ','tʃʷ',
-	'tɬ','tɬʼ',
-	'qχ','qχʼ','qχʷ',
-	'χ','χː','χʷ','h','ħ',
-	'ʁ','ʁʷ',
-	'ɾ','l','ɬ',
-	'm','n',
-	'w','v','f','j'		
-];
-		
-        const vowels = ['ɑ','a','i','u','ə','ɑː','aː','iː','uː','əː'];
 		
         // Decide con cual arreglo se empareja arr1
-		const arr1 = vowels;
-		const arr2 = [''];
+		const arr1 = ["s"];
+		const arr2 = onset;
         
+        const invalido = [];
         const resultado = [];
+		
+		const regex1 = /s/;
 
         // Dos bucles para emparejar CADA elemento de arr1 con CADA elemento de arr2
         for (let i = 0; i < arr1.length; i++) {
             for (let j = 0; j < arr2.length; j++) {
-                resultado.push(`${arr1[i]}${arr2[j]}`);
+				let str = `${arr1[i]}${arr2[j]}`;
+				!regex1.test(str) ? invalido.push(str) : resultado.push(str);
             }
         }
 		

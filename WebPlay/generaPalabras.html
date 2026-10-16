@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Palabras</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            user-select: none;
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            width: 320px;
+            position: relative;
+        }
+        h1 {
+            font-size: 0.9rem;
+            color: #95a5a6;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .palabra-display {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            min-height: 4.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: transform 0.1s ease, color 0.2s ease;
+        }
+        .palabra-display:hover {
+            color: #3498db;
+            transform: scale(1.05);
+        }
+        .palabra-display:active {
+            transform: scale(0.95);
+        }
+        .tooltip {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-bottom: 25px;
+            height: 1rem;
+            transition: color 0.2s ease;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            width: 100%;
+            font-weight: 500;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+	<script src="script.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Palabra Generada</h1>
+        <div id="pantallaPalabra" class="palabra-display" onclick="copiarPalabra()" title="Haz clic para copiar">...</div>
+        <div id="mensajeCopiado" class="tooltip">Haz clic en la palabra para copiar</div>
+        <button onclick="mostrarNuevaPalabra()">Generar otra</button>
+    </div>
+
+    <script>
+        // --- TU SCRIPT DEFINITIVO (SIN CAMBIOS) ---
+        const C = onset;
+        const V = vowels;
+        const M = medial;
+        const R = coda;
+
+        const regex1 = /r$/; 
+        const regex2 = /([aiu])[aiu]/g; 
+
+        const rand = (array) => array[Math.floor(Math.random() * array.length)];
+        const coinFlip = () => Math.random() < 0.5;
+
+        function generarEstructura() {
+            let str = rand(C) + rand(V) + rand(M);
+
+            if (!regex1.test(str)) { 
+                if (coinFlip()) {
+                    return limpiarVocales(str);
+                }
+            }
+
+            str += rand(V) + rand(R);
+
+            if (!regex1.test(str)) {
+                return limpiarVocales(str);
+            }
+
+            str += rand(V);
+            
+            return limpiarVocales(str);
+        }
+
+        function limpiarVocales(cadena) {
+            return cadena.replace(regex2, '$1');
+        }
+        // --- FIN DEL SCRIPT DEFINITIVO ---
+
+        // Función para renderizar la palabra en pantalla
+        function mostrarNuevaPalabra() {
+            const palabra = generarEstructura();
+            const elemento = document.getElementById('pantallaPalabra');
+            elemento.innerText = palabra || '-';
+            
+            // Resetear el texto de ayuda por si acaso estaba en "¡Copiado!"
+            document.getElementById('mensajeCopiado').innerText = "Haz clic en la palabra para copiar";
+            document.getElementById('mensajeCopiado').style.color = "#7f8c8d";
+        }
+
+        // Nueva función interactiva para copiar al portapapeles
+        function copiarPalabra() {
+            const texto = document.getElementById('pantallaPalabra').innerText;
+            
+            // Evitar copiar el guión por defecto si sale vacío
+            if (texto === '...' || texto === '-') return;
+
+            navigator.clipboard.writeText(texto).then(() => {
+                const aviso = document.getElementById('mensajeCopiado');
+                aviso.innerText = "¡Copiado al portapapeles!";
+                aviso.style.color = "#2ecc71"; // Cambia a color verde
+            }).catch(err => {
+                console.error('Error al copiar: ', err);
+            });
+        }
+
+        // Carga inicial automática
+        window.onload = mostrarNuevaPalabra;
+    </script>
+</body>
+</html>

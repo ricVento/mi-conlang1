@@ -9,22 +9,22 @@
     margin: (x: 3cm, y: 2.5cm),
   )
   set text(
-    font: "Arial",
+    font: "Charis",
 	size: 11pt,
     lang: "es"
   )
   set heading(numbering: "1.1")
 
-  show regex("(/)?(\b[A-Z0-9]{2,}\b)"): coincidencia => {
-  let texto = coincidencia.text
-  if texto.starts-with("/") {
-    // Es una sigla protegida (ej: /ONU). Quitamos el punto y la dejamos intacta.
-    texto.slice(1)
-  } else {
-    // Es un morfema normal (ej: 3PL). Lo convertimos a versalitas.
-    smallcaps(all: true)[#texto]
+  show regex("/[A-Z0-9]{2,}\b|\b[A-Z0-9]{2,}\b"): coincidencia => {
+   let texto = coincidencia.text
+   if texto.starts-with("/") {
+     // Es una sigla protegida (ej: /ONU) > Quitamos la barra y lo dejamos intacto.
+     texto.slice(1)
+   } else {
+     // Es un morfema normal (ej: 3PL) > Lo convertimos a versalitas.
+     smallcaps(all: true)[#texto]
+   }
   }
-}
 
   show:eggs.with()
   

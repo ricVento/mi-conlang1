@@ -69,7 +69,7 @@
 		// Conserva la sílaba SOLO si NO activa ninguna regla prohibida
 		const valid_cvc_array = cvc_array.filter(str => !rules.some(regex => regex.test(str)));
 		
-		titleCVC.innerHTML = `${valid_cvc_array.length} CV`;
+		titleCVC.innerHTML = `${valid_cvc_array.length} CVC`;
 		outputCVC.innerHTML = valid_cvc_array.join("<br>");
 		
 	</script>

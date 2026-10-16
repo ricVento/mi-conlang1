@@ -46,3 +46,5 @@
 #include "secciones/03_sustantivos.typ"
 #pagebreak()
 #include "secciones/04_adjetivos.typ"
+#pagebreak()
+#include "secciones/05_pronombres.typ"
