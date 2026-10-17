@@ -34,50 +34,57 @@ La gran mayoría de las palabras forman el ergativo añadiendo un sufijo a la fo
 - kiz kizindi
 
 Los nombres terminados en vocal usan sufijos oblicuos de nucleo sonante-obstructiva. Los nombres terminados en vocal que forman el genitivo así son:
-zi zirdi
-kubu kuburdu
-mişa  mişandi
-ivi ivindi
+- zi zirdi
+- kubu kuburdu
+- mişa  mişandi
+- ivi ivindi
 
 Otros sustantivos de sufijos oblicuos que no cumplen con la formación sonante-obstructiva:
-ğudam ğudamçi
-adam adamari
+- ğudam ğudamçi
+- adam adamari
 
 === Apofonía
 Un cierto numero de palabras se limita a cambiar la vocal radical antes de añadir la vocal armónica o el sufijo oblicuo. Es un mecanismo no productivo y limitado a un grupo cerrado de palabras.
-tel til-i
+- tel til-i
 
 === Elisión
 Para formar el ergativo algunos sustantivos cambian la base consonante del absolutivo antes de añadir los sufijos. La forma base es generalmente -RVC, siendo V una vocal epentética en absolutivo que desaparece en genitivo. 
-q’iliş q’ilşi
-iraç irçi 
+- q’iliş q’ilşi
+- iraç irçi 
  
 En casos donde el grupo consonante dé como resultado una doble sonante, tambien se recurre a elisión. No obstante, existen excepciones, como la de la palabra qulur (véase METATESIS más adelante).
-selim selmi
+- selim selmi
 
 === Metátesis
 En palabras con estructura -CVR, se recurre a metátesis de la sonante. Observese que la palabra qulur no hace solo elisión, sino tambien metátesis para evitar el grupo -lr. Esto ocurre sobre todo cuando la sonante es -r, para evitar en ergativo la cercania de ambas vibrantes.
-ibir irbi
-akir arki
-qulur qurlu
+- ibir irbi
+- akir arki
+- qulur qurlu
 
 === Epentesis
 Muchos sustantivos monosílabos terminados en consonante, especialmente si la consonante final es una obstructiva, insertan una sonante antes de la consonante final. Esta sonante presenta formas distintas en -n y en -r. 
-ked kendi
-ts’ek ts’enki
-vut vurtu
+- ked kendi
+- ts’ek ts’enki
+- vut vurtu
 
 == Plural de los Sustantivos
 El plural utiliza un sufijo variable _b_ sobre una raiz supletiva. Absolutivo y ergativo poseen un mismo sufijo plural unido a bases plurales diferentes; del plural de ergativo se forman los plurales del resto de los casos, análogo a lo que sucede en singular.
 
 === Plural de Absolutivo
 Utilizan el sufijo -b apoyado en vocal armónica sobre la forma basal de absolutivo. Los plurales de absolutivo siempre terminan en -b. Los nombres terminados en vocal no añaden vocal de apoyo.
-ze ked xhur  xhin adam ğodam xab
-ze-b ked-ib xhur-ub  xhin-ib adam-ib ğodam-ib xab-ib
+- ze ze-b
+- ked ked-ib
+- xhur xhur-ub
+- xhin xhin-ib
+- adam adam-ib
+- ğodam ğodam-ib
+- xab xab-ib
 
 Los sustantivos con ergativo en vocal armónica hacen el plural absolutivo en -b sobre la raiz de absolutivo. Estos plurales asemejan un ergativo singular seguido de -b.
-q’il(i) zir(i) k’ur(u) zor(u)
-q’il-ib zir-ib k’ur-ub zor-ub 
+- q’il(i) q’il-ib 
+- zir(i) zir-ib 
+- k’ur(u) k’ur-ub 
+- zor(u) zor-ub 
 
 Los mismos sustantivos que suprimen la vocal radical en el ergativo sufren esta modificación para formar la base plural. No obstante, no usan el sufijo oblicuo como si lo hacen en el ergativo. En el absolutivo plural, los monosílabos conservan la vocal radical. Comparese el singular ker, ergativo krindi, con el absolutivo plural kerib (no krib), ergativo plural krindibi.
 q’iriş ibur iraç ker selim axhim

@@ -3,14 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Combinar Todo</title>
+	<style>
+		.contenedor-columnas {
+		  display: flex; /* Activa el diseño de columnas modernas */
+		  gap: 20px;     /* Espacio de separación entre las dos columnas */
+		}
+
+		.columna {
+		  flex: 1;       /* Hace que ambas columnas ocupen el mismo ancho disponible */
+		}	
+	</style>
 	<script src="script.js"></script>
 </head>
 <body>
 
     <!-- Contenedor para la lista total -->
-    <div id="arrLength"></div>
-    <div id="arrTotal"></div>
-
+	<div class="contenedor-columnas">
+	  <div class="columna">
+		<h2><div id="col_1"></div></h2>
+		<div id="arr_1"></div>
+	  </div>
+	  <div class="columna">
+		<h2><div id="col_2"></div></h2>
+		<div id="arr_2"></div>
+	  </div>
+	</div>
+	
     <script>
 		
         // Decide con cual arreglo se empareja arr1
@@ -30,9 +48,14 @@
             }
         }
 		
+		clust.sort((a, b) => a.localeCompare(b));
+
+		
         // Mostrar en pantalla separados por un salto de línea
-        document.getElementById('arrLength').innerHTML = resultado.length;
-        document.getElementById('arrTotal').innerHTML = resultado.join('<br>');
+        document.getElementById('col_1').innerHTML = resultado.length;
+        document.getElementById('arr_1').innerHTML = resultado.join('<br>');
+		document.getElementById('col_2').innerHTML = clust.length;
+        document.getElementById('arr_2').innerHTML = clust.join('<br>');
     </script>
 
 </body>
