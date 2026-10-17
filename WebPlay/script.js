@@ -108,6 +108,10 @@ const mid = [ // solo mediales
 	'pː','tː','kː','χː','sː','ʃː','tsː','tʃː', // geminadas solo mediales
 ];
 
+const clust = [
+	'mb','ɾb','lb','zb','ʒb','ʁb','nd','ɾd','ld','zd','ʒd','ʁd','nɣ','ɾɣ','lɣ','zɣ','ʒɣ','nɡ','ɾɡ','lɡ','zɡ','ʒɡ','nɣʷ','ɾɣʷ','lɣʷ','zɣʷ','ʒɣʷ','nɡʷ','ɾɡʷ','lɡʷ','zɡʷ','ʒɡʷ','nħ','ɾħ','lħ','sħ','ʃħ','nj','ɾj','lj','nk','ɾk','lk','sk','ʃk','xk','nkʼ','ɾkʼ','lkʼ','skʼ','ʃkʼ','xkʼ','nkʷ','ɾkʷ','lkʷ','skʷ','ʃkʷ','xkʷ','ɾl','sl','ʃl','χl','nɬ','ɾɬ','ɾm','lm','sm','ʃm','χm','ɾn','sn','ʃn','χn','mp','ɾp','lp','sp','ʃp','χp','mpʼ','ɾpʼ','lpʼ','spʼ','ʃpʼ','χpʼ','nq','ɾq','lq','sq','ʃq','χq','nqʼ','ɾqʼ','lqʼ','sqʼ','ʃqʼ','χqʼ','nqʷ','ɾqʷ','lqʷ','sqʷ','ʃqʷ','χqʷ','χɾ','ns','ɾs','ls','χs','nʃ','ɾʃ','lʃ','χʃ','nsʷ','ɾsʷ','lsʷ','χsʷ','nʃʷ','ɾʃʷ','lʃʷ','χʃʷ','nt','ɾt','lt','st','ʃt','χt','ntʼ','ɾtʼ','ltʼ','stʼ','ʃtʼ','χtʼ','ntɬ','ɾtɬ','ntɬʼ','ɾtɬʼ','nts','ɾts','lts','χts','ntsʼ','ɾtsʼ','ltsʼ','χtsʼ','ntʃ','ɾtʃ','ltʃ','χtʃ','ntʃʼ','ɾtʃʼ','ltʃʼ','χtʃʼ','ntsʷ','ɾtsʷ','ltsʷ','χtsʷ','ntʃʷ','ɾtʃʷ','ltʃʷ','χtʃʷ','ntʷ','ɾtʷ','ltʷ','χtʷ','nw','ɾw','lw','nz','ɾz','lz','ʁz','nzʷ','ɾzʷ','lzʷ','ʁzʷ','nʒ','ɾʒ','lʒ','ʁʒ','nʒʷ','ɾʒʷ','lʒʷ','ʁʒʷ','nχ','ɾχ','lχ','sχ','ʃχ','nχʷ','ɾχʷ','lχʷ','sχʷ','ʃχʷ',
+];
+
 const iniMid = [ // nunca finales
 	'd','ɡ','b','z','ʒ','ʁ', // sonoras finales
 	'pʼ','tʼ','kʼ','tsʼ','tʃʼ','tɬʼ', // eyectivas finales	
@@ -119,8 +123,7 @@ const anyPos = [ // cualquier posición
 	'ʔ',
 	'p','t','k',
 	's','ʃ',
-	'ts','tʃ',
-	'tɬ',
+	'ts','tʃ','tɬ',
 	'χ',
 	'ɾ','l','ɬ',
 	'm','n',
@@ -128,7 +131,7 @@ const anyPos = [ // cualquier posición
 ];
 
 const end = [
-	'q', // susituye qχ, tambien esta en mid
+	'q', // sustituye qχ, tambien esta en mid
 ];
 	
 // rr, ll como geminacion enfatica
@@ -139,7 +142,7 @@ const onset = [...new Set([...ini, ...iniMid, ...anyPos])].sort((a, b) => a.loca
 
 const vowels = ['ɑ','æ','ɪ','ʊ','ə','ɑː','ɛː','iː','uː','əː'];
 
-const medial = [...new Set([...mid, ...iniMid, ...anyPos])].sort((a, b) => a.localeCompare(b));
+const medial = [...new Set([...mid, ...iniMid, ...anyPos, ...clust])].sort((a, b) => a.localeCompare(b));
 
 const coda = [...new Set([...end, ...anyPos])].sort((a, b) => a.localeCompare(b));
 
@@ -153,8 +156,5 @@ const coda = [...new Set([...end, ...anyPos])].sort((a, b) => a.localeCompare(b)
 
 	ə = y = œ
 */
-		
-// Reglas para CV
-const rules = [
-//,
-];	
+
+const regExpRules = [/ʷ[ʊu]/];

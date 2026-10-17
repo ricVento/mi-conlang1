@@ -45,7 +45,7 @@ A continuación, se presenta la declinación de los sustantivos de la primera cl
     table.hline(y: 0, stroke: 1pt + black), // Línea superior externa
     
     // Encabezados de la tabla
-    [*Caso*], [*Singular* (/M./F)], [*Plural* (/N)],
+    [*Caso*], [*Singular* (M/F)], [*Plural* (N)],
     
     table.hline(y: 1, stroke: 0.5pt + gray), // Línea divisoria del encabezado
     

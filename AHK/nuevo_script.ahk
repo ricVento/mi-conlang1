@@ -19,18 +19,18 @@ MinimizarRAM() {
 ::ae::æ
 ::.a::ɑː
 
-::ee::ɛː
-::.e::ə
+::ee::ə
+::.e::ɛː
 
 ::ff::ˁ
 
 ::gg::ɣ
 ::,g::ğ
-::.g::ʕ
-::/g::ʢ
+::qg::ʢ ; Q + G
 
 ::hh::ħ
 ::.h::ʰ
+::hx::ʕ
 
 ::ii::iː
 ::.i::ɪ
@@ -38,6 +38,7 @@ MinimizarRAM() {
 ::jj::ʲ
 
 ::.l::ɬ
+::/l::ƛ
 
 ::oo::ɔ
 ::oe::œ
@@ -50,8 +51,6 @@ MinimizarRAM() {
 
 ::ss::ʃ
 ::,s::ş
-
-::.tt::ƛ
 
 ::uu::uː
 ::.u::ʊ
@@ -69,9 +68,11 @@ MinimizarRAM() {
 
 #Hotstring * C ? C1
 
-::.G::ˁ
 ::,G::Ğ
 ::,S::Ş
 ::AE::Æ
+::EE::Ə
 
 RAlt & e::SendText("ə")
+
+; åÅ øØ ðÐ þÞ

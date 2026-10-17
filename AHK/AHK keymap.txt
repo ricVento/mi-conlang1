@@ -1,53 +1,41 @@
-	aa	ɑ
-	ae	æ
-	.a	ɑː
+aa	ɑ
+ae	æ	AE	Æ
+.a	ɑː
+ee	ə	EE	Ə
+.e	ɛː
+ff	ˁ
+gg	ɣ
+,g	ğ	,G	Ğ
+qg	ʢ
+hh	ħ
+.h	ʰ
+hx	ʕ
+ii	iː
+.i	ɪ
+jj	ʲ
+.l	ɬ
+/l	ƛ
+oo	ɔ
+oe	œ
+qq	ʔ
+.q	ˀ
+.r	ɾ
+,r	ʁ
+ss	ʃ
+,s	ş	,S	Ş
+uu	uː
+.u	ʊ
+ww	ʷ
+xx	χ
+yy	ɥ
+zz	ʒ
+,,	ʼ
+..	ː
 
-	ee	ɛː
-	.e	ə
 
-	ff	ˁ
 
-	gg	ɡ
-	,g	ɣ
-	.g	ʕ
-	/g	ʢ
 
-	hh	ħ
-	.h	ʰ
 
-	ii	iː
-	.i	ɪ
 
-	jj	ʲ
 
-	.l	ɬ
-
-	oo	ɔ
-	oe	œ
-
-	qq	ʔ
-	.q	ˀ
-
-	.r	ɾ
-	,r	ʁ
-
-	ss	ʃ
-
-	.t	ƛ
-
-	uu	uː
-	.u	ʊ
-
-	ww	ʷ
-
-	xx	χ
-
-	yy	ɥ
-
-	zz	ʒ
-
-	,,	ʼ
-	..	ː
-	
-
-:?*::ux::ŭ	
+:?*	ux	ŭ	

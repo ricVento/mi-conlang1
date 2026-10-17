@@ -90,17 +90,21 @@
 	const V = vowels;
 	const M = medial;
 	const R = coda;
-	const regex1 = /([ːʷʼ]).+\1/;
-	const regex2 = /.ʔ./;
+	
+	const rules = [
+		/([ːʷʼɬ]).+\1/,
+		/ʷ[ʊu]/
+	];
 	const regexOclusion = /([ɑæəɛɪiʊu](?:ː)?)ʔ([ɑæəɛɪiʊu](?:ː)?)/g;
+	
 	const rand = (array) => array[Math.floor(Math.random() * array.length)];
 	const coinFlip = () => Math.random() < 0.5;
 
 	function transformarOclusion(texto) {
 		const mapaVocales = {
-		'ɛ': 'æ',
-		'i': 'ɪ',
-		'u': 'ʊ'
+			'ɛ': 'æ',
+			'i': 'ɪ',
+			'u': 'ʊ'
 		};
 
 		return texto.replace(regexOclusion, (match, v1, v2) => {
@@ -120,8 +124,7 @@
 
 		while (!esValido) {
 			str = rand(C) + rand(V) + (coinFlip() ? "" : rand(M) + rand(V)) + rand(R);
-			esValido = !regex1.test(str);
-			//esValido = regex2.test(str);
+			esValido = !rules.some(regex => regex.test(str));
 		}
 
 		return transformarOclusion(str);

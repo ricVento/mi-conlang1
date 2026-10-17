@@ -1,47 +1,47 @@
 // Importar todo desde config (que ya expone el paquete eggs)
 #import "../config.typ": *
 
-#example[
- - x
- x
-]
-
 = Sustantivos y Flexión Nominal
 Reconoce género, número y caso
 
 == Género y Número
 La signacion de género responde a varios criterios.
-Hay cuatro letras asignadas a los generos: i/j, u/v, b/p, d/t.
+Hay cuatro letras asignadas a los generos: 
+- i/j, u/v, b/p, d/t
 Hay nombres que tienen asignada mas de una concordancia.
-Los pronombres tienen una concordancia débil con n, d/t, b/p. solamente
+Los pronombres tienen una concordancia débil solamente con
+- n, d/t, b/p
 
 == Raices Oblicuas
-El punto crucial de la declinación nominal es la formación del ergativo singular y el absolutivo plural; su formación distingue muchas clases basadas en criterios fonológicos y semanticos. 
+Hay tres raices básicas:
++ absolutivo
++ ergativo (= oblicuo en la mayoria de los sust)
++ oblicuo (pl y oblicuo en sust irr)
 
 === Ergativo en Vocal
 Un grupo grande de palabras terminadas en consonante sencillamente añaden una vocal armónica al final de la terminación de absolutivo, sin modificación de la estructura basica de la palabra.
-fuz fuzu
+- fuz fuzu
 
 En sustantivos terminados en vocal, se usa una aproximante _j_. 
-gubu gubuju
+- gubu gubuju
 
 Un subgrupo de sustantivos terminados en consonate que se refieren a seres animados, tanto humanos como no humanos recurren a una vocal no armónica de timbre _a_. Esta vocal determina la armonía para el resto de la declinación.
-q’al q’ala
+- q’al q’ala
 
 === Sufijación
 La gran mayoría de las palabras forman el ergativo añadiendo un sufijo a la forma básica. 
-jum	 jumurdu
-kiz	kizindi
+- jum  jumurdu
+- kiz kizindi
 
 Los nombres terminados en vocal usan sufijos oblicuos de nucleo sonante-obstructiva. Los nombres terminados en vocal que forman el genitivo así son:
-zi	zirdi
-kubu	kuburdu
-mişa 	mişandi
-ivi	ivindi
+zi zirdi
+kubu kuburdu
+mişa  mişandi
+ivi ivindi
 
 Otros sustantivos de sufijos oblicuos que no cumplen con la formación sonante-obstructiva:
-ğudam	ğudamçi
-adam	adamari
+ğudam ğudamçi
+adam adamari
 
 === Apofonía
 Un cierto numero de palabras se limita a cambiar la vocal radical antes de añadir la vocal armónica o el sufijo oblicuo. Es un mecanismo no productivo y limitado a un grupo cerrado de palabras.
@@ -49,22 +49,22 @@ tel til-i
 
 === Elisión
 Para formar el ergativo algunos sustantivos cambian la base consonante del absolutivo antes de añadir los sufijos. La forma base es generalmente -RVC, siendo V una vocal epentética en absolutivo que desaparece en genitivo. 
-q’iliş	q’ilşi
-iraç	irçi	
-	
+q’iliş q’ilşi
+iraç irçi 
+ 
 En casos donde el grupo consonante dé como resultado una doble sonante, tambien se recurre a elisión. No obstante, existen excepciones, como la de la palabra qulur (véase METATESIS más adelante).
 selim selmi
 
 === Metátesis
 En palabras con estructura -CVR, se recurre a metátesis de la sonante. Observese que la palabra qulur no hace solo elisión, sino tambien metátesis para evitar el grupo -lr. Esto ocurre sobre todo cuando la sonante es -r, para evitar en ergativo la cercania de ambas vibrantes.
-ibir	irbi
-akir	arki
-qulur	qurlu
+ibir irbi
+akir arki
+qulur qurlu
 
 === Epentesis
 Muchos sustantivos monosílabos terminados en consonante, especialmente si la consonante final es una obstructiva, insertan una sonante antes de la consonante final. Esta sonante presenta formas distintas en -n y en -r. 
-ked	kendi
-ts’ek	ts’enki
+ked kendi
+ts’ek ts’enki
 vut vurtu
 
 == Plural de los Sustantivos
@@ -72,52 +72,52 @@ El plural utiliza un sufijo variable _b_ sobre una raiz supletiva. Absolutivo y 
 
 === Plural de Absolutivo
 Utilizan el sufijo -b apoyado en vocal armónica sobre la forma basal de absolutivo. Los plurales de absolutivo siempre terminan en -b. Los nombres terminados en vocal no añaden vocal de apoyo.
-ze	ked	xhur 	xhin	adam	ğodam	xab
-ze-b	ked-ib	xhur-ub 	xhin-ib	adam-ib	ğodam-ib	xab-ib
+ze ked xhur  xhin adam ğodam xab
+ze-b ked-ib xhur-ub  xhin-ib adam-ib ğodam-ib xab-ib
 
 Los sustantivos con ergativo en vocal armónica hacen el plural absolutivo en -b sobre la raiz de absolutivo. Estos plurales asemejan un ergativo singular seguido de -b.
-q’il(i)	zir(i)	k’ur(u)	zor(u)
-q’il-ib	zir-ib	k’ur-ub	zor-ub 
+q’il(i) zir(i) k’ur(u) zor(u)
+q’il-ib zir-ib k’ur-ub zor-ub 
 
 Los mismos sustantivos que suprimen la vocal radical en el ergativo sufren esta modificación para formar la base plural. No obstante, no usan el sufijo oblicuo como si lo hacen en el ergativo. En el absolutivo plural, los monosílabos conservan la vocal radical. Comparese el singular ker, ergativo krindi, con el absolutivo plural kerib (no krib), ergativo plural krindibi.
-q’iriş	ibur	iraç	ker	selim	axhim
-q’irş-ib	irb-ib	irç-ib	ker-ib	selm-ib	axhm-ib	
+q’iriş ibur iraç ker selim axhim
+q’irş-ib irb-ib irç-ib ker-ib selm-ib axhm-ib 
 
 Los sustantivos con vocal final en absolutivo forman el plural solo añadiendo -b.
-ze	gobo	maşka	iva	
-ze-b	gobo-b	maşka-b	iva-b	
+ze gobo maşka iva 
+ze-b gobo-b maşka-b iva-b 
 
 === Plural de Ergativo
 El ergativo plural, base para la declinación del resto de los casos en plural, se forma mediante la base de genitivo seguido de la terminación de plural -b y la vocal de caso genitivo. 
-ked	xhur	xhin	ğodam	xab
-kend-ib-i	xhurd-ub-u	xhind-ib-i	ğodamç-ib-i	xamb-ib-i
+ked xhur xhin ğodam xab
+kend-ib-i xhurd-ub-u xhind-ib-i ğodamç-ib-i xamb-ib-i
 
 Los sustantivos con vocal en -a siguen la misma regla. La vocal final está en armonía con la -a y no con la vocal radical. Esta armonía se extiende a lo largo de toda la declinación de los casos espaciales.
-q’al-a	vits-a	fur-a
-q’al-ab-i	vits-ab-i	fur-ab-i
+q’al-a vits-a fur-a
+q’al-ab-i vits-ab-i fur-ab-i
 
 Nótese los sustantivos que eliden la vocal radical
-q’iriş	ibur	iraç	ker	selim	akim
-q’irş-ib-i	irb-ib-i	irç-ib-i	kr-ind-ib-i	selm-ib-i	akm-ib-i
+q’iriş ibur iraç ker selim akim
+q’irş-ib-i irb-ib-i irç-ib-i kr-ind-ib-i selm-ib-i akm-ib-i
 
 Los sustantivos de genitivo singular en vocal armónica cuya consonante final sea sonante o fricativa y no esté precedida de otra consonante intercalan el sufijo plural -b directamente sin vocal armónica. Esto tambien es válido para los sustantivos con genitivo en raiz oblicua que cumpla con esta condición:
-q’il-i	zir-i	k’ur-u	zor-u	şekam-i	adamar-i
-q’il(i)-b-i	zir-(i)b-i	k’ur-(u)b-u	zor-(u)b-u	şekam(i)-b-i	adamar(i)-b-i
+q’il-i zir-i k’ur-u zor-u şekam-i adamar-i
+q’il(i)-b-i zir-(i)b-i k’ur-(u)b-u zor-(u)b-u şekam(i)-b-i adamar(i)-b-i
 
 Los plurales de genitivo siempre terminan en vocal. Sin embargo, coloquialmente, en el genitivo plural suele omitirse la vocal final, especialmente cuando la raiz sufre cambios, por lo que es común escuchar genitivos plurales tipo:
-kend-ib	xhurd-ub	xhind-ib	ğodamç-ib	xamb-ib 	adamar-ib
+kend-ib xhurd-ub xhind-ib ğodamç-ib xamb-ib  adamar-ib
 
 Nótese que en el último ejemplo el sustantivo adam puede tener dos genitivos plurales: adamarbi y adamarib. El primero es usado para el resto de los casos oblicuos, mientras que el segundo se reserva solo para el genitivo. La ocurrendia de dos plurales oblicuos se observa tambien en los sustantivos terminados en vocal, los cuales tienen dos bases para los plurales, la derivada del absolutivo y la derivada del genitivo. En algunos casos los plurales adquieren significados diferentes:
-ze-rd-i-b-i (gen-plu1)	ze-b-i (gen-plu2)
+ze-rd-i-b-i (gen-plu1) ze-b-i (gen-plu2)
 
 A continuación, un ejemplo completo de la declinación de los casos espaciales en plural con raices de ambas vocales armónicas con los sustantivos zor y dar. Nótese que en la confluencia de sonante más obstructiva suele omitirse la vocal de apoyo de genitivo entre el nombre y la declinación, excepto en los nombres con genitivo en -a.
 
 == Casos Abstractos
-Existen siete casos gramaticales básicos. No indican posición ni direccion; indican función sintactica argumental de la accion verbal. Estan formados por diversos sufijos unidos al ergativo, el cual constituye la raiz oblicua y es la base de toda la declinación.
+Existen ocho casos gramaticales básicos. No indican posición ni direccion; indican función sintactica argumental de la accion verbal. Estan formados por diversos sufijos unidos al ergativo, el cual constituye la raiz oblicua y es la base de toda la declinación.
 
-Los siete casos gramaticales básicos: ABS, ERG, DAT, GEN, PART, INST, DUR siempre cumplen función argumental o de complemento no espacial cuando están unidos directamente al sustantivo, adjetivo o pronombre. Adquieren significado espacial cuando están delante de un caso de dirección espacial.
+Los ocho casos gramaticales básicos: ABS, ERG, DAT, GEN, PART, INST, DUR, VOC siempre cumplen función argumental o de complemento no espacial cuando están unidos directamente al sustantivo, adjetivo o pronombre. Adquieren significado espacial cuando están delante de un caso de dirección espacial.
 
-Existe un octavo caso VOC solo en nombres propios y algunos sustantivos animados. 
+El caso VOC solo en nombres propios y algunos sustantivos animados. 
 
 == Casos Gramaticales Espaciales
 Además de los casos gramaticales, existen otras desinencias que indican localización y movimiento llamados casos espaciales. Se forman mediante ocho sufijos que indican orientación y seis sufijos que indican dirección. Esto da como resultado XX casos espaciales conjugados. 
@@ -164,7 +164,7 @@ Agente o instrumento activo. El agente de un verbo transitivo
  - sample
  conejo.ERG arbol.GEN corteza mordisquear 
 ]
-	
+ 
 No está restringido a sustantivos animados; con objetos inanimados expresa una fuerza natural
 #example[
  - sample
@@ -178,7 +178,7 @@ Posesión inalienable
 #example[
  - sample
  el padre de Murad-GEN
-]	
+] 
 
 Material y Composición
 #example[
@@ -186,7 +186,7 @@ Material y Composición
  anillo de oro-GEN
 ]
 
-Topónimo y lugar de nacimiento	
+Topónimo y lugar de nacimiento 
 #example[
  + - sample
   la villa de Ghvarşi-GEN
@@ -199,12 +199,12 @@ Tamaño y cantidad
  - sample
  una deuda de cinco rublos-GEN
 ]
-	
+ 
 Régimen de numerosas posposiciones
 #example[
  - sample
  detrás de la escuela-GEN
-]	
+] 
 
 === Partitivo
 Caso asociativo. Tambien llamado /GEN2. Posesión alienable
@@ -218,12 +218,12 @@ Propiedad de seres inanimados
  - sample
  la historia de esta casa-PART
 ]
-	
+ 
 Parte de un todo 
 #example[
  - sample
  tomaré una de las abejas-PART de Murad
-]	
+] 
 
 Lugar de procedencia
 #example[
@@ -235,14 +235,14 @@ Contenido
 #example[
  - sample
  plato de sopa-PART
-]	
+] 
 
 El asunto del que se habla
 #example[
  - sample
  hablaban de ti-PART
 ]
-	
+ 
 El argumento de algunos verbos en función copular
 #example[
  - sample
@@ -297,7 +297,7 @@ Con valor de adverbio temporal, expresa un limite de tiempo. Télico; implica qu
 #example[
  - sample
  Trabajó en el campo todo el mes-INST
-]	
+] 
 
 === Causal
 La causa o el causante
@@ -407,4 +407,9 @@ Además de su valor estrictamente locativo y movimiento; los casos espaciales se
  - This is a proper numbered item
  - Este es un propio numerado elemento
  This is the gloss
+]
+
+#example[
+ - x
+ x
 ]
