@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor de Silabas CVC</title>
+	<style>
+        :root {
+            --bg-color: #1e1e1e;
+            --text-color: #d4d4d4;
+        }	
+	
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+		
+        .title-cell {
+            padding: 10px 0;
+        }
+
+        .title-cell h2 {
+            font-size: 1.2rem;
+            color: #2f3640;
+        }
+
+
+
+    </style>
+	<script src="script.js"></script>
+</head>
+<body>
+    <div class="main-grid">
+        <!-- FILA SUPERIOR: TÍTULOS -->
+        <div class="title-cell">
+            <h2 id="cvcTitle">Sílaba CVC</h2>
+        </div>
+
+        <!-- FILA INFERIOR: DIVS (Reemplazando los textareas anteriores) -->
+        <div class="textarea-cell">
+            <div id="outputCVC" class="full-textarea">Contenido de la columna derecha...</div>
+        </div>
+    </div>
+	<script>
+        // Referencias al DOM
+        const outputCVC = document.getElementById('outputCVC');
+        const titleCVC = document.getElementById('cvcTitle');
+	
+		// Arrays resultantes
+		const cvc_array = [];
+		
+		// Creamos CVC
+		for(const o of onset){
+			for(const v of vowels){
+				for(const c of coda){
+					let cvc = o + v + c;
+					cvc_array.push(cvc);				
+				}			
+			}			
+		}
+		
+		// Conserva la sílaba SOLO si NO activa ninguna regla prohibida
+		const valid_cvc_array = cvc_array.filter(str => !regExpRules.some(regex => regex.test(str)));
+		
+		//const arrTrans = valid_cvc_array.map(reemplazarPares);
+		const arrTrans = valid_cvc_array;
+		
+		titleCVC.innerHTML = `${valid_cvc_array.length} CVC`;
+		outputCVC.innerHTML = arrTrans.join("<br>");
+		
+	</script>
+</body>
+</html>

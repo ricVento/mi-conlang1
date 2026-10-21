@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor de Silabas CV</title>
+	<style>
+        body, html {
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f6fa;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .main-grid {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .title-cell {
+            padding: 10px 0;
+        }
+
+        .title-cell h2 {
+            font-size: 1.2rem;
+            color: #2f3640;
+            margin: 0 0 15px 0;
+        }
+
+        .textarea-cell {
+            flex: 1;
+            overflow-y: auto;
+        }
+    </style>
+	<script src="script.js"></script>
+</head>
+<body>
+    <div class="main-grid">
+        <!-- FILA SUPERIOR: TÍTULOS -->
+        <div class="title-cell">
+            <h2 id="cvTitle">Sílaba CV</h2>
+        </div>
+
+        <!-- FILA INFERIOR: GRILLA DE CONTENEDORES POR ONSET -->
+        <div class="textarea-cell">
+            <div id="gridContainer"></div>
+        </div>
+    </div>
+	<script>
+        // Referencias al DOM
+        const titleCV = document.getElementById('cvTitle');
+        const gridContainer = document.getElementById('gridContainer');
+	
+        // Configurar estilos de la grilla
+        gridContainer.style.display = 'grid';
+        gridContainer.style.gridTemplateColumns = 'repeat(auto-fill, minmax(180px, 1fr))';
+        gridContainer.style.gap = '15px';
+        gridContainer.style.paddingBottom = '20px';
+
+        let totalValidCount = 0;
+
+        // Iterar por cada onset para crear un contenedor independiente en la grilla
+        for(const c of onset){
+            const cv_array = [];
+            for(const v of vowels){
+                let cv = c + v;
+				cv_array.push(cv);                
+            }
+            
+            // Conserva la sílaba SOLO si NO activa ninguna regla prohibida en CV
+			const valid_cv_ = cv_array.filter(str => !regExpRules.some(regex => regex.test(str)));
+			
+			//const valid_cv = valid_cv_.map(reemplazarPares); // cambia ʷi => ɨ
+			const valid_cv = valid_cv_;
+            
+            if (valid_cv.length === 0) continue;
+
+            totalValidCount += valid_cv.length;
+            
+            // Crear el contenedor (tarjeta) para este onset
+            const box = document.createElement('div');
+            box.style.background = '#ffffff';
+            box.style.border = '1px solid #dcdde1';
+            box.style.borderRadius = '8px';
+            box.style.padding = '12px';
+            box.style.boxShadow = '0 2px 4px rgba(0,0,0,0.05)';
+
+            const boxTitle = document.createElement('h3');
+            boxTitle.style.margin = '0 0 8px 0';
+            boxTitle.style.fontSize = '1rem';
+            boxTitle.style.color = '#e84118';
+            boxTitle.style.borderBottom = '1px solid #f1f2f6';
+            boxTitle.style.paddingBottom = '6px';
+            boxTitle.textContent = `${c} [${valid_cv.length}]`;
+
+            const boxContent = document.createElement('div');
+            boxContent.style.fontSize = '0.95rem';
+            boxContent.style.color = '#2f3640';
+            boxContent.innerHTML = valid_cv.join("<br>");
+
+            box.appendChild(boxTitle);
+            box.appendChild(boxContent);
+            gridContainer.appendChild(box);
+        }
+		
+		titleCV.innerHTML = `${totalValidCount} sílabas CV totales`;
+	</script>
+</body>
+</html>

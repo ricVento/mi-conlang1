@@ -1,0 +1,40 @@
+= Bash
+
+	cd C:\ConlangGits\mi-conlang1
+	git add .
+	git commit -m "update"
+	git push
+	exit
+
+==== Si quiero limpiar historial
+
+	cd C:\ConlangGits\mi-conlang1
+	git checkout --orphan temporal
+	git add .
+	git commit -m "Clean Update"
+	git branch -D main
+	git branch -m main
+	git push -u origin main --force
+	git reflog expire --expire=now --all
+	git gc --prune=now --aggressive
+
+==== Dia a dia, sin multiples commits
+
+MODIFICAR config UNA SOLA VEZ EN LA VIDA	
+
+	cd C:\ConlangGits\mi-conlang1
+	git config --global --edit
+
+AÑADIR
+	[alias]
+		wip = !git add . && git commit -m 'WIP: Cambios temporales'
+		cerrar = "!f() { git add .; git commit -m 'WIP: Ultimo momento'; HASH=$(git commit-tree HEAD^{tree} -m \"Avance real: ${1:-Cambios del dia}\") && git update-ref refs/heads/$(git branch --show-current) $HASH && git push origin HEAD --force; }; f"
+
+
+... LUEGO CADA VEZ
+	cd C:\ConlangGits\mi-conlang1
+	git wip
+
+... AL FINAL DEL DIA (hace un ultimo `git wip` y `pull`
+	cd C:\ConlangGits\mi-conlang1
+	git cerrar "Clean Update" // nombre opcional

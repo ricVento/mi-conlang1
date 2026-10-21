@@ -1,0 +1,196 @@
+ :root {
+ --bg-color: #1e1e1e;
+ --panel-bg: #2d2d2d;
+ --text-color: #d4d4d4;
+ --accent: #007acc;
+ --border-color: #404040;
+ }
+
+ body {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ background-color: var(--bg-color);
+ color: var(--text-color);
+ margin: 0;
+ padding: 20px;
+ display: flex;
+ flex-direction: column;
+ height: 100vh;
+ box-sizing: border-box;
+ }
+
+ .toolbar {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ background-color: var(--panel-bg);
+ padding: 10px 20px;
+ border-radius: 8px;
+ margin-bottom: 20px;
+ border: 1px solid var(--border-color);
+ }
+
+ .toolbar-title {
+ font-size: 16px;
+ font-weight: bold;
+ color: var(--text-color);
+ letter-spacing: 0.5px;
+ }
+	
+ .toolbar-title a {
+ color: var(--text-color);
+	text-decoration:none;
+ }	
+
+	.toolbar-title a:hover {
+	color: var(--accent);
+	cursor: pointer;
+	}	
+
+ .toolbar-title span {
+ color: var(--accent);
+ }
+
+ button {
+ background-color: var(--accent);
+ color: white;
+ border: none;
+ padding: 8px 16px;
+ border-radius: 4px;
+ font-size: 14px;
+ font-weight: bold;
+ cursor: pointer;
+ outline: none;
+ transition: background-color 0.2s;
+ }
+
+ button:hover {
+ background-color: #005f9e;
+ }
+
+ .editor-container {
+ display: flex;
+ flex-direction: column;
+ gap: 20px;
+ flex-grow: 1;
+ }
+
+ .box {
+ display: flex;
+ flex-direction: column;
+ flex-grow: 1;
+ background-color: var(--panel-bg);
+ border-radius: 8px;
+ border: 1px solid var(--border-color);
+ overflow: hidden;
+ }
+
+ .box-header {
+ background-color: #333;
+ padding: 8px 15px;
+ font-size: 12px;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ color: #888;
+ border-bottom: 1px solid var(--border-color);
+ }
+
+ textarea {
+ flex-grow: 1;
+ background-color: transparent;
+ color: var(--text-color);
+ border: none;
+ padding: 15px;
+ font-size: 18px;
+ font-family: 'Consolas', 'Courier New', monospace;
+ resize: none;
+ outline: none;
+ }
+
+ #output {
+ background-color: #252526;
+ }
+
+ /* Estilizado del Modal Nativo <dialog> */
+ dialog {
+ background-color: var(--panel-bg);
+ color: var(--text-color);
+ border: 1px solid var(--border-color);
+ border-radius: 8px;
+ padding: 25px;
+ width: 80%;
+ max-width: 800px;
+ max-height: 80vh;
+ box-sizing: border-box;
+ box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+ }
+
+ dialog[open] {
+ display: flex;
+ flex-direction: column;
+ }
+
+ dialog::backdrop {
+ background-color: rgba(0, 0, 0, 0.75);
+ }
+
+ .modal-header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: 15px;
+ border-bottom: 1px solid var(--border-color);
+ padding-bottom: 10px;
+ }
+
+ .modal-header h2 {
+ margin: 0;
+ font-size: 20px;
+ }
+
+ .close-btn {
+ background: transparent;
+ color: #888;
+ font-size: 24px;
+ border: none;
+ padding: 0;
+ cursor: pointer;
+ }
+
+ .close-btn:hover { 
+ color: white; 
+ background: transparent;
+ }
+
+ .grid-container {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 10px;
+ overflow-y: auto;
+ padding-right: 10px;
+ font-family: 'Consolas', monospace;
+ }
+
+ .grid-item {
+ background-color: #333;
+ padding: 8px 12px;
+ border-radius: 4px;
+ display: flex;
+ justify-content: space-between;
+ border: 1px solid #444;
+ }
+
+ .grid-item span.ascii { 
+ color: var(--accent); 
+ font-weight: bold; 
+ }
+ 
+ .grid-item span.ipa { 
+ color: #ce9178; 
+ font-weight: bold;
+ }
+ 
+ /* Ajustes de scrollbar internos */
+ ::-webkit-scrollbar { width: 8px; }
+ ::-webkit-scrollbar-track { background: var(--bg-color); }
+ ::-webkit-scrollbar-thumb { background: #555; border-radius: 4px; }
+ ::-webkit-scrollbar-thumb:hover { background: #777; }

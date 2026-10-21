@@ -1,0 +1,25 @@
+# Caché de Python
+__pycache__/
+*.pyc
+
+# Entornos virtuales
+.venv/
+env/
+
+# Archivos del sistema (Windows)
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Dependencias de JavaScript (por si las usas luego)
+node_modules/
+
+# Archivos compilados de Typst u otros documentos
+*.pdf
+*.odt
+*.ods
+*.exe
+*.wav
+
+# Ignorar la carpeta privada
+ms/
