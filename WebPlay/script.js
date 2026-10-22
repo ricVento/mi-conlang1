@@ -18,6 +18,8 @@ const ini = [
 	'pχ','tχ','tsχ','tʃχ','kx',
 	'ʢ', // = ʕ	
 	'dz','dʒ', // = z, ʒ
+	'ʃt','ʃk','ʃp',
+	'st','sk','sp',
 ];
 
 const mid = [
@@ -40,6 +42,9 @@ const end = [
 	'z','ʒ','tʃ',
 	'r','l','ɬ','m','n',
 	'w','j','ʔ','h','ʕ',
+	'ʃt','ʃk',
+	'st','sk',	
+	'rd','rt','rʃ','rs',
 ];
 
 const clust = [
@@ -93,7 +98,7 @@ function reemplazarPares(str) {
 		'i': 'e',
 		'u': 'œ',
 		'wa': 'wɑ',
-		'wi': 'ɨ',		
+		'wi': 'ɨ',	
 				
 		//'wə': '','ja': 'jæ','ju': 'y','jə': 'ɥœ','əː': 'ɑɛ',		
 	};	

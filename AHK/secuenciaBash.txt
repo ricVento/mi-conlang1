@@ -29,12 +29,13 @@ AÑADIR
 	[alias]
 		wip = !git add . && git commit -m 'WIP: Cambios temporales'
 		cerrar = "!f() { git add .; git commit -m 'WIP: Ultimo momento'; HASH=$(git commit-tree HEAD^{tree} -m \"Avance real: ${1:-Cambios del dia}\") && git update-ref refs/heads/$(git branch --show-current) $HASH && git push origin HEAD --force; }; f"
+		subir = "!f() { git add . && git commit -m \"$1\" && git push; }; f"
 
+... AL FINAL DEL DIA
+	cd C:\ConlangGits\mi-conlang1
+	git subir "Update"	
 
-... LUEGO CADA VEZ
+... LUEGO una vez al mes
 	cd C:\ConlangGits\mi-conlang1
 	git wip
-
-... AL FINAL DEL DIA (hace un ultimo `git wip` y `pull`
-	cd C:\ConlangGits\mi-conlang1
 	git cerrar "Clean Update" // nombre opcional
