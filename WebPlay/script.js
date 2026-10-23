@@ -15,7 +15,7 @@ function transcribir_IPA(cadenaASCII) {
 // Variables para Combinatoria
 const ini = [
 	'bɣ','dɣ','dzɣ','dʒɣ',
-	'pχ','tχ','tsχ','tʃχ','kx',
+	'pχ','tχ','tsχ','tʃχ','kx','qχ',
 	'ʢ', // = ʕ	
 	'dz','dʒ', // = z, ʒ
 	'ʃt','ʃk','ʃp',
@@ -23,14 +23,15 @@ const ini = [
 ];
 
 const mid = [
-	'pː','tː','kː','χː','sː','ʃː','tsː','tʃː',
+	'pː','tː','kː','sː','ʃː','tsː','tʃː',
+	'χː', // = q:
 	'ɣ', // = ʕ
 ];
 
 const iniMid = [
 	'b','d','g',
-	'p','t','k','q','ts','tʃ','ƛ',
-	'pʼ','tʼ','kʼ','qʼ','tsʼ','tʃʼ','ƛʼ',
+	'p','t','k','q','ts','tʃ','tɬ',
+	'pʼ','tʼ','kʼ','qʼ','tsʼ','tʃʼ','tɬʼ',
 	's','ʃ','χ',
 	'r','l','ɬ','m','n','w','j','ʔ',
 	'ħ','h',
@@ -84,9 +85,9 @@ const vowels = [
 const regExpRules = [
 	/wu/,
 	/ji/,
-	/[ɬƛħʔʢɣwjʼː]w/,
+	/[ɬħʔʢɣwjʼː]w/,
 	// for wordbuilding
-	/([ːʼɬƛɣ]).+\1/,
+	/([ːʼɬɣ]).+\1/,
 	/ː[^aiu]{2,}/,
 ];
 
