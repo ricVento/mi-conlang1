@@ -28,11 +28,13 @@ const mid = [
 ];
 
 const iniMid = [
-	'qʼ','pʼ','tʼ','kʼ','tsʼ','tʃʼ','ƛʼ',
-	'p','t','k','s','r','l','ɬ','m','n','w','j','q','χ','ts','ʔ','ʃ','tʃ',
+	'b','d','g',
+	'p','t','k','q','ts','tʃ','ƛ',
+	'pʼ','tʼ','kʼ','qʼ','tsʼ','tʃʼ','ƛʼ',
+	's','ʃ','χ',
+	'r','l','ɬ','m','n','w','j','ʔ',
 	'ħ','h',
-	'ƛ',
-	'ʁ','d','g','b','z','ʒ',
+	'ʁ','z','ʒ',
 ];
 
 const end = [
@@ -107,3 +109,37 @@ function reemplazarPares(str) {
   
 	return str.replace(expresion, (coincidencia) => pares[coincidencia]);
 }
+
+function adaptaVocales(str) {
+    // 1. Definimos las reglas por grupos de caracteres
+    const reglasGrupo1 = { 'a': 'o', 'e': 'i', 'o': 'u' }; // Reglas para el grupo [kXq]
+    const reglasGrupo2 = { 'a': 'e', 'e': 'a' };           // Ejemplo de reglas para otro grupo
+
+    // Mapeamos qué letras pertenecen a qué grupo
+    const grupos = {
+        'k': reglasGrupo1, 'X': reglasGrupo1, 'q': reglasGrupo1,
+        'p': reglasGrupo2, 'm': reglasGrupo2
+    };
+
+    // 2. Expresión regular adaptada:
+    // ([kXqpMm...]) -> Primer grupo: los caracteres disparadores
+    // ('?)          -> Segundo grupo: el apóstrofe opcional (el signo ? significa 0 o 1 ocurrencia)
+    // ([aeiouAEIOU])-> Tercer grupo: la vocal
+    const regex = /([kXqpMm])('?)([aeiouAEIOU])/g;
+
+    return str.replace(regex, (match, disparador, intercalado, vocalOriginal) => {
+        // Seleccionamos el grupo de reglas que le corresponde a la letra
+        const reglasDelGrupo = grupos[disparador];
+
+        // Si la letra no tiene grupo asignado, devolvemos el texto original
+        if (!reglasDelGrupo) return match;
+
+        // Buscamos el cambio correspondiente a la vocal en ese grupo
+        const cambio = reglasDelGrupo[vocalOriginal];
+
+        // Reconstruimos la cadena: Letra + Carácter Intercalado + (Vocal nueva o la original)
+        return disparador + intercalado + (cambio || vocalOriginal);
+    });
+}
+
+
