@@ -33,7 +33,7 @@ const iniMid = [
 	'p','t','k','q','ts','tʃ','tɬ',
 	'pʼ','tʼ','kʼ','qʼ','tsʼ','tʃʼ','tɬʼ',
 	's','ʃ','χ',
-	'r','l','ɬ','m','n','w','j','ʔ',
+	'r','l','ɬ','m','n','w','j','ˀ',
 	'ħ','h',
 	'ʁ','z','ʒ',
 ];
@@ -44,19 +44,19 @@ const end = [
 	's','ʃ','χ','dʒ',
 	'z','ʒ','tʃ',
 	'r','l','ɬ','m','n',
-	'w','j','ʔ','h','ʕ',
+	'w','j','ˀ','h','ˁ',
 	'ʃt','ʃk',
 	'st','sk',	
 	'rd','rt','rʃ','rs',
 ];
 
 const clust = [
-	'lb','ld','lg','lj','lk','lkʼ','lm','ln','lp','lpʼ','lq','lqʼ','ls','lʃ','lt','lts','ltsʼ','ltʃ','ltʃʼ','ltʼ','lz','lʒ','lχ','lw',
-	'nb','nd','ng','nj','nk','nkʼ','nɬ','np','npʼ','nq','nqʼ','ns','nʃ','nt','nts','ntsʼ','ntʃ','ntʃʼ','ntʼ','nz','nʒ','nχ','nw',
-	'rb','rd','rg','rj','rk','rkʼ','rl','rm','rn','rp','rpʼ','rq','rqʼ','rs','rʃ','rt','rts','rtsʼ','rtʃ','rtʃʼ','rtʼ','rz','rʒ','rχ','rw',
-	'sb','sd','sg','sk','skʼ','sl','sm','sn','sp','spʼ','sq','sqʼ','st','stʼ','sχ','sw',
-	'ʃb','ʃd','ʃg','ʃk','ʃkʼ','ʃl','ʃm','ʃn','ʃp','ʃpʼ','ʃq','ʃqʼ','ʃt','ʃtʼ','ʃχ','ʃw',
-	'χb','χd','χk','χkʼ','χm','χn','χp','χpʼ','χs','χʃ','χt','χts','χtsʼ','χtʃ','χtʃʼ','χtʼ','χw',
+	'lb','ld','lg','lj','lk','lkʼ','lm','ln','lp','lpʼ','lq','lqʼ','ls','lʃ','lt','lts','ltsʼ','ltʃ','ltʃʼ','ltʼ','lz','lʒ','lχ',
+	'nb','nd','ng','nj','nk','nkʼ','nɬ','np','npʼ','nq','nqʼ','ns','nʃ','nt','nts','ntsʼ','ntʃ','ntʃʼ','ntʼ','nz','nʒ','nχ',
+	'rb','rd','rg','rj','rk','rkʼ','rl','rm','rn','rp','rpʼ','rq','rqʼ','rs','rʃ','rt','rts','rtsʼ','rtʃ','rtʃʼ','rtʼ','rz','rʒ','rχ',
+	'sb','sd','sg','sk','skʼ','sl','sm','sn','sp','spʼ','sq','sqʼ','st','stʼ','sχ',
+	'ʃb','ʃd','ʃg','ʃk','ʃkʼ','ʃl','ʃm','ʃn','ʃp','ʃpʼ','ʃq','ʃqʼ','ʃt','ʃtʼ','ʃχ',
+	'χb','χd','χk','χkʼ','χm','χn','χp','χpʼ','χs','χʃ','χt','χts','χtsʼ','χtʃ','χtʃʼ','χtʼ',
 ];
 
 const onset = [...new Set([...ini, ...iniMid])].sort((a, b) => a.localeCompare(b));
@@ -65,10 +65,12 @@ const medial = [...new Set([...mid, ...clust])].sort((a, b) => a.localeCompare(b
 
 const coda = end.sort((a, b) => a.localeCompare(b));
 
+const rootEnd = [...new Set([...end, ...clust])].sort((a, b) => a.localeCompare(b));
+
 const vowels = [
 	'a','i','u',
 	'aː','iː','uː',
-	'wa','wi',
+	'ʷa','ʷi',
 ];
 
 /*
@@ -83,9 +85,10 @@ const vowels = [
 */
 
 const regExpRules = [
-	/wu/,
-	/ji/,
-	/[ɬħʔʢɣwjʼː]w/,
+	/ʷu|u(ː)?w/,
+	/ji|i(ː)?j/,
+	/[xɬħʔˀˁʢɣwjʼː]ʷ/,
+	/[ptsʃq]χʷ/,
 	// for wordbuilding
 	/([ːʼɬɣ]).+\1/,
 	/ː[^aiu]{2,}/,

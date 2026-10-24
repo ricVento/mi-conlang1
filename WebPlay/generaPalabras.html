@@ -90,20 +90,28 @@
 	const V = vowels;
 	const M = medial;
 	const R = coda;
+	const E = rootEnd;
 	
 	const rand = (array) => array[Math.floor(Math.random() * array.length)];
-	const coinFlip = () => Math.random() < 0.5;
+	const coinFlip = () => Math.random() < 0.5; // devuelve boolean
 
 	function generarEstructura() {
 		let str = "";
 		let esValido = false;
 
 		while (!esValido) {
-			str = rand(C) + rand(V) + (coinFlip() ? "" : rand(M) + rand(V)) + rand(R);
+			// 1. arroja moneda y devuelve CVC vs CVMVR
+			//str = rand(C) + rand(V) + (coinFlip() ? "" : rand(M) + rand(V)) + rand(R);
+			
+			// 2. directamente devuelve siempre CVE
+			str = rand(C) + rand(V) + rand(R) + "~";
+			
+			// 3. Siempre verifica que sea valido
 			esValido = !regExpRules.some(regex => regex.test(str));
 		}
 
-		//return reemplazarPares(str); // cambia wi|iw => ɨ
+		// 4. Elige reemplazar pares de caracteres, p.e.: wi|iw => ɨ
+		//return reemplazarPares(str);		
 		return str;
 	}
 

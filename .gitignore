@@ -14,12 +14,13 @@ desktop.ini
 # Dependencias de JavaScript (por si las usas luego)
 node_modules/
 
-# Archivos compilados de Typst u otros documentos
+# Archivos compilados y otros documentos
 *.pdf
 *.odt
 *.ods
 *.exe
 *.wav
+*.db
 
 # Ignorar la carpeta privada
 ms/
