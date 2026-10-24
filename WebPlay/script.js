@@ -14,26 +14,28 @@ function transcribir_IPA(cadenaASCII) {
 
 // Variables para Combinatoria
 const ini = [
-	'bɣ','dɣ','dzɣ','dʒɣ',
-	'pχ','tχ','tsχ','tʃχ','kx','qχ',
+	'bɣ','dɣ','dzɣ',
+	'pχ','tχ','tsχ','qχ',
 	'ʢ', // = ʕ	
+	'ʔ', // = ˀ
 	'dz','dʒ', // = z, ʒ
-	'ʃt','ʃk','ʃp',
 	'st','sk','sp',
 ];
 
 const mid = [
 	'pː','tː','kː','sː','ʃː','tsː','tʃː',
 	'χː', // = q:
+	'q', // = qχ
 	'ɣ', // = ʕ
+	'ˀ', // = ʔ
 ];
 
 const iniMid = [
 	'b','d','g',
-	'p','t','k','q','ts','tʃ','tɬ',
+	'p','t','k','ts','tʃ','tɬ',
 	'pʼ','tʼ','kʼ','qʼ','tsʼ','tʃʼ','tɬʼ',
 	's','ʃ','χ',
-	'r','l','ɬ','m','n','w','j','ˀ',
+	'r','l','ɬ','m','n','w','j',
 	'ħ','h',
 	'ʁ','z','ʒ',
 ];
@@ -44,10 +46,9 @@ const end = [
 	's','ʃ','χ','dʒ',
 	'z','ʒ','tʃ',
 	'r','l','ɬ','m','n',
-	'w','j','ˀ','h','ˁ',
-	'ʃt','ʃk',
+	'w','j','ʔ','h','ʕ',
 	'st','sk',	
-	'rd','rt','rʃ','rs',
+	'rt','rs',
 ];
 
 const clust = [
@@ -64,8 +65,6 @@ const onset = [...new Set([...ini, ...iniMid])].sort((a, b) => a.localeCompare(b
 const medial = [...new Set([...mid, ...clust])].sort((a, b) => a.localeCompare(b));
 
 const coda = end.sort((a, b) => a.localeCompare(b));
-
-const rootEnd = [...new Set([...end, ...clust])].sort((a, b) => a.localeCompare(b));
 
 const vowels = [
 	'a','i','u',
@@ -85,10 +84,9 @@ const vowels = [
 */
 
 const regExpRules = [
-	/ʷu|u(ː)?w/,
+	/[ʷw]u|u(ː)?w/,
 	/ji|i(ː)?j/,
-	/[xɬħʔˀˁʢɣwjʼː]ʷ/,
-	/[ptsʃq]χʷ/,
+	/[xɬħʔʢwjː]ʷ/,
 	// for wordbuilding
 	/([ːʼɬɣ]).+\1/,
 	/ː[^aiu]{2,}/,
@@ -104,7 +102,7 @@ function reemplazarPares(str) {
 		'i': 'e',
 		'u': 'œ',
 		'wa': 'wɑ',
-		'wi': 'ɨ',	
+		'ʷi': 'ɨ',	
 				
 		//'wə': '','ja': 'jæ','ju': 'y','jə': 'ɥœ','əː': 'ɑɛ',		
 	};	
@@ -113,37 +111,3 @@ function reemplazarPares(str) {
   
 	return str.replace(expresion, (coincidencia) => pares[coincidencia]);
 }
-
-function adaptaVocales(str) {
-    // 1. Definimos las reglas por grupos de caracteres
-    const reglasGrupo1 = { 'a': 'o', 'e': 'i', 'o': 'u' }; // Reglas para el grupo [kXq]
-    const reglasGrupo2 = { 'a': 'e', 'e': 'a' };           // Ejemplo de reglas para otro grupo
-
-    // Mapeamos qué letras pertenecen a qué grupo
-    const grupos = {
-        'k': reglasGrupo1, 'X': reglasGrupo1, 'q': reglasGrupo1,
-        'p': reglasGrupo2, 'm': reglasGrupo2
-    };
-
-    // 2. Expresión regular adaptada:
-    // ([kXqpMm...]) -> Primer grupo: los caracteres disparadores
-    // ('?)          -> Segundo grupo: el apóstrofe opcional (el signo ? significa 0 o 1 ocurrencia)
-    // ([aeiouAEIOU])-> Tercer grupo: la vocal
-    const regex = /([kXqpMm])('?)([aeiouAEIOU])/g;
-
-    return str.replace(regex, (match, disparador, intercalado, vocalOriginal) => {
-        // Seleccionamos el grupo de reglas que le corresponde a la letra
-        const reglasDelGrupo = grupos[disparador];
-
-        // Si la letra no tiene grupo asignado, devolvemos el texto original
-        if (!reglasDelGrupo) return match;
-
-        // Buscamos el cambio correspondiente a la vocal en ese grupo
-        const cambio = reglasDelGrupo[vocalOriginal];
-
-        // Reconstruimos la cadena: Letra + Carácter Intercalado + (Vocal nueva o la original)
-        return disparador + intercalado + (cambio || vocalOriginal);
-    });
-}
-
-
