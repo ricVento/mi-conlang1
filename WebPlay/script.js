@@ -69,7 +69,7 @@ const coda = end.sort((a, b) => a.localeCompare(b));
 const vowels = [
 	'a','i','u',
 	'aː','iː','uː',
-	'ʷa','ʷi',
+	'wa','wi',
 ];
 
 /*
@@ -84,12 +84,14 @@ const vowels = [
 */
 
 const regExpRules = [
-	/[ʷw]u|u(ː)?w/,
-	/ji|i(ː)?j/,
-	/[xɬħʔʢwjː]ʷ/,
-	// for wordbuilding
+	//wu|u(ː)?w/,
+	/ji/,
+	/w[wu]/,
+	// for wordbuilding only
 	/([ːʼɬɣ]).+\1/,
 	/ː[^aiu]{2,}/,
+	/i(ː)?j/,
+	/u(ː)?w/,
 ];
 
 

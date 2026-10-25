@@ -65,10 +65,14 @@
 		// Arrays resultantes
 		const cvr_array = [];
 		
-		// Creamos CV
-		for(const o of onset){
+		const onsetX = ['~'];
+		const vowelsX = ['~'];
+		const medialX = coda;
+		
+		// Creamos Raiz
+		for(const o of onsetX){
 			for(const v of vowels){
-				for(const m of medial){
+				for(const m of medialX){
 					let cvr = o + v + m;
 					cvr_array.push(cvr);						
 				}
