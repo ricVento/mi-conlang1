@@ -20,6 +20,14 @@ const ini = [
 	'ʔ', // = ˀ
 	'dz','dʒ', // = z, ʒ
 	'st','sk','sp',
+	
+	// labializadas
+	'bɣʷ','dɣʷ','dzɣʷ',
+	'pχʷ','tχʷ','tsχʷ','qχʷ',
+	'ʢʷ',
+	'ʔʷ',
+	'dzʷ','dʒʷ',
+	'stʷ','skʷ','spʷ',
 ];
 
 const mid = [
@@ -28,6 +36,13 @@ const mid = [
 	'q', // = qχ
 	'ɣ', // = ʕ
 	'ˀ', // = ʔ
+	
+	// labializadas
+	'pːʷ','tːʷ','kːʷ','sːʷ','ʃːʷ','tsːʷ','tʃːʷ',
+	'χːʷ',
+	'qʷ',
+	'ɣʷ',
+	'ˀʷ',
 ];
 
 const iniMid = [
@@ -38,6 +53,15 @@ const iniMid = [
 	'r','l','ɬ','m','n','w','j',
 	'ħ','h',
 	'ʁ','z','ʒ',
+	
+	// labializadas
+	'bʷ','dʷ','gʷ',
+	'pʷ','tʷ','kʷ','tsʷ','tʃʷ','tɬʷ',
+	'pʼʷ','tʼʷ','kʼʷ','qʼʷ','tsʼʷ','tʃʼʷ','tɬʼʷ',
+	'sʷ','ʃʷ','χʷ',
+	'rʷ','lʷ','ɬʷ','mʷ','nʷ','ww','jʷ',
+	'ħʷ','hʷ',
+	'ʁʷ','zʷ','ʒʷ',
 ];
 
 const end = [
@@ -49,6 +73,16 @@ const end = [
 	'w','j','ʔ','h','ʕ',
 	'st','sk',	
 	'rt','rs',
+	
+	// labializadas
+	'pʷ','tʷ','kʷ','qʷ','tsʷ',
+	'bʷ','dʷ','gʷ','ʁʷ','dzʷ',
+	'sʷ','ʃʷ','χʷ','dʒʷ',
+	'zʷ','ʒʷ','tʃʷ',
+	'rʷ','lʷ','ɬʷ','mʷ','nʷ',
+	'ww','jʷ','ʔʷ','hʷ','ʕʷ',
+	'stʷ','skʷ',
+	'rtʷ','rsʷ',
 ];
 
 const clust = [
@@ -67,9 +101,9 @@ const medial = [...new Set([...mid, ...clust])].sort((a, b) => a.localeCompare(b
 const coda = end.sort((a, b) => a.localeCompare(b));
 
 const vowels = [
-	'a','i','u',
-	'aː','iː','uː',
-	'wa','wi',
+	//'a','i','u',
+	//'aː','iː','uː',
+	'a','aː','ə','əː',
 ];
 
 /*
@@ -84,29 +118,30 @@ const vowels = [
 */
 
 const regExpRules = [
-	//wu|u(ː)?w/,
+	/*
+	/[ʷw]u|u(ː)?[ʷw]/,
 	/ji/,
-	/w[wu]/,
+	/[ʷw].*[ʷwu]/,
+	/[ʔħʢ][ʷw]/,
 	// for wordbuilding only
-	/([ːʼɬɣ]).+\1/,
-	/ː[^aiu]{2,}/,
+	/([ːʼɬɣwʷ]).+\1/,
 	/i(ː)?j/,
-	/u(ː)?w/,
+	/u(ː)?[ʷw]/,	
+	*/
+
 ];
 
 
 function reemplazarPares(str) {
 	const pares = {
-		'aː': 'a',
-		'iː': 'i',
-		'uː': 'u',
-		'a': 'ɔ',
-		'i': 'e',
-		'u': 'œ',
-		'wa': 'wɑ',
-		'ʷi': 'ɨ',	
-				
-		//'wə': '','ja': 'jæ','ju': 'y','jə': 'ɥœ','əː': 'ɑɛ',		
+		'ʷəː': 'y',		
+		'ʷaː': 'we',		
+		'ʷə': 'œ',		
+		'ʷa': 'wo',	
+		'aː': 'e',
+		'əː': 'i',		
+		'a': 'a',
+		'ə': 'u',
 	};	
 	// Creamos una expresión regular que busque todas las claves del objeto: /e|sa/g
 	const expresion = new RegExp(Object.keys(pares).join('|'), 'g');

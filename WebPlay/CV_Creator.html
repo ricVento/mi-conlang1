@@ -71,8 +71,8 @@
             // Conserva la sílaba SOLO si NO activa ninguna regla prohibida en CV
 			const valid_cv_ = cv_array.filter(str => !regExpRules.some(regex => regex.test(str)));
 			
-			//const valid_cv = valid_cv_.map(reemplazarPares); // cambia ʷi => ɨ
-			const valid_cv = valid_cv_;
+			const valid_cv = valid_cv_.map(reemplazarPares); // cambia ʷi => ɨ
+			//const valid_cv = valid_cv_;
             
             if (valid_cv.length === 0) continue;
 

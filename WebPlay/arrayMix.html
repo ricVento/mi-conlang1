@@ -4,14 +4,46 @@
     <meta charset="UTF-8">
     <title>Combinar Todo</title>
 	<style>
+        :root {
+            /* Colores planos, uniformes y luminosos */
+            --bg-color: #f5f7fa;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --accent-color: #0052ff;
+            --border-color: #e2e8f0;
+        }	
+	
+        body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-color: var(--bg-color);
+          color: var(--text-color);
+          margin: 0;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          height: 100vh;
+          box-sizing: border-box;
+        }
+		
 		.contenedor-columnas {
 		  display: flex; /* Activa el diseño de columnas modernas */
 		  gap: 20px;     /* Espacio de separación entre las dos columnas */
+		  padding: 10px;
 		}
 
 		.columna {
 		  flex: 1;       /* Hace que ambas columnas ocupen el mismo ancho disponible */
+          padding: 12px 20px;
+          background-color: var(--card-bg);
+          border: 1px solid var(--border-color);
+          border-radius: 6px;
+          align-self: flex-start;
 		}	
+		
+		h2 {
+		  border-bottom: 1px solid var(--border-color);
+		  padding-bottom: 5px;
+		}
 	</style>
 	<script src="script.js"></script>
 </head>
@@ -30,33 +62,34 @@
 	</div>
 	
     <script>
-		
-        // Decide con cual arreglo se empareja arr1
-		const arr1 = onset;
-		const arr2 = vowels;
         
-        const invalido = [];
-        const resultado = [];
+        const arr1 = onset;
+        const arr2 = [...new Set([...mid, ...iniMid])].sort((a, b) => a.localeCompare(b));
+        const arr3 = [''];
 		
-		const regex1 = /ñ/;
+		const invalido = [];
+        const resultado = [];
 
         // Dos bucles para emparejar CADA elemento de arr1 con CADA elemento de arr2
         for (let i = 0; i < arr1.length; i++) {
             for (let j = 0; j < arr2.length; j++) {
-				let str = `${arr1[i]}${arr2[j]}`;
-				regex1.test(str) ? invalido.push(str) : resultado.push(str);
-            }
+				for (let k = 0; k < arr3.length; k++) {
+					let str = `${arr1[i]}...${arr2[j]}${arr3[k]}`;
+					const esInvalido = regExpRules.some(regex => regex.test(str));
+					esInvalido ? invalido.push(str) : resultado.push(str);
+				}
+			}
         }
 		
-		const arrTrans = resultado.map(reemplazarPares);
+		const itemAzar = resultado[Math.floor(Math.random() * resultado.length)];
 		
-		const allArray = [...new Set([...ini, ...mid, ...clust, ...coda])].sort((a, b) => a.localeCompare(b));
+		const wIni = end.map(str => `'${str}w'`);
 			
         // Mostrar en pantalla separados por un salto de línea
-        document.getElementById('col_1').innerHTML = arrTrans.length;
-        document.getElementById('arr_1').innerHTML = arrTrans.join('<br>');
-		document.getElementById('col_2').innerHTML = allArray.length;
-        document.getElementById('arr_2').innerHTML = allArray.join('<br>');
+        document.getElementById('col_1').innerHTML = resultado.length;
+        document.getElementById('arr_1').innerHTML = resultado.join('<br>');
+		document.getElementById('col_2').innerHTML = itemAzar;
+        document.getElementById('arr_2').innerHTML = 'silaba al azar';
     </script>
 
 </body>

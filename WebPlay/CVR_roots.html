@@ -67,10 +67,10 @@
 		
 		const onsetX = ['~'];
 		const vowelsX = ['~'];
-		const medialX = coda;
+		const medialX = ['~'];
 		
 		// Creamos Raiz
-		for(const o of onsetX){
+		for(const o of onset){
 			for(const v of vowels){
 				for(const m of medialX){
 					let cvr = o + v + m;
@@ -82,8 +82,8 @@
 		// Conserva la sílaba SOLO si NO activa ninguna regla prohibida
 		const valid_cv_array = cvr_array.filter(str => !regExpRules.some(regex => regex.test(str)));
 		
-		//const arrTrans = valid_cv_array.map(reemplazarPares);
-		const arrTrans = valid_cv_array;
+		const arrTrans = valid_cv_array.map(reemplazarPares);
+		//const arrTrans = valid_cv_array;
 		
 		titleCVR.innerHTML = `${valid_cv_array.length} CVR`;
 		outputCVR.innerHTML = arrTrans.join("<br>");
