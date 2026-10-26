@@ -42,7 +42,7 @@ const mid = [
 	'χːʷ',
 	'qʷ',
 	'ɣʷ',
-	'ˀʷ',
+	'ˀʷ',	
 ];
 
 const iniMid = [
@@ -118,8 +118,7 @@ const vowels = [
 */
 
 const regExpRules = [
-	/wʷ/,
-	/ww/
+	/[wʔʢ]ʷ/,
 ];
 
 	/*
