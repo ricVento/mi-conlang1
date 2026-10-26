@@ -1,0 +1,35 @@
+Estado y Control
+	git status
+		Muestra el estado actual de tu área de trabajo (archivos modificados o sin rastrear).
+	git branch
+		Lista todas las ramas locales. La rama con un asterisco * es la activa.
+
+Crear y Cambiar
+	git switch <nombre>
+		Cambia a una rama que ya existe.
+	git switch -c <nombre>
+		Crea una nueva rama y se cambia a ella automáticamente.
+	git branch -d <nombre>
+		Borra una rama local (solo si ya guardaste sus cambios en la principal).
+
+Guardar Progreso
+	git add .
+		Prepara todos los archivos modificados para el próximo commit.
+	git commit -m "mensaje"
+		Guarda tus cambios en el historial de la rama actual de forma definitiva.
+
+Borradores (Stash)
+	git stash
+		Guarda tus cambios temporales en un "casillero" y deja la rama limpia.
+	git stash pop
+		Recupera los cambios guardados temporalmente y los aplica de nuevo.
+
+Sincronizar GitHub
+	git pull
+		Trae y fusiona los últimos cambios desde GitHub a tu computadora.
+	git push -u origin <nombre>
+		Sube tu nueva rama a GitHub por primera vez y la conecta.
+	git push
+		Sube los nuevos commits a GitHub (para ramas que ya están conectadas).
+
+

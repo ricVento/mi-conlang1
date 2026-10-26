@@ -59,7 +59,7 @@ const iniMid = [
 	'pʷ','tʷ','kʷ','tsʷ','tʃʷ','tɬʷ',
 	'pʼʷ','tʼʷ','kʼʷ','qʼʷ','tsʼʷ','tʃʼʷ','tɬʼʷ',
 	'sʷ','ʃʷ','χʷ',
-	'rʷ','lʷ','ɬʷ','mʷ','nʷ','ww','jʷ',
+	'rʷ','lʷ','ɬʷ','mʷ','nʷ','wʷ','jʷ',
 	'ħʷ','hʷ',
 	'ʁʷ','zʷ','ʒʷ',
 ];
@@ -80,7 +80,7 @@ const end = [
 	'sʷ','ʃʷ','χʷ','dʒʷ',
 	'zʷ','ʒʷ','tʃʷ',
 	'rʷ','lʷ','ɬʷ','mʷ','nʷ',
-	'ww','jʷ','ʔʷ','hʷ','ʕʷ',
+	'wʷ','jʷ','ʔʷ','hʷ','ʕʷ',
 	'stʷ','skʷ',
 	'rtʷ','rsʷ',
 ];
@@ -103,7 +103,7 @@ const coda = end.sort((a, b) => a.localeCompare(b));
 const vowels = [
 	//'a','i','u',
 	//'aː','iː','uː',
-	'a','aː','ə','əː',
+	'a','aː','ə',
 ];
 
 /*
@@ -118,6 +118,10 @@ const vowels = [
 */
 
 const regExpRules = [
+	/wʷ/,
+	/ww/
+];
+
 	/*
 	/[ʷw]u|u(ː)?[ʷw]/,
 	/ji/,
@@ -129,20 +133,18 @@ const regExpRules = [
 	/u(ː)?[ʷw]/,	
 	*/
 
-];
-
-
+//'ʷəː': 'y',	
+//'əː': 'i',	
 function reemplazarPares(str) {
-	const pares = {
-		'ʷəː': 'y',		
+	const pares = {			
 		'ʷaː': 'we',		
 		'ʷə': 'œ',		
-		'ʷa': 'wo',	
-		'aː': 'e',
-		'əː': 'i',		
-		'a': 'a',
+		'ʷa': 'o',	
+		'aː': 'a',	
+		'a': 'e',
 		'ə': 'u',
 	};	
+	
 	// Creamos una expresión regular que busque todas las claves del objeto: /e|sa/g
 	const expresion = new RegExp(Object.keys(pares).join('|'), 'g');
   
