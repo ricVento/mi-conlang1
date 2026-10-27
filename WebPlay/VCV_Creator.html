@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor de Silabas VCV</title>
+	<style>
+        :root {
+            /* Colores planos, uniformes y luminosos */
+            --bg-color: #f5f7fa;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --accent-color: #0052ff;
+            --border-color: #e2e8f0;
+        }	
+	
+        body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-color: var(--bg-color);
+          color: var(--text-color);
+          margin: 0;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          height: 100vh;
+          box-sizing: border-box;
+        }
+
+		.contenedor-columnas {
+		  display: flex; 
+          flex-direction: column; /* Cambiado a columna para apilar los elementos verticalmente */
+		  gap: 20px;     
+		  padding: 10px;
+		}
+
+		.columna {
+          width: 100%;   /* Asegura que ocupe todo el ancho disponible */
+          box-sizing: border-box; /* Evita que el padding extra de la columna rompa el ancho */
+          padding: 12px 20px;
+          background-color: var(--card-bg);
+          border: 1px solid var(--border-color);
+          border-radius: 6px;
+          align-self: flex-start;
+		}	
+		
+		h2 {
+		  border-bottom: 1px solid var(--border-color);
+		  padding-bottom: 5px;
+		}		
+    </style>
+	<script src="script.js"></script>
+</head>
+<body>
+	<div class="contenedor-columnas">
+	  <div class="columna">
+		<div><h2 id="col_1"></h2></div>
+		<div id="arr_1"></div>
+	  </div>
+	</div>
+	<script>
+        // Referencias al DOM
+        const titleRoot = document.getElementById('col_1');
+        const outputRoot = document.getElementById('arr_1');
+	
+		// Arrays resultantes
+		const root_array = [];
+				
+		// Creamos ROOT
+		for(const a of vowels){
+			for(const b of onset){
+				for(const c of vowels){
+					let root = a + b + c;
+					root_array.push(root);
+				}
+			}
+		}
+		
+		// Conserva la sílaba SOLO si NO activa ninguna regla prohibida
+		const valid_root_array = root_array.filter(str => !regExpRules.some(regex => regex.test(str)));
+		
+		//const arrTrans = valid_root_array.map(reemplazarPares);
+		const arrTrans = valid_root_array;
+		
+		titleRoot.innerHTML = `${valid_root_array.length} VCV`;
+		outputRoot.innerHTML = arrTrans.join("<br>");
+		
+	</script>
+</body>
+</html>

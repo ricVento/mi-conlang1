@@ -6,63 +6,69 @@
     <title>Constructor de Silabas CVC</title>
 	<style>
         :root {
-            --bg-color: #1e1e1e;
-            --text-color: #d4d4d4;
+            /* Colores planos, uniformes y luminosos */
+            --bg-color: #f5f7fa;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --accent-color: #0052ff;
+            --border-color: #e2e8f0;
         }	
 	
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            box-sizing: border-box;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-color: var(--bg-color);
+          color: var(--text-color);
+          margin: 0;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          height: 100vh;
+          box-sizing: border-box;
         }
+
+		.contenedor-columnas {
+		  display: flex; 
+          flex-direction: column; /* Cambiado a columna para apilar los elementos verticalmente */
+		  gap: 20px;     
+		  padding: 10px;
+		}
+
+		.columna {
+          width: 100%;   /* Asegura que ocupe todo el ancho disponible */
+          box-sizing: border-box; /* Evita que el padding extra de la columna rompa el ancho */
+          padding: 12px 20px;
+          background-color: var(--card-bg);
+          border: 1px solid var(--border-color);
+          border-radius: 6px;
+          align-self: flex-start;
+		}	
 		
-        .title-cell {
-            padding: 10px 0;
-        }
-
-        .title-cell h2 {
-            font-size: 1.2rem;
-            color: #2f3640;
-        }
-
-
-
+		h2 {
+		  border-bottom: 1px solid var(--border-color);
+		  padding-bottom: 5px;
+		}		
     </style>
 	<script src="script.js"></script>
 </head>
 <body>
-    <div class="main-grid">
-        <!-- FILA SUPERIOR: TÍTULOS -->
-        <div class="title-cell">
-            <h2 id="cvcTitle">Sílaba CVC</h2>
-        </div>
-
-        <!-- FILA INFERIOR: DIVS (Reemplazando los textareas anteriores) -->
-        <div class="textarea-cell">
-            <div id="outputCVC" class="full-textarea">Contenido de la columna derecha...</div>
-        </div>
-    </div>
+	<div class="contenedor-columnas">
+	  <div class="columna">
+		<div><h2 id="col_1"></h2></div>
+		<div id="arr_1"></div>
+	  </div>
+	</div>
 	<script>
         // Referencias al DOM
-        const outputCVC = document.getElementById('outputCVC');
-        const titleCVC = document.getElementById('cvcTitle');
+        const titleCVC = document.getElementById('col_1');
+        const outputCVC = document.getElementById('arr_1');
 	
 		// Arrays resultantes
 		const cvc_array = [];
-		
-		const onsetx = [''];
-		const vowelx = ['a'];
-		
+				
 		// Creamos CVC
 		for(const o of onset){
 			for(const v of vowels){
-				for(const c of coda){
+				for(const c of onset){
 					let cvc = o + v + c;
 					cvc_array.push(cvc);				
 				}			
@@ -77,7 +83,6 @@
 		
 		titleCVC.innerHTML = `${valid_cvc_array.length} CVC`;
 		outputCVC.innerHTML = arrTrans.join("<br>");
-		
 	</script>
 </body>
 </html>

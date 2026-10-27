@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor de Silabas ~VC</title>
+	<style>
+        :root {
+            /* Colores planos, uniformes y luminosos */
+            --bg-color: #f5f7fa;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --accent-color: #0052ff;
+            --border-color: #e2e8f0;
+        }	
+	
+        body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-color: var(--bg-color);
+          color: var(--text-color);
+          margin: 0;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          height: 100vh;
+          box-sizing: border-box;
+        }
+
+		.contenedor-columnas {
+		  display: flex; 
+          flex-direction: column; /* Cambiado a columna para apilar los elementos verticalmente */
+		  gap: 20px;     
+		  padding: 10px;
+		}
+
+		.columna {
+          width: 100%;   /* Asegura que ocupe todo el ancho disponible */
+          box-sizing: border-box; /* Evita que el padding extra de la columna rompa el ancho */
+          padding: 12px 20px;
+          background-color: var(--card-bg);
+          border: 1px solid var(--border-color);
+          border-radius: 6px;
+          align-self: flex-start;
+		}	
+		
+		h2 {
+		  border-bottom: 1px solid var(--border-color);
+		  padding-bottom: 5px;
+		}		
+    </style>
+	<script src="script.js"></script>
+</head>
+<body>
+	<div class="contenedor-columnas">
+	  <div class="columna">
+		<div><h2 id="col_1"></h2></div>
+		<div id="arr_1"></div>
+	  </div>
+	</div>
+	<script>
+        // Referencias al DOM
+        const titleVC = document.getElementById('col_1');
+        const outputVC = document.getElementById('arr_1');
+	
+		// Arrays resultantes
+		const vc_array = [];
+				
+		// Creamos VC
+		for(const v of vowels){
+			for(const o of onset){
+				let vc = v + o;
+				vc_array.push(vc);				
+			}			
+		}
+		
+		// Conserva la sílaba SOLO si NO activa ninguna regla prohibida
+		const valid_vc_array = vc_array.filter(str => !regExpRules.some(regex => regex.test(str)));
+		
+		//const arrTrans = valid_vc_array.map(reemplazarPares);
+		const arrTrans = valid_vc_array;
+		
+		titleVC.innerHTML = `${valid_vc_array.length} ~VC`;
+		outputVC.innerHTML = arrTrans.join("<br>");
+	</script>
+</body>
+</html>

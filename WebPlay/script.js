@@ -13,76 +13,40 @@ function transcribir_IPA(cadenaASCII) {
 }
 
 // Variables para Combinatoria
-const ini = [
-	'bɣ','dɣ','dzɣ',
-	'pχ','tχ','tsχ','qχ',
-	'ʢ', // = ʕ	
-	'ʔ', // = ˀ
-	'dz','dʒ', // = z, ʒ
-	'st','sk','sp',
+const cons = [
+	'bɣ',
+	'b','p','pʼ','pː','pχ',	
 	
-	// labializadas
-	'bɣʷ','dɣʷ','dzɣʷ',
-	'pχʷ','tχʷ','tsχʷ','qχʷ',
-	'ʢʷ',
-	'ʔʷ',
-	'dzʷ','dʒʷ',
-	'stʷ','skʷ','spʷ',
-];
-
-const mid = [
-	'pː','tː','kː','sː','ʃː','tsː','tʃː',
-	'χː', // = q:
-	'q', // = qχ
-	'ɣ', // = ʕ
-	'ˀ', // = ʔ
+	'dɣ',
+	'd','t','tʼ','tː','tχ',	
 	
-	// labializadas
-	'pːʷ','tːʷ','kːʷ','sːʷ','ʃːʷ','tsːʷ','tʃːʷ',
-	'χːʷ',
-	'qʷ',
-	'ɣʷ',
-	'ˀʷ',	
-];
-
-const iniMid = [
-	'b','d','g',
-	'p','t','k','ts','tʃ','tɬ',
-	'pʼ','tʼ','kʼ','qʼ','tsʼ','tʃʼ','tɬʼ',
-	's','ʃ','χ',
-	'r','l','ɬ','m','n','w','j',
-	'ħ','h',
-	'ʁ','z','ʒ',
+	'g','k','kʼ','kː',
 	
-	// labializadas
-	'bʷ','dʷ','gʷ',
-	'pʷ','tʷ','kʷ','tsʷ','tʃʷ','tɬʷ',
-	'pʼʷ','tʼʷ','kʼʷ','qʼʷ','tsʼʷ','tʃʼʷ','tɬʼʷ',
-	'sʷ','ʃʷ','χʷ',
-	'rʷ','lʷ','ɬʷ','mʷ','nʷ','wʷ','jʷ',
-	'ħʷ','hʷ',
-	'ʁʷ','zʷ','ʒʷ',
-];
-
-const end = [
-	'p','t','k','q','ts',
-	'b','d','g','ʁ','dz',
-	's','ʃ','χ','dʒ',
-	'z','ʒ','tʃ',
-	'r','l','ɬ','m','n',
-	'w','j','ʔ','h','ʕ',
-	'st','sk',	
-	'rt','rs',
+	'ʁ','χ','ɣ',
+	'q','qʼ','qː','qχ',
+	'qχʼ',
 	
-	// labializadas
-	'pʷ','tʷ','kʷ','qʷ','tsʷ',
-	'bʷ','dʷ','gʷ','ʁʷ','dzʷ',
-	'sʷ','ʃʷ','χʷ','dʒʷ',
-	'zʷ','ʒʷ','tʃʷ',
-	'rʷ','lʷ','ɬʷ','mʷ','nʷ',
-	'wʷ','jʷ','ʔʷ','hʷ','ʕʷ',
-	'stʷ','skʷ',
-	'rtʷ','rsʷ',
+	'z','s','sː','sχ',
+	
+	'ʒ','ʃ','ʃː','zɣ',	
+	
+	'dz','ts','tsʼ','tsː','tsχ',
+	
+	'dʒ','tʃ','tʃʼ','tʃː',		
+	
+	'tɬ','tɬʼ',	
+	
+	'h','ħ',	
+	
+	'r','l','ɬ',
+	'm','n',	
+	
+	'w','j',	
+	
+	'rs','rt',	
+	'st','sk',
+	
+	'ʔ','ʢ',
 ];
 
 const clust = [
@@ -94,31 +58,37 @@ const clust = [
 	'χb','χd','χk','χkʼ','χm','χn','χp','χpʼ','χs','χʃ','χt','χts','χtsʼ','χtʃ','χtʃʼ','χtʼ',
 ];
 
-const onset = [...new Set([...ini, ...iniMid])].sort((a, b) => a.localeCompare(b));
+const labCons = cons.map(str => `${str}ʷ`);
 
-const medial = [...new Set([...mid, ...clust])].sort((a, b) => a.localeCompare(b));
+const onset = [...new Set([...cons, ...labCons])].sort((a, b) => a.localeCompare(b));
 
-const coda = end.sort((a, b) => a.localeCompare(b));
+const medial = [...new Set([...cons, ...clust])].sort((a, b) => a.localeCompare(b));
+
+const coda = cons.sort((a, b) => a.localeCompare(b));
 
 const vowels = [
-	//'a','i','u',
-	//'aː','iː','uː',
-	'a','aː','ə',
+	'aː','a','ə',
+	'aj','əj',
+	'aw','əw',
 ];
 
-/*
-	S	LH	HL
-	bɑ	bwɔ	bʌə
-	bæ	bjɛ	bea
-	bɪ	biː	bɪə
-	bʊ	buː	bʊə
-	by	bɥœ	byə
-
-	ə = y = œ
-*/
-
 const regExpRules = [
-	/[wʔʢ]ʷ/,
+	// restricciones generales
+	/[wʔʢː]ʷ/,
+	/jj/,
+	
+	// iniciales prohibidas
+	/^r[st]/,
+	/^ɣ/,
+	/^(t)?[kptqsʃ]ː/,
+	/^qʼ(ʷ)?[aə]/,
+	/^q(ʷ)?[aə]/,
+	
+	// finales prohibidas
+	/[ːɣj](ʷ)?$/,
+	/qχ(ʼ)?$/,
+	/[pstq]χ(ʷ)?$/,
+	/ʼʷ$/,
 ];
 
 	/*
@@ -132,13 +102,15 @@ const regExpRules = [
 	/u(ː)?[ʷw]/,	
 	*/
 
-//'ʷəː': 'y',	
-//'əː': 'i',	
 function reemplazarPares(str) {
 	const pares = {			
 		'ʷaː': 'we',		
 		'ʷə': 'œ',		
-		'ʷa': 'o',	
+		'ʷa': 'o',
+		'aj': 'e',
+		'aw': 'o',
+		'əj': 'i',
+		'əw': 'u',		
 		'aː': 'a',	
 		'a': 'e',
 		'ə': 'u',
@@ -149,3 +121,22 @@ function reemplazarPares(str) {
   
 	return str.replace(expresion, (coincidencia) => pares[coincidencia]);
 }
+
+/*
+
+	aː
+	a
+	ə
+	aj
+	əj
+	aw
+	əw
+	ʷaː
+	ʷa
+	ʷə
+	ʷaj
+	ʷəj
+	ʷaw
+	ʷəw
+
+*/
