@@ -10,31 +10,33 @@ echo ===================================================
 echo.
 
 :: REEMPLAZA ESTA RUTA por la carpeta exacta donde quieras el reporte:
-set "LOG_PATH=C:\userBackup\registro_copia.txt"
+set "MY_FOLDER=C:\oldBackup"
+set "MY_BACK=C:\newBackup"
+set "LOG_PATH=%MY_FOLDER%\registro_copia.txt"
 
-:: --- CARPETA 1: ALL PDF ---
-echo [1/6] Copiando carpeta "ALL PDF"...
-robocopy "%USERPROFILE%\OneDrive\ALL PDF" "C:\userBackup\ALL PDF" /E /MT:32 /R:3 /W:2 /V /TS /FP /LOG+:"%LOG_PATH%" /TEE
+:: --- CARPETA 1: ALL_PDF ---
+echo [1/6] Copiando carpeta "ALL_PDF"...
+robocopy "%MY_FOLDER%\ALL_PDF" "%MY_BACK%\ALL_PDF" /E /MT:32 /R:3 /W:2 /V /TS /FP /LOG+:"%LOG_PATH%" /TEE
 
-:: --- CARPETA 2: Anki Fonts and Files ---
-echo [2/6] Copiando carpeta "Anki Fonts and Files"...
-robocopy "%USERPROFILE%\OneDrive\Anki Fonts and Files" "C:\userBackup\Anki Fonts and Files" /E /MT:32 /R:3 /W:2 /V /TS /FP /LOG+:"%LOG_PATH%" /TEE
+:: --- CARPETA 2: ANKI ---
+echo [2/6] Copiando carpeta "ANKI"...
+robocopy "%MY_FOLDER%\ANKI" "%MY_BACK%\ANKI" /E /MT:32 /R:3 /W:2 /V /TS /FP /LOG+:"%LOG_PATH%" /TEE
 
-:: --- CARPETA 3: Otros documentos ---
-echo [3/6] Copiando carpeta "Otros documentos"...
-robocopy "%USERPROFILE%\OneDrive\Otros documentos" "C:\userBackup\Otros documentos" /E /MT:32 /R:3 /W:2 /V /TS /FP /LOG+:"%LOG_PATH%" /TEE
+:: --- CARPETA 3: DOCS ---
+echo [3/6] Copiando carpeta "DOCS"...
+robocopy "%MY_FOLDER%\DOCS" "%MY_BACK%\DOCS" /E /MT:32 /R:3 /W:2 /V /TS /FP /LOG+:"%LOG_PATH%" /TEE
 
-:: --- CARPETA 4: MyCONLANGS ---
-echo [4/6] Copiando carpeta "MyCONLANGS"...
-robocopy "%USERPROFILE%\OneDrive\MyCONLANGS" "C:\userBackup\MyCONLANGS" /E /MT:32 /R:3 /W:2 /V /TS /FP /LOG+:"%LOG_PATH%" /TEE
+:: --- CARPETA 4: CONLANGS ---
+echo [4/6] Copiando carpeta "CONLANGS"...
+robocopy "%MY_FOLDER%\CONLANGS" "%MY_BACK%\CONLANGS" /E /MT:32 /R:3 /W:2 /V /TS /FP /LOG+:"%LOG_PATH%" /TEE
 
-:: --- CARPETA 5: Escritorio\Ivette Colegio Medico ---
-echo [5/6] Copiando carpeta "Ivette Colegio Medico"...
-robocopy "%USERPROFILE%\OneDrive\Escritorio\Ivette Colegio Medico" "C:\userBackup\Ivette Colegio Medico" /E /MT:32 /R:3 /W:2 /V /TS /FP /LOG+:"%LOG_PATH%" /TEE
+:: --- CARPETA 5: IVETTE ---
+echo [5/6] Copiando carpeta "IVETTE"...
+robocopy "%MY_FOLDER%\IVETTE" "%MY_BACK%\IVETTE" /E /MT:32 /R:3 /W:2 /V /TS /FP /LOG+:"%LOG_PATH%" /TEE
 
 :: --- CARPETA 6: UNIVERSIDAD ---
-echo [5/6] Copiando carpeta "UNIVERSIDAD"...
-robocopy "%USERPROFILE%\OneDrive\UNIVERSIDAD" "C:\userBackup\UNIVERSIDAD" /E /MT:32 /R:3 /W:2 /V /TS /FP /LOG+:"%LOG_PATH%" /TEE
+echo [6/6] Copiando carpeta "UNIVERSIDAD"...
+robocopy "%MY_FOLDER%\UNIVERSIDAD" "%MY_BACK%\UNIVERSIDAD" /E /MT:32 /R:3 /W:2 /V /TS /FP /LOG+:"%LOG_PATH%" /TEE
 
 echo.
 echo ===================================================

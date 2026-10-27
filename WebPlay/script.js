@@ -75,7 +75,7 @@ const vowels = [
 const regExpRules = [
 	// restricciones generales
 	/[wʔʢː]ʷ/,
-	/jj/,
+	/jj|ww/,
 	
 	// iniciales prohibidas
 	/^r[st]/,
@@ -85,10 +85,13 @@ const regExpRules = [
 	/^q(ʷ)?[aə]/,
 	
 	// finales prohibidas
-	/[ːɣj](ʷ)?$/,
+	/[ɣhʒʢ](ʷ)?$/,
 	/qχ(ʼ)?$/,
 	/[pstq]χ(ʷ)?$/,
 	/ʼʷ$/,
+	/ɬʷ$/,
+	/[pqɬ]ʼ$/,
+	/dz(ʷ)?$/,
 ];
 
 	/*
