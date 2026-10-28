@@ -21,23 +21,35 @@ const cons = [
 	'ʁ','χ','ɣ',
 	'z','s','sː',
 	'ʒ','ʃ','ʃː',
-	'ʑ','ɕ','ɕː',
 	'dz','ts','tsʼ','tsː',
 	'dʒ','tʃ','tʃʼ','tʃː',	
-	'dʑ','tɕ','tɕʼ','tɕː',
+	//'ʑ','ɕ','ɕː',	
+	//'dʑ','tɕ','tɕʼ','tɕː',
 	'tɬ','tɬʼ',	
 	'h','ħ',
 	'r','l','ɬ',
 	'm','n',
 	'w','j',	
-	
 	'ʔ','ʢ',	
 	
 	'rs','rt',	
 	'st','sk',
 	'bɣ','dɣ',
 	'pχ','tχ',		
-	'sχ','tsχ',	
+	'sχ','tsχ',
+];
+
+const labCons = [
+	'dʷ','tʷ','tʼʷ',
+	'gʷ','kʷ','kʼʷ',
+	'qʷ','qʼʷ',	
+	'ʁʷ','χʷ',
+	'zʷ','ʒʷ',
+	'sʷ','ʃʷ',
+	'tsʷ','tsʼʷ',
+	'tʃʷ','tʃʼʷ',
+	'hʷ','ħʷ', // v f
+
 ];
 
 const clust = [
@@ -49,7 +61,7 @@ const clust = [
 	'χb','χd','χk','χkʼ','χm','χn','χp','χpʼ','χs','χʃ','χt','χts','χtsʼ','χtʃ','χtʃʼ','χtʼ',
 ];
 
-const labCons = cons.map(str => `${str}ʷ`);
+//const labCons = cons.map(str => `${str}ʷ`);
 
 const onset = [...new Set([...cons, ...labCons])];
 
@@ -59,13 +71,12 @@ const coda = cons.sort((a, b) => a.localeCompare(b));
 
 const vowels = [
 	'a','ə',
-	'aj','əj',
-	'aw','əw',
+/*	'aj','əj',
+	'aw','əw',	*/
 ];
 
 const regExpRules = [
 	// restricciones generales
-	/[wʔʢ]ʷ/,
 	/jj|ww/,
 	
 	// iniciales prohibidas
@@ -74,13 +85,11 @@ const regExpRules = [
 	/^(t)?[kptqsʃɕʑ]ː/,
 	
 	// finales prohibidas
-	/[ːɣʢ]$/,
+	/[ʼːɣhʢ](ʷ)?$/,
+	/ʼʷ$/,
+	/tɬ(ʷ)?$/,
 	/[pts]χ(ʷ)?$/,
-	/[ʼːɣ]ʷ$/,
-	/(d)?[ʒʑ]$/,
-	/dz$/,
-	/ʼ$/,
-	/tɬ$/,
+	/d[zʒ](ʷ)?$/,
 	
 	// mediales prohibidas
 ];
