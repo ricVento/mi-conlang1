@@ -33,6 +33,9 @@ MinimizarRAM() {
 
 ::ñx::χʼ
 
+::ñs::ɕ
+::ñz::ʑ
+
 ::,f::ˁ
 ::,,::ː
 ::,a::ɑ
@@ -58,14 +61,14 @@ MinimizarRAM() {
 ::,w::ʢ
 ::,j::ʼ
 
-
 #Hotstring * C ? C1
 
-; ::,G::Ğ
-
+::,G::Ğ
+::,S::ʂ
+::,Z::ʐ
 
 RAlt & e::SendText("ə")
 
 ; åÅ øØ ðÐ þÞ
 ; ,d ,v ,b ,n ,m
-; ñr ñt ñp ñs ñd ñk ñl ñz ñv ñb ñn ñm
+; ñr ñt ñp ñs ñd ñk ñl ñz ñv ñb ñn ñm 

@@ -14,39 +14,30 @@ function transcribir_IPA(cadenaASCII) {
 
 // Variables para Combinatoria
 const cons = [
-	'bɣ',
-	'b','p','pʼ','pː','pχ',	
-	
-	'dɣ',
-	'd','t','tʼ','tː','tχ',	
-	
+	'b','p','pʼ','pː',
+	'd','t','tʼ','tː',
 	'g','k','kʼ','kː',
-	
+	'q','qʼ','qː',	
 	'ʁ','χ','ɣ',
-	'q','qʼ','qː','qχ',
-	'qχʼ',
-	
-	'z','s','sː','sχ',
-	
-	'ʒ','ʃ','ʃː','zɣ',	
-	
-	'dz','ts','tsʼ','tsː','tsχ',
-	
-	'dʒ','tʃ','tʃʼ','tʃː',		
-	
+	'z','s','sː',
+	'ʒ','ʃ','ʃː',
+	'ʑ','ɕ','ɕː',
+	'dz','ts','tsʼ','tsː',
+	'dʒ','tʃ','tʃʼ','tʃː',	
+	'dʑ','tɕ','tɕʼ','tɕː',
 	'tɬ','tɬʼ',	
-	
-	'h','ħ',	
-	
+	'h','ħ',
 	'r','l','ɬ',
-	'm','n',	
-	
+	'm','n',
 	'w','j',	
+	
+	'ʔ','ʢ',	
 	
 	'rs','rt',	
 	'st','sk',
-	
-	'ʔ','ʢ',
+	'bɣ','dɣ',
+	'pχ','tχ',		
+	'sχ','tsχ',	
 ];
 
 const clust = [
@@ -60,38 +51,38 @@ const clust = [
 
 const labCons = cons.map(str => `${str}ʷ`);
 
-const onset = [...new Set([...cons, ...labCons])].sort((a, b) => a.localeCompare(b));
+const onset = [...new Set([...cons, ...labCons])];
 
 const medial = [...new Set([...cons, ...clust])].sort((a, b) => a.localeCompare(b));
 
 const coda = cons.sort((a, b) => a.localeCompare(b));
 
 const vowels = [
-	'aː','a','ə',
+	'a','ə',
 	'aj','əj',
 	'aw','əw',
 ];
 
 const regExpRules = [
 	// restricciones generales
-	/[wʔʢː]ʷ/,
+	/[wʔʢ]ʷ/,
 	/jj|ww/,
 	
 	// iniciales prohibidas
 	/^r[st]/,
 	/^ɣ/,
-	/^(t)?[kptqsʃ]ː/,
-	/^qʼ(ʷ)?[aə]/,
-	/^q(ʷ)?[aə]/,
+	/^(t)?[kptqsʃɕʑ]ː/,
 	
 	// finales prohibidas
-	/[ɣhʒʢ](ʷ)?$/,
-	/qχ(ʼ)?$/,
-	/[pstq]χ(ʷ)?$/,
-	/ʼʷ$/,
-	/ɬʷ$/,
-	/[pqɬ]ʼ$/,
-	/dz(ʷ)?$/,
+	/[ːɣʢ]$/,
+	/[pts]χ(ʷ)?$/,
+	/[ʼːɣ]ʷ$/,
+	/(d)?[ʒʑ]$/,
+	/dz$/,
+	/ʼ$/,
+	/tɬ$/,
+	
+	// mediales prohibidas
 ];
 
 	/*
