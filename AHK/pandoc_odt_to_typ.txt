@@ -1,0 +1,20 @@
+// DEFINICIÓN DEL COMODÍN (Cambia lo de adentro cuando quieras)
+#let c(texto) = [
+  #underline(texto) // Por ahora será subrayado
+]
+
+// EL TEXTO EN .odt
+El marco de trabajo [[Scrum]] es ideal para proyectos ágiles. 
+Ayer implementamos el módulo de [[Autenticación]] en el servidor.
+
+// APLICO pandoc
+pandoc mi_documento.odt -o documento.typ
+
+// EJECUTO REGEXP
+1. Buscar: \[\[(.*?)\]\]
+2. Reemplazar por: #c[$1]
+
+// LISTO PARA .typ
+El marco de trabajo #c[Scrum] es ideal para proyectos ágiles. 
+Ayer implementamos el módulo de #c[Autenticación] en el servidor.
+
