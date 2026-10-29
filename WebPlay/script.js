@@ -13,45 +13,41 @@ function transcribir_IPA(cadenaASCII) {
 }
 
 // Variables para Combinatoria
-const cons = [
-	'b','p','pʼ','pː',
-	'd','t','tʼ','tː',
+const ini = [
+	'b','p','pʼ',
+	'd','t','tʼ',
+	'dʷ','tʷ','tʼʷ',
 	'g','k','kʼ','kː',
+	'gʷ','kʷ','kʼʷ',	
 	'q','qʼ','qː',	
+	'qʷ','qʼʷ',	
 	'ʁ','χ','ɣ',
+	'ʁʷ','χʷ',	
 	'z','s','sː',
+	'zʷ','sʷ',
 	'ʒ','ʃ','ʃː',
+	'ʒʷ','ʃʷ',		
 	'dz','ts','tsʼ','tsː',
+	'tsʷ','tsʼʷ',	
 	'dʒ','tʃ','tʃʼ','tʃː',	
-	//'ʑ','ɕ','ɕː',	
-	//'dʑ','tɕ','tɕʼ','tɕː',
+	'tʃʷ','tʃʼʷ',	
 	'tɬ','tɬʼ',	
 	'h','ħ',
+	'hʷ','ħʷ', // v f	
 	'r','l','ɬ',
 	'm','n',
-	'w','j',	
-	'ʔ','ʢ',	
-	
+	'w','j',
+	'ʔ','ʢ',
 	'rs','rt',	
 	'st','sk',
 	'bɣ','dɣ',
-	'pχ','tχ',		
+	'pχ','tχ',
 	'sχ','tsχ',
 ];
 
-const labCons = [
-	'dʷ','tʷ','tʼʷ',
-	'gʷ','kʷ','kʼʷ',
-	'qʷ','qʼʷ',	
-	'ʁʷ','χʷ',
-	'zʷ','ʒʷ',
-	'sʷ','ʃʷ',
-	'tsʷ','tsʼʷ',
-	'tʃʷ','tʃʼʷ',
-	'hʷ','ħʷ', // v f
+const mid = ['pː','tː',];
 
-];
-
+/*
 const clust = [
 	'lb','ld','lg','lj','lk','lkʼ','lm','ln','lp','lpʼ','lq','lqʼ','ls','lʃ','lt','lts','ltsʼ','ltʃ','ltʃʼ','ltʼ','lz','lʒ','lχ',
 	'nb','nd','ng','nj','nk','nkʼ','nɬ','np','npʼ','nq','nqʼ','ns','nʃ','nt','nts','ntsʼ','ntʃ','ntʃʼ','ntʼ','nz','nʒ','nχ',
@@ -60,14 +56,15 @@ const clust = [
 	'ʃb','ʃd','ʃg','ʃk','ʃkʼ','ʃl','ʃm','ʃn','ʃp','ʃpʼ','ʃq','ʃqʼ','ʃt','ʃtʼ','ʃχ',
 	'χb','χd','χk','χkʼ','χm','χn','χp','χpʼ','χs','χʃ','χt','χts','χtsʼ','χtʃ','χtʃʼ','χtʼ',
 ];
+*/
+//const arr = cons.map(str => `${str}ʷ`);
+//const arr = [...new Set([...ini, ...clust])].sort((a, b) => a.localeCompare(b));
 
-//const labCons = cons.map(str => `${str}ʷ`);
+const onset = ini.sort((a, b) => a.localeCompare(b));
 
-const onset = [...new Set([...cons, ...labCons])];
+const medial = ini.sort((a, b) => a.localeCompare(b));
 
-const medial = [...new Set([...cons, ...clust])].sort((a, b) => a.localeCompare(b));
-
-const coda = cons.sort((a, b) => a.localeCompare(b));
+const coda = ini.sort((a, b) => a.localeCompare(b));
 
 const vowels = [
 	'a','ə',
@@ -141,5 +138,8 @@ function reemplazarPares(str) {
 	ʷəj
 	ʷaw
 	ʷəw
+
+	'ʑ','ɕ','ɕː',	
+	'dʑ','tɕ','tɕʼ','tɕː',
 
 */
