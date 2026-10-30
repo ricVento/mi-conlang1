@@ -21,7 +21,8 @@ Los pronombres de 1#super[era] y 2#super[da] persona exhiben una alineación neu
 
 #example[
  - zin zi-va-zina umur dusman sa-vu-yu
- - 1 1-2-INST lifetime enemy be-F-FUT.F
+ - 1 1-2-#ins lifetime enemy be-#f\-#fut.#f
  Je serai ton ennemie pour la vie
 ]
 
+#print-abbreviations()

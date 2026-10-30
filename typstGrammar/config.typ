@@ -1,6 +1,8 @@
 // Importar el paquete oficial eggs para lingüística
-#import "@preview/eggs:0.9.0": *
-#import abbreviations: pl, ins
+#import "@preview/eggs:0.10.0": *
+#import abbreviations: m, f, sg, pl, ins, pst, fut
+
+#let aor = abbreviation("aor", "aorist")
 
 // Configuración estética de la gramática
 #let configuracion_gramatica(doc) = {

@@ -13,7 +13,7 @@ El paquete `eggs` utiliza viñetas (`-`) para las glosas dentro de la función `
 
 #example[
   - Gato-s los egg-s comer-on.
-  - cat-NOM DET.PL egg-PL eat-3PL.PAST
+  - cat-NOM DET.#pl egg-#pl eat-3#pl.#pst
   'Los gatos comieron los huevos.' #ex-label(<gl>)
 ]
 
@@ -25,11 +25,11 @@ Unas glosas con dos subejemplos
 
 #example[
  + - Gato-s los egg-s comer-on.
-   - cat-NOM DET.PL egg-PL eat-3PL.PAST
+   - cat-NOM DET.#pl egg-#pl eat-3PL.PAST
    'Los gatos comieron los huevos.' #ex-label(<gl>)
    #v(0.25cm)
  + - Perro el hueso come
-   - perro-sg det-PL.SG hueso-ABS comer-AOR
+   - perro-#sg det-#pl.#sg hueso-ABS comer-#aor
    'El perro come hueso' #ex-label(<gl2>)
 ]
 
