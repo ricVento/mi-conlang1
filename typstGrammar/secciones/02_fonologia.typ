@@ -9,24 +9,40 @@ La evidencia empírica de esta reducción es la ausencia absoluta de pares míni
 A pesar de las ventajas del modelo analítico, en las glosas se mantendrá la transcripción fonética. De este modo se facilita el cotejo con los audios de los hablantes nativos y se evita introducir una abstracción teórica que complique innecesariamente el diseño de una ortografía práctica para la comunidad.
 
 == Ejemplos Interlineales con Eggs
-El paquete `eggs` utiliza viñetas (`-`) para las glosas dentro de la función `#example`:
+El paquete `eggs` utiliza viñetas (`-`) para las glosas dentro de la función `#example`. He aqui algunos ejemplos prácticos.
 
 #example[
- +  - Gato-s  los  egg-s  comer-on.
-    - cat-NOM  DET.PL  egg-PL  eat-3PL.PAST
-    'Los gatos comieron los huevos.' #ex-label(<gl>)
-    #v(0.25cm)
- +  - Perro  el  hueso come
-    - perro-sg  det-PL.SG  hueso-ABS  comer-AOR
-    'El perro come hueso' #ex-label(<gl2>)
+  - Gato-s los egg-s comer-on.
+  - cat-NOM DET.PL egg-PL eat-3PL.PAST
+  'Los gatos comieron los huevos.' #ex-label(<gl>)
 ]
+
+Se deben usar dos espacios antes de `__-` en ambas glosas para que separe las palabras; entre las palabras se puede usar espacio simple.
+
+La traduccion puede ir entre `'` o `"`. Las primeras se convieren en `"` y las segundas en `«`. Tambien pueden omitirse del todo. Por comodidad y coherecia con el resto del texto se pueden preceder de dos espacios para mantener la sangría pero no es necesario.
+
+Unas glosas con dos subejemplos
+
+#example[
+ + - Gato-s los egg-s comer-on.
+   - cat-NOM DET.PL egg-PL eat-3PL.PAST
+   'Los gatos comieron los huevos.' #ex-label(<gl>)
+   #v(0.25cm)
+ + - Perro el hueso come
+   - perro-sg det-PL.SG hueso-ABS comer-AOR
+   'El perro come hueso' #ex-label(<gl2>)
+]
+
+Si se quieren usar subejemplos no son necesarios los espacios dobles antes de `__-`, basta con usar `_+_-_texto` en la primera linea, luego la segunda sí exige mantener la linea de sangría.
 
 == Notas sobre morfología
 Además, puedes acceder a los ejemplos indonesio #ex-ref(<gl>) y bahasa @gl2 son referencias válidas.
 
+Este ejemplo no lo entiendo bien...
+
 #example(auto-subexamples: false, auto-glosses: false)[
-  + This is a proper numbered item
-  - And this is a proper bullet item
+ + This is a proper numbered item
+ - And this is a proper bullet item
   #subexample[But this is a subexample]
   #gloss[i gloss-y][and gloss-#pl]
 ]
