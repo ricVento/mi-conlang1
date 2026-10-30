@@ -1,7 +1,7 @@
 @echo off
 :: Cambiar el código de página a UTF-8 para evitar problemas con tildes o eñes
 :: forma abreviada a continuación: 
-:: --> robocopy "C:\Users\ricve\OneDrive\ALL PDF" "D:userBackup\ALL PDF" /E /MT:32 /R:3 /W:2 /V /TS /FP
+:: --> robocopy "C:\...\OneDrive\ALL PDF" "D:userBackup\ALL PDF" /E /MT:32 /R:3 /W:2 /V /TS /FP
 chcp 65001 > nul
 
 echo ===================================================
