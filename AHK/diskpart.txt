@@ -1,0 +1,17 @@
+:: para formatear HDext
+
+diskpart
+list disk
+select disk 1
+detail disk
+clean
+convert gpt
+create partition primary
+format fs=ntfs quick
+assign
+
+:: en PS para encontrar pdf > 100 MB
+Get-ChildItem -Path "C:\newBackup" -Filter "*.pdf" -Recurse -File -ErrorAction SilentlyContinue | Where-Object { $_.Length -gt 100MB } | Select-Object FullName, @{Name="MB";Expression={[Math]::Round($_.Length / 1MB, 2)}} | Out-GridView
+
+:: en PS para encontrar un arch que tenga un str en especial `abc`
+Get-ChildItem -Path "C:\newBackup" -Filter "*abc*" -Recurse -File -ErrorAction SilentlyContinue | Select-Object FullName, @{Name="MB";Expression={[Math]::Round($_.Length / 1MB, 2)}} | Out-GridView

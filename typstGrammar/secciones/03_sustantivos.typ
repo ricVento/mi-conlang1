@@ -122,9 +122,9 @@ A continuación, un ejemplo completo de la declinación de los casos espaciales 
 == Casos Abstractos
 Existen ocho casos gramaticales básicos. No indican posición ni direccion; indican función sintactica argumental de la accion verbal. Estan formados por diversos sufijos unidos al ergativo, el cual constituye la raiz oblicua y es la base de toda la declinación.
 
-Los ocho casos gramaticales básicos: ABS, ERG, DAT, GEN, PART, INST, DUR, VOC siempre cumplen función argumental o de complemento no espacial cuando están unidos directamente al sustantivo, adjetivo o pronombre. Adquieren significado espacial cuando están delante de un caso de dirección espacial.
+Los ocho casos gramaticales básicos: #abs, #erg, #dat, #gen, #part, #ins, #dur, #voc siempre cumplen función argumental o de complemento no espacial cuando están unidos directamente al sustantivo, adjetivo o pronombre. Adquieren significado espacial cuando están delante de un caso de dirección espacial.
 
-El caso VOC solo en nombres propios y algunos sustantivos animados. 
+El caso #voc solo en nombres propios y algunos sustantivos animados. 
 
 == Casos Gramaticales Espaciales
 Además de los casos gramaticales, existen otras desinencias que indican localización y movimiento llamados casos espaciales. Se forman mediante ocho sufijos que indican orientación y seis sufijos que indican dirección. Esto da como resultado XX casos espaciales conjugados. 
@@ -135,27 +135,27 @@ Los casos espaciales simples o conjugados se sufijan a la raiz oblicua (ergativo
 Caso básico de la enunciación. Es el sujeto de un verbo intransitivo o el objeto de un verbo transitivo.
 #example[
  - sample
- Ahmed capturó al ladron-ABS
+ Ahmed capturó al ladron-0ABS
 ]
 
 Componente nominal de una frase copular predicativa.
 #example[
  - sample
- El es un mal hombre-ABS
+ El es un mal hombre-0ABS
 ] 
 
 Forma del sustantivo en construcción apositiva.
 #example[
  - sample
- un chico-ABS [de] ojos azules
+ un chico-0ABS [de] ojos azules
 ]
 
-Instrumento en predicados de contacto como /GOLPEAR y /PINTAR /COLOREAR.
+Instrumento en predicados de contacto como 0GOLPEAR y 0PINTAR 0COLOREAR.
 #example[
  + - sample
-  chico-ERG pared-CONT pintura-ABS tocar
+  chico-0ERG pared-CONT pintura-0ABS tocar
  + - sample
-  yo.ERG chico.PART palo.ABS golpear
+  yo.0ERG chico.0PART palo.0ABS golpear
 ]
 
 === Vocativo

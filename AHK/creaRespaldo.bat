@@ -10,8 +10,8 @@ echo ===================================================
 echo.
 
 :: REEMPLAZA ESTA RUTA por la carpeta exacta donde quieras el reporte:
-set "MY_FOLDER=C:\oldBackup"
-set "MY_BACK=C:\newBackup"
+set "MY_FOLDER=C:\newBackup"
+set "MY_BACK=D:\Nov2026"
 set "LOG_PATH=%MY_FOLDER%\registro_copia.txt"
 
 :: --- CARPETA 1: ALL_PDF ---

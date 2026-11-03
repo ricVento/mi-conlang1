@@ -13,7 +13,7 @@ El paquete `eggs` utiliza viñetas (`-`) para las glosas dentro de la función `
 
 #example[
   - Gato-s los egg-s comer-on.
-  - cat-NOM DET.#pl egg-#pl eat-3#pl.#pst
+  - cat-#nom #det.#pl egg-#pl eat-3#pl.#pst
   'Los gatos comieron los huevos.' #ex-label(<gl>)
 ]
 
@@ -25,11 +25,11 @@ Unas glosas con dos subejemplos
 
 #example[
  + - Gato-s los egg-s comer-on.
-   - cat-NOM DET.#pl egg-#pl eat-3PL.PAST
+   - cat-#nom #det.#pl egg-#pl eat-3#pl.#pst
    'Los gatos comieron los huevos.' #ex-label(<gl>)
    #v(0.25cm)
  + - Perro el hueso come
-   - perro-#sg det-#pl.#sg hueso-ABS comer-#aor
+   - perro-#sg det-#pl.#sg hueso-#abs comer-#aor
    'El perro come hueso' #ex-label(<gl2>)
 ]
 
@@ -70,12 +70,12 @@ A continuación, se presenta la declinación de los sustantivos de la primera cl
     table.hline(y: 1, stroke: 0.5pt + gray), // Línea divisoria del encabezado
     
     // Filas de datos (Tus mayúsculas pasan a versalitas solas)
-    [NOM], [rosa-a],   [rosa-ae],
-    [VOC], [rosa-a],   [rosa-ae],
-    [ACC], [rosa-am],  [rosa-as],
-    [GEN], [rosa-ae],  [rosa-arum],
-    [DAT], [rosa-ae],  [rosa-is],
-    [ABL], [rosa-a],   [rosa-is],
+    [#nom], [rosa-a],   [rosa-ae],
+    [#voc], [rosa-a],   [rosa-ae],
+    [#acc], [rosa-am],  [rosa-as],
+    [#gen], [rosa-ae],  [rosa-arum],
+    [#dat], [rosa-ae],  [rosa-is],
+    [#abl], [rosa-a],   [rosa-is],
     
     table.hline(y: 7, stroke: 1pt + black), // Línea inferior externa
   )
@@ -102,10 +102,10 @@ A continuación, se presenta la declinación de los sustantivos de la primera cl
     table.hline(y: 1, stroke: 0.5pt + gray),
     
     // FILAS DE DATOS CUSTOM
-    [NOM], [kel-u],  [kel-wi],
-    [ACC], [kel-un], [kel-win],
-    [GEN], [kel-is], [kel-bi],
-    [DAT], [kel-bi], [kel-bi],
+    [#nom], [kel-u],  [kel-wi],
+    [#acc], [kel-un], [kel-win],
+    [#gen], [kel-is], [kel-bi],
+    [#dat], [kel-bi], [kel-bi],
     
     // Línea inferior de cierre
     table.hline(y: 5, stroke: 1pt + black),
@@ -130,20 +130,20 @@ A continuación, se presenta la declinación de los sustantivos de la primera cl
     table.hline(y: 1, stroke: 0.5pt + gray),
     
     // FILAS DE DATOS
-    [NOM], [nix], [nix-es],
-    [ACC], [nix-em], [nix-es],
+    [#nom], [nix], [nix-es],
+    [#acc], [nix-em], [nix-es],
     
     // 1. EJEMPLO DE ROWSPAN (Fusión Vertical: toma 2 filas hacia abajo)
-    [GEN], [nix-is], table.cell(rowspan: 2, align: center + horizon)[
+    [#gen], [nix-is], table.cell(rowspan: 2, align: center + horizon)[
       *nix-um* // \ (Forma sincretizada)
     ],
-    [DAT], [nix-i], // Esta celda queda vacía porque el Plural del GEN la invade hacia abajo
+    [#dat], [nix-i], // Esta celda queda vacía porque el Plural del #gen la invade hacia abajo
     
     table.hline(y: 5, stroke: 0.5pt + gray),
     
     // 2. EJEMPLO DE COLSPAN (Fusión Horizontal: toma 2 columnas hacia la derecha)
     // El caso Locativo borra la distinción de número y abarca tanto Singular como Plural
-    [LOC], table.cell(colspan: 2, align: center)[
+    [#loc], table.cell(colspan: 2, align: center)[
       *nix-i-bux* // \ (Morfema global de espacio)
     ],
     
