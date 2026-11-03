@@ -5,6 +5,8 @@
 #let aor = abbreviation("aor", "aorist")
 #let part = abbreviation("part", "partitive")
 
+#let xxx = "Aghvar"
+
 // Configuración estética de la gramática
 #let configuracion_gramatica(doc) = {
   set page(

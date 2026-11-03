@@ -1,4 +1,5 @@
-#import "config.typ": configuracion_gramatica
+// Importar todo desde config
+#import "config.typ": *
 
 // Aplicar reglas de diseño
 #show: configuracion_gramatica

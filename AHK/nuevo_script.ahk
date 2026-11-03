@@ -73,6 +73,8 @@ MinimizarRAM() {
 #Hotstring * C ? C1
 
 ; ::,G::Ğ
+; ? = Activa en medio de palabras | C = Sensible a mayúsculas | * = No requiere espacio al final | B0 = No borra automáticamente (lo borramos nosotros)
+; ::ch::{bs 2}ч
 
 RAlt & e::SendText("ə")
 

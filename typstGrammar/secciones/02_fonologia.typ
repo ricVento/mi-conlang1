@@ -1,4 +1,4 @@
-// Importar todo desde config (que ya expone el paquete eggs)
+// Importar todo desde config
 #import "../config.typ": *
 
 = Fonología y Ejemplos Sintácticos

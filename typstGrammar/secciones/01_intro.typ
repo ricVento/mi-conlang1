@@ -1,4 +1,4 @@
-// Importar todo desde config (que ya expone el paquete eggs)
+// Importar todo desde config
 #import "../config.typ": *
 
 = Introducción
@@ -30,3 +30,5 @@ Una lista anidada que no lleva numeros
 - este continua
 
 Para transformar palabras en versalitas solo hay que colocar un cero `0` delate como en `0‌abc` delante. Una funcion elimina el cero y convierte el texto en versalitas. Esta es una sigla protegida protegida: 0onu (en versalitas), en cambio esta no está protegida ONU (como en AFI arriba)
+
+Este es el nombre de mi #xxx
