@@ -1,6 +1,18 @@
 // Importar todo desde config
 #import "../config.typ": *
 
+#figure(
+  caption: [Este es el título de mi tabla mundana],
+  kind: table,
+	table(
+	  columns: (4fr,) + (1fr,) * 6,
+	  align: left,
+	  table.cell(rowspan: 2)[Gender assigment], table.cell(colspan: 3)[Singular], table.cell(colspan: 3)[Plural],
+	  [#rotate(-90deg, reflow: true)[prefix]], [#rotate(-90deg, reflow: true)[infix]], [#rotate(-90deg, reflow: true)[suffix]], [#rotate(-90deg, reflow: true)[prefix]], [#rotate(-90deg, reflow: true)[infix]], [#rotate(-90deg, reflow: true)[suffix]], [0i male human], [1], [2], [3], [4], [5],
+	  [6], [0ii female human], [7], [8], [9], [10], [11], [12], [0iii animals & inanimate objects], [13], [14], [15], [16], [17], [18], [0iv animate & inanimate objects], [19], [20], [21], [22], [23], [24], [0v inanimate objects & names of young], [25], [26], [27],  [28], [29], [30]
+	)  
+)
+
 0.1.5	Posposiciones
 Existen una serie de postposiciones a las que tradicionalmente se les incluye dentro de los casos gramaticales, aunque en realidad se comporten de manera muy diferente. Tienen la caracteristica de:
 (1)	Unirse al sustantivo, adjetivo o pronombre mediante un caso distinto al absolutivo o ergativo, 

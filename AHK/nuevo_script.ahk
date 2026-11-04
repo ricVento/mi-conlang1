@@ -70,6 +70,8 @@ MinimizarRAM() {
 ::ºv::ʌ
 ::ºz::ʑ
 
+::çç::#
+
 #Hotstring * C ? C1
 
 ; ::,G::Ğ
