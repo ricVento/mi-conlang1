@@ -1,6 +1,6 @@
 // Importar el paquete oficial eggs para lingüística
 #import "@preview/eggs:0.10.0": *
-#import abbreviations: m, f, sg, pl, erg, abs, nom, acc, dat, gen, abl, ins, voc, dur, obl, loc, pst, fut, det
+#import abbreviations: m, f, sg, pl, erg, abs, dat, gen, abl, ins, voc, dur, obl, loc, pst, fut, det
 
 #let aor = abbreviation("aor", "aorist")
 #let part = abbreviation("part", "partitive")
@@ -8,7 +8,6 @@
 #let ii = abbreviation("ii", "gender 2")
 #let iii = abbreviation("iii", "gender 3")
 #let iv = abbreviation("iv", "gender 4")
-#let v_ = abbreviation("v", "gender 5")
 
 #let xxx = "Aghvar"
 

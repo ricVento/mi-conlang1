@@ -2,16 +2,55 @@
 #import "../config.typ": *
 
 = Sustantivos y Flexión Nominal
-Los sustantivos tienen tres raices: #abs, #gen y #pl. En un gran numero de palabras el #pl y el #gen se forman a partir de una misma base #obl, pero lo más comun es que exista un #pl exclusivo para el #abs.#pl mientras que el #gen sirve como #obl para formar el resto de casos en ambos números. 
+Muchos sustantivos tienen hasta tres raices: de _absolutivo_, de _genitivo_ y de _plural_. En un gran numero de palabras la raiz de plural y de genitivo coinciden en una misma base oblicua, pero es comun que exista un plural exclusivo para el absolutivo plural mientras que el genitivo sirva como base oblicua para formar el resto de casos en ambos números. 
 
 == Géneros y Clases
-El #xxx distingue x géneros en #sg y x en #pl. Algunos sustantivos pertenecen a clases distintas según el número. Hay cinco marcas que se asocian a la clase nominal: de la #i a la #v_.
+El #xxx distingue cuatro géneros en singular y dos en plural. Algunos sustantivos pertenecen a clases distintas según el número. Hay cuatro marcas que se asocian a la clase nominal: #i, #ii, #iii y #iv.
 
-En #sg hay distincion entre seres humanos #m (clase #i) y #f (clase #ii).
+Ref al ejemplo @pair
+
+En singular hay distincion entre seres humanos masculinos (clase #i) y femeninos (clase #ii), así como seres animados no humanos (clase #iii) y objetos inanimados (clase #iv).
+
+En plural los sustantivos se reorganizan en dos grupos: seres humanos (clase #iii) y no humanos (clase #iv)
+
+== Número
+En la lengua #xxx todos los sustantivos distinguen singular y plural. Existe ademas un plural asociativo.
+
+La marca del plural se indica en algunos sustantivos mediante una raiz dedicada. Todos los sustantivos tiene además un sufijo de plural que varía según la semantica y morfologia de la palabra.
+
+== Casos
+La categoría de caso gramatical distinguen entre casos _abstractos_ y casos _espaciales_. 
+
+=== Casos Abstractos
+Existen ocho casos gramaticales, la base es el absolutivo, con él se forma tambien el vocativo; para formar el resto de casos es necesario conocer el genitivo, que constituye en muchos sustantivos la forma oblicua.
+
+Con el genitivo se construyen el ergativo, partitivo, dativo, instrumental y durativo en ambos números. El plural de absolutivo y vocativo tiene una raiz específica.
+
+=== Casos Espaciales
+Los casos espaciales tienen dos dimensiones en el espacio: una dimension de orientación y otra de dirección. 
+
+Existen siete orientaciones; indican la posición del objeto sin hacer referencia a su movilidad.
+- 0in: en un lugar, dentro de algo, en el interior de un espacio o una masa, en contacto con el contenedor, espacio cerrado.
+- 0ad: cerca de un lugar o una persona, dentro de un espacio grande, abierto, sin contacto con los bordes del contenedor.
+- 0apud: al lado de una persona, próximo a un lugar; contacto cercano pero no estrecho.
+- 0sub: debajo de un lugar o persona.
+- 0super: sobre un objeto o una persona, reposando sobre un lugar con una pequeña superficie de contacto.
+- 0ante: delante de un objeto o una persona.
+- 0post: detrás de un objeto o una persona.
+
+Hay seis direcciones; indica específicamente si el objeto está en movimiento y el sentido del mismo.
+- Esivo: situado en un lugar estático, sin movimiento.
+- Lativo: movimiento con dirección orientada a un punto específico.
+- Versativo: direccion hacia un punto inespecifico, atélico o sin movimiento; un destino genérico (como _vers_ o _envers_ en francés, _towards_ en inglés).
+- Elativo: fuente, origen del movimiento, punto de partida.
+- Translativo: movimiento a través, atravesando; cambio o transición. 
+- Terminativo: movimiento hasta un destino final, punto de llegada, télico, finalidad. 
+
+La unión de orientaciones y direcciones da lugar a los 42 casos espaciales del #xxx.
 
 #asterismo
 
-#example[
+#example[#ex-label(<pair>)
  - ay ʃid, ɣa-ʃa!
  - hey brother come
  'hermano, ven acá'
