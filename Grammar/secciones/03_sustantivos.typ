@@ -24,7 +24,7 @@ La categoría de caso gramatical distinguen entre casos _abstractos_ y casos _es
 === Casos Abstractos
 Existen ocho casos gramaticales, la base es el absolutivo, con él se forma tambien el vocativo; para formar el resto de casos es necesario conocer el genitivo, que constituye en muchos sustantivos la forma oblicua.
 
-Con el genitivo se construyen el ergativo, partitivo, dativo, instrumental y durativo en ambos números. El plural de absolutivo y vocativo tiene una raiz específica.
+Con el genitivo se construyen el ergativo, partitivo, dativo, instrumental y adverbial en ambos números. El plural de absolutivo y vocativo tiene una raiz específica.
 
 === Casos Espaciales
 Los casos espaciales tienen dos dimensiones en el espacio: una dimension de orientación y otra de dirección. 

@@ -40,12 +40,25 @@
 // Inclusión modular de tu carpeta de secciones
 #set page(numbering: "1") 
 #counter(page).update(1) 
+
+/*
 #include "secciones/01_intro.typ"
 #pagebreak()
+
 #include "secciones/02_fonologia.typ"
 #pagebreak()
+*/
+
 #include "secciones/03_sustantivos.typ"
 #pagebreak()
+
+/*
 #include "secciones/04_adjetivos.typ"
 #pagebreak()
+
 #include "secciones/05_pronombres.typ"
+#pagebreak()
+*/
+
+#include "secciones/features.typ"
+#pagebreak()
