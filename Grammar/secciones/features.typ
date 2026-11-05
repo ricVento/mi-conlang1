@@ -4,6 +4,8 @@
 = Introducción
 Este proyecto contiene la descripción gramatical de la lengua objeto de estudio. Es un conlang con espiritu caucásico.
 
+si uso el código 0abs1 no genera conflictos?
+
 == Metodología
 Los datos fueron recolectados mediante sesiones de elicitación directa. 
 
@@ -16,6 +18,7 @@ No sé que mas quieres que te diga. Esto son pruebas que hago para ver como trab
 == Alfabeto
 El idioma usa el alfabeto fonetico internacional (AFI) con algunas modificaciones como χ qχʷ ʔɑtʃ'ɪdʒ ł ƛ qχ° æ
 
+== Listas
 Esto es una lista anidada
 + Un elemento
  + otro elemento
@@ -29,9 +32,11 @@ Una lista anidada que no lleva numeros
  - y otro mas en el medio
 - este continua
 
+== Versalitas
 Para transformar palabras en versalitas solo hay que colocar un cero `0` delate como en `0‌abc` delante. Una funcion elimina el cero y convierte el texto en versalitas. Esta es una sigla protegida protegida: 0onu (en versalitas), en cambio esta no está protegida ONU (como en AFI arriba)
 
-Este es el nombre de mi #xxx
+== Nombre Automatico
+Este es el nombre de mi #xxx. Se cambia en config.typ
 
 = Fonología y Ejemplos Sintácticos
 Para analizar este sistema vocálico se pueden adoptar dos posturas: una descriptiva, basada en los sonidos que los hablantes producen realmente, y otra analítica, enfocada en el nivel subyacente. Desde el primer punto de vista, el idioma cuenta con más de cinco vocales de superficie. Sin embargo, un análisis subyacente reduce el inventario a solo tres fonemas contrastivos por duración. Este segundo enfoque no solo resulta más económico, sino que simplifica drásticamente la descripción gramatical, ya que toda la morfología y los procesos de armonía vocálica se pueden explicar a partir de estas tres vocales básicas.
@@ -40,6 +45,7 @@ Para analizar este sistema vocálico se pueden adoptar dos posturas: una descrip
 
 La evidencia empírica de esta reducción es la ausencia absoluta de pares mínimos con más de tres vocales distintas; es decir, cualquier raíz o morfema que comparta el mismo entorno consonántico solo es capaz de contrastar tres timbres vocálicos.
 
+== Una tabla chula
 #figure(
   caption: [Este es el título de mi tabla mundana],
   kind: table,
@@ -198,4 +204,6 @@ A continuación, se presenta la declinación de los sustantivos de la primera cl
   )
 ]
 
+== Lista de Abreviaturas
+Se deben declarar en config.typ; se pueden crear nuevas como variables.
 #print-abbreviations()

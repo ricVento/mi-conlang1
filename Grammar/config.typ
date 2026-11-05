@@ -31,13 +31,14 @@
   )
   
   set heading(numbering: "1.1")
-
-  show regex("\b0\p{L}+\b"): coincidencia => {
+  
+  show regex("\b0([a-zA-Z1-9]+)\b"): coincidencia => {
+	// regexp anterior "\b0\p{L}+\b"
     let texto = coincidencia.text
-    let texto-limpio = texto.slice(1) // Eliminamos el primer carácter (el "0")
+    let texto-limpio = texto.slice(1) // Eliminamos el primer carácter (el "~")
     smallcaps(all: true)[#texto-limpio]
   }
-  
+
   set enum(indent: 10pt, full: true)
 
   show:eggs.with()
