@@ -7,7 +7,7 @@
 // Portada
 #align(center)[
   #v(5cm)
-  #text(size: 26pt, weight: "bold")[Gramática de la Lengua #xxx] \
+  #text(size: 26pt, weight: "bold")[Gramática de la Lengua #_xxx] \
   #v(1cm)
   #text(size: 16pt)[_Ricardo Ventosinos_]
   #align(bottom)[#text(size: 12pt)[Borrador: Octubre 2026]]

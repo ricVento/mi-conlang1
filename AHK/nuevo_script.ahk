@@ -71,7 +71,7 @@ MinimizarRAM() {
 ::ºz::ʑ
 
 ::çç::#
-::++::~
+::++::#_
 
 #Hotstring * C ? C1
 

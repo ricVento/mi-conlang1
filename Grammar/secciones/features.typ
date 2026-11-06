@@ -36,7 +36,7 @@ Una lista anidada que no lleva numeros
 Para transformar palabras en versalitas solo hay que colocar un cero `0` delate como en `0‌abc` delante. Una funcion elimina el cero y convierte el texto en versalitas. Esta es una sigla protegida protegida: 0onu (en versalitas), en cambio esta no está protegida ONU (como en AFI arriba)
 
 == Nombre Automatico
-Este es el nombre de mi #xxx. Se cambia en config.typ
+Este es el nombre de mi #_xxx. Se cambia en config.typ
 
 = Fonología y Ejemplos Sintácticos
 Para analizar este sistema vocálico se pueden adoptar dos posturas: una descriptiva, basada en los sonidos que los hablantes producen realmente, y otra analítica, enfocada en el nivel subyacente. Desde el primer punto de vista, el idioma cuenta con más de cinco vocales de superficie. Sin embargo, un análisis subyacente reduce el inventario a solo tres fonemas contrastivos por duración. Este segundo enfoque no solo resulta más económico, sino que simplifica drásticamente la descripción gramatical, ya que toda la morfología y los procesos de armonía vocálica se pueden explicar a partir de estas tres vocales básicas.
@@ -81,7 +81,7 @@ Unas glosas con dos subejemplos
    'Los gatos comieron los huevos.' #ex-label(<gl>)
    #v(0.25cm)
  + - Perro el hueso come
-   - perro-#sg det-#pl.#sg hueso-#abs comer-#aor
+   - perro-#sg det-#pl.#sg hueso-#abs comer-#_aor
    'El perro come hueso' #ex-label(<gl2>)
 ]
 

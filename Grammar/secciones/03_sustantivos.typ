@@ -5,16 +5,16 @@
 Muchos sustantivos tienen hasta tres raices: de _absolutivo_, de _genitivo_ y de _plural_. En un gran numero de palabras la raiz de plural y de genitivo coinciden en una misma base oblicua, pero es comun que exista un plural exclusivo para el absolutivo plural mientras que el genitivo sirva como base oblicua para formar el resto de casos en ambos números. 
 
 == Géneros y Clases
-El #xxx distingue cuatro géneros en singular y dos en plural. Algunos sustantivos pertenecen a clases distintas según el número. Hay cuatro marcas que se asocian a la clase nominal: #i, #ii, #iii y #iv.
+El #_xxx distingue cuatro géneros en singular y dos en plural. Algunos sustantivos pertenecen a clases distintas según el número. Hay cuatro marcas que se asocian a la clase nominal: #_i, #_ii, #_iii y #_iv.
 
 Ref al ejemplo @pair
 
-En singular hay distincion entre seres humanos masculinos (clase #i) y femeninos (clase #ii), así como seres animados no humanos (clase #iii) y objetos inanimados (clase #iv).
+En singular hay distincion entre seres humanos masculinos (clase #_i) y femeninos (clase #_ii), así como seres animados no humanos (clase #_iii) y objetos inanimados (clase #_iv).
 
-En plural los sustantivos se reorganizan en dos grupos: seres humanos (clase #iii) y no humanos (clase #iv)
+En plural los sustantivos se reorganizan en dos grupos: seres humanos (clase #_iii) y no humanos (clase #_iv)
 
 == Número
-En la lengua #xxx todos los sustantivos distinguen singular y plural. Existe ademas un plural asociativo.
+En la lengua #_xxx todos los sustantivos distinguen singular y plural. Existe ademas un plural asociativo.
 
 La marca del plural se indica en algunos sustantivos mediante una raiz dedicada. Todos los sustantivos tiene además un sufijo de plural que varía según la semantica y morfologia de la palabra.
 
@@ -30,13 +30,13 @@ Con el genitivo se construyen el ergativo, partitivo, dativo, instrumental y adv
 Los casos espaciales tienen dos dimensiones en el espacio: una dimension de orientación y otra de dirección. 
 
 Existen siete orientaciones; indican la posición del objeto sin hacer referencia a su movilidad.
-- 0in: en un lugar, dentro de algo, en el interior de un espacio o una masa, en contacto con el contenedor, espacio cerrado.
-- 0ad: cerca de un lugar o una persona, dentro de un espacio grande, abierto, sin contacto con los bordes del contenedor.
-- 0apud: al lado de una persona, próximo a un lugar; contacto cercano pero no estrecho.
-- 0sub: debajo de un lugar o persona.
-- 0super: sobre un objeto o una persona, reposando sobre un lugar con una pequeña superficie de contacto.
-- 0ante: delante de un objeto o una persona.
-- 0post: detrás de un objeto o una persona.
+- #_in: en un lugar, dentro de algo, en el interior de un espacio o una masa, en contacto con el contenedor, espacio cerrado.
+- #_ad: cerca de un lugar o una persona, dentro de un espacio grande, abierto, sin contacto con los bordes del contenedor.
+- #_apud: al lado de una persona, próximo a un lugar; contacto cercano pero no estrecho.
+- #_sub: debajo de un lugar o persona.
+- #_super: sobre un objeto o una persona, reposando sobre un lugar con una pequeña superficie de contacto.
+- #_ante: delante de un objeto o una persona.
+- #_post: detrás de un objeto o una persona.
 
 Hay seis direcciones; indica específicamente si el objeto está en movimiento y el sentido del mismo.
 - Esivo: situado en un lugar estático, sin movimiento.
@@ -46,7 +46,7 @@ Hay seis direcciones; indica específicamente si el objeto está en movimiento y
 - Translativo: movimiento a través, atravesando; cambio o transición. 
 - Terminativo: movimiento hasta un destino final, punto de llegada, télico, finalidad. 
 
-La unión de orientaciones y direcciones da lugar a los 42 casos espaciales del #xxx.
+La unión de orientaciones y direcciones da lugar a los 42 casos espaciales del #_xxx.
 
 #asterismo
 

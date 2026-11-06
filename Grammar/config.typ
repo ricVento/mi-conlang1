@@ -2,14 +2,22 @@
 #import "@preview/eggs:0.10.0": *
 #import abbreviations: m, f, sg, pl, erg, abs, dat, gen, abl, ins, voc, nom, acc, dur, obl, loc, pst, fut, det
 
-#let aor = abbreviation("aor", "aorist")
-#let part = abbreviation("part", "partitive")
-#let i = abbreviation("i", "nominal class 1")
-#let ii = abbreviation("ii", "nominal class 2")
-#let iii = abbreviation("iii", "nominal class 3")
-#let iv = abbreviation("iv", "nominal class 4")
+#let _aor = abbreviation("aor", "aorist")
+#let _part = abbreviation("part", "partitive")
+#let _i = abbreviation("i", "nominal class 1")
+#let _ii = abbreviation("ii", "nominal class 2")
+#let _iii = abbreviation("iii", "nominal class 3")
+#let _iv = abbreviation("iv", "nominal class 4")
+#let _ad = abbreviation("ad", "orientation AD")
+#let _ante = abbreviation("ante", "orientation ANTE")
+#let _apud = abbreviation("apud", "orientation APUD")
+#let _in = abbreviation("in", "orientation IN")
+#let _post = abbreviation("post", "orientation POST")
+#let _sub = abbreviation("sub", "orientation SUB")
+#let _super = abbreviation("super", "orientation SUPER")
 
-#let xxx = "Aghvar"
+
+#let _xxx = "Aghvar"
 
 #let asterismo = {
   v(1em)
