@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+    <style>
+        body { font-family: sans-serif; }
+    </style>
+</head>
+<body>
+    <h1>Pruebas</h1>
+	<p>Dentro de esta pagina hay funciones para Números de Stirling de Segunda Especie y Particiones de un entero n en exactamente k sumandos (necesarias en las 12 vias de Rota)</p>
+    <div id="comb">Combinacion</div>
+    <div id="combRep">Combinacion con repeticion</div>
+    <div id="perm">Permutacion</div>
+    <div id="permRep">Permutacion con repeticion</div>
+    <script>
+		const n = 5;
+		const r = 3;
+		
+		const combBox = document.getElementById('comb');
+		const combRepBox = document.getElementById('combRep');
+		const permBox = document.getElementById('perm');
+		const permRepBox = document.getElementById('permRep');
+		
+		function fr(num) {
+		  if (num < 0) return undefined;
+		  if (num === 0 || num === 1) return 1;
+		  return num * fr(num - 1);
+		}
+
+		/**
+		 * Calcula el Número de Stirling de segunda especie S(n, k).
+		 * @param {number} n - Número de elementos en el conjunto original.
+		 * @param {number} k - Número de subconjuntos no vacíos.
+		 * @returns {number} - Cantidad de formas de particionar el conjunto.
+		 */
+		function fStirling(n, k) {
+			// Casos base y límites
+			if (k < 0 || k > n) return 0;
+			if (k === 0 && n === 0) return 1; // Convención matemática
+			if (k === 1 || k === n) return 1;
+
+			// Crear un arreglo para la fila actual y la anterior (optimización de espacio)
+			let dp = new Array(k + 1).fill(0);
+			dp[0] = 1; // S(0,0) = 1
+
+			// Construcción iterativa basada en la recurrencia: S(n, k) = S(n-1, k-1) + k * S(n-1, k)
+			for (let i = 1; i <= n; i++) {
+				// Recorremos de atrás hacia adelante para usar el mismo arreglo sin pisar datos previos
+				for (let j = Math.min(i, k); j > 0; j--) {
+					dp[j] = (dp[j - 1] || 0) + j * (dp[j] || 0);
+				}
+				dp[0] = 0; // S(n, 0) = 0 para n > 0
+			}
+
+			return dp[k];
+		}
+
+		/**
+		 * Calcula el número de particiones de un entero n en exactamente k partes.
+		 * @param {number} n - El número entero a particionar.
+		 * @param {number} k - El número exacto de sumandos (partes).
+		 * @returns {bigint} - El número total de particiones bajo esta restricción.
+		 */
+		function fEuler(n, k) {
+			// Casos base y límites lógicos
+			if (k <= 0 || k > n) return 0n;
+			if (k === 1 || k === n) return 1n;
+
+			// dp[j] guardará temporalmente p(j, parte_actual)
+			// Inicializamos con el caso base para 1 parte: p(j, 1) = 1n para todo j >= 1
+			let dp = new Array(n + 1).fill(1n);
+			dp[0] = 0n; // p(0, 1) es 0
+
+			// Iteramos para encontrar las soluciones desde 2 partes hasta k partes
+			for (let partes = 2; partes <= k; partes++) {
+				let proximoDp = new Array(n + 1).fill(0n);
+
+				for (let num = partes; num <= n; num++) {
+					// Aplicamos la recurrencia: p(num, partes) = p(num - 1, partes - 1) + p(num - partes, partes)
+					let termino1 = dp[num - 1]; // p(num - 1, partes - 1) de la fila anterior
+					let termino2 = proximoDp[num - partes]; // p(num - partes, partes) de la fila actual
+
+					proximoDp[num] = termino1 + termino2;
+				}
+				
+				dp = proximoDp;
+			}
+
+			return dp[n];
+		}
+		
+		const combResult = fr(n)/(fr(r)*fr(n - r));
+		const combRepResult = fr(r + n - 1)/(fr(r)*fr(n - 1));
+		const permResult = fr(n)/fr(n - r);
+		const permRepResult = n**r;
+
+		combBox.innerHTML = `${combResult} Combinacion`;
+		combRepBox.innerHTML = `${combRepResult} Combinacion con repeticion`;
+		permBox.innerHTML = `${permResult} Permutacion`;
+		permRepBox.innerHTML = `${permRepResult} Permutacion con repeticion`;
+    </script>		
+</body>
+</html>

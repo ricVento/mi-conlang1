@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las 12 Vías de la Combinatoria</title>
+</head>
+<body>
+
+    <h1>Las 12 Vías de la Combinatoria</h1>
+	
+	<p>La clasificación clásica de la combinatoria agrupa los problemas en 4 casos fundamentales basados en dos criterios: si importa el orden y si se permite la repetición (o reemplazo).</p>
+	
+	<p>Las <strong>12 vías</strong> (<em>The Twelvefold Way</em> o <em>modelo de Gian-Carlo Rota</em>) extienden estos 4 casos al añadir las condiciones de si los objetos y los recipientes son distinguibles (D) o indistinguibles (I). La equivalencia exacta se da cuando tanto los objetos como los recipientes son distinguibles (Caso D → D). Este enfoque clasifica los problemas fundamentales de contar cómo colocar <strong>n objetos</strong> en <strong>k cajas</strong>. La clasificación depende de tres condiciones:</p>
+    
+    <ul>
+        <li>Si los objetos son distinguibles (únicos) o indistinguibles (idénticos).</li>
+        <li>Si las cajas son distinguibles (únicas) o indistinguibles (idénticas).</li>
+        <li>La restricción en la asignación:
+            <ul>
+                <li><strong>Cualquiera:</strong> No hay restricciones (pueden quedar cajas vacías).</li>
+                <li><strong>Inyectiva:</strong> Cada caja puede contener como máximo 1 objeto (n &le; k).</li>
+                <li><strong>Sobreyectiva:</strong> Cada caja debe contener al menos 1 objeto (n &ge; k).</li>
+            </ul>
+        </li>
+    </ul>
+
+	<p>Para encontrar la equivalencia entre el modelo clasico de cuatro vias y el de 12 vías hay un regla mnemotécnica:</p>
+	
+    <ul>
+        <li>Con Orden = Objetos Distinguibles.</li>
+        <li>Sin Orden = Objetos Indistinguibles.</li>
+        <li>Con Repetición = Condición "Cualquiera" (pueden caer varios objetos en un mismo recipiente).</li>
+        <li>Sin Repetición = Condición "Inyectiva" (máximo un objeto por recipiente).</li>
+    </ul>
+
+	<h3>Fórmula de Combinación</h3>
+    <p>La fórmula general para combinatoria <strong>C(k, n)</strong> varía de acuerdo a qué compone exactamente <strong>k</strong> (él número total de elementos). Dado que en las Combinaciones el orden no importa <strong>n</strong> siempre es <strong>n!(k - n)!</strong>. Cuando no se pueden repetir, <strong>k</strong> se convierte en <strong>k!</strong>; mientras que cuando la repetición es posible pasa a ser <strong>(n + k - 1)!</strong></p>	
+
+    <h2>Tabla Resumen de Funciones y Fórmulas</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Objetos (n)</th>
+                <th>Cajas (k)</th>
+                <th>Cualquiera (Sin restricciones)</th>
+                <th>Inyectiva (&le; 1 por caja)</th>
+                <th>Sobreyectiva (&ge; 1 por caja)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Fila 1: Distinguibles / Distinguibles -->
+            <tr>
+                <td><strong>Distinguibles</strong></td>
+                <td><strong>Distinguibles</strong></td>
+                <td>
+                    <strong>k<sup>n</sup></strong><br>
+                    Funciones totales de N a K.<br>
+					[con Orden y Repetición]
+                </td>
+                <td>
+                    <strong>k! / (k - n)!</strong><br>
+                    Permutaciones. Funciones inyectivas.<br>
+					[con Orden sin Repetición]
+                </td>
+                <td>
+                    <strong>k! &middot; S(n, k)</strong><br>
+                    Funciones sobreyectivas (S = Números de Stirling de 2ª especie).
+                </td>
+            </tr>
+            <!-- Fila 2: Indistinguibles / Distinguibles -->
+            <tr>
+                <td><strong>Indistinguibles</strong></td>
+                <td><strong>Distinguibles</strong></td>
+                <td>
+                    <strong>C(n + k - 1, n)</strong><br>
+                    Combinaciones con repetición (Estrellas y barras).<br>
+					[sin Orden con Repetición]
+                </td>
+                <td>
+                    <strong>C(k, n)</strong><br>
+                    Combinaciones simples (Elegir n cajas de k).<br>
+					[sin Orden ni Repetición]
+                </td>
+                <td>
+                    <strong>C(n - 1, k - 1)</strong><br>
+                    Composiciones de un entero n en k partes positivas.
+                </td>
+            </tr>
+            <!-- Fila 3: Distinguibles / Indistinguibles -->
+            <tr>
+                <td><strong>Distinguibles</strong></td>
+                <td><strong>Indistinguibles</strong></td>
+                <td>
+                    <strong>&sum;<sub>i=1</sub><sup>k</sup> S(n, i)</strong><br>
+                    Particiones de un conjunto en ≤ k subconjuntos.
+                </td>
+                <td>
+                    <strong>1</strong> (si n &le; k)<br>
+                    <strong>0</strong> (si n &gt; k)
+                </td>
+                <td>
+                    <strong>S(n, k)</strong><br>
+                    Particiones de un conjunto en exactamente k subconjuntos.
+                </td>
+            </tr>
+            <!-- Fila 4: Indistinguibles / Indistinguibles -->
+            <tr>
+                <td><strong>Indistinguibles</strong></td>
+                <td><strong>Indistinguibles</strong></td>
+                <td>
+                    <strong>&sum;<sub>i=1</sub><sup>k</sup> p<sub>i</sub>(n)</strong><br>
+                    Particiones de un entero n en ≤ k sumandos.
+                </td>
+                <td>
+                    <strong>1</strong> (si n &le; k)<br>
+                    <strong>0</strong> (si n &gt; k)
+                </td>
+                <td>
+                    <strong>p<sub>k</sub>(n)</strong><br>
+                    Particiones de un entero n en exactamente k sumandos.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Descripción Breve de las Funciones Generales</h2>
+    
+    <h3>1. Objetos Distinguibles en Cajas Distinguibles</h3>
+    <p>Equivale a contar funciones matemáticas de un conjunto a otro. Es el escenario clásico de asignación de tareas individuales u objetos diferentes a personas específicas.</p>
+    
+    <h3>2. Objetos Indistinguibles en Cajas Distinguibles</h3>
+    <p>El orden de los objetos no importa, solo cuántos caen en cada caja. Se modela comúnmente con el método de "estrellas y barras" (por ejemplo, distribuir monedas idénticas entre niños).</p>
+    
+    <h3>3. Objetos Distinguibles en Cajas Indistinguibles</h3>
+    <p>Equivale a agrupar elementos únicos en colecciones o subconjuntos donde las cajas no tienen un nombre o etiqueta que las diferencie. Se resuelve usando los Números de Stirling de Segunda Especie.</p>
+    
+    <h3>4. Objetos Indistinguibles en Cajas Indistinguibles</h3>
+    <p>Es el caso de la partición de enteros. Consiste simplemente en descomponer un número entero positivo <em>n</em> como la suma de <em>k</em> números enteros (por ejemplo, de cuántas formas puedes desglosar el número 7 usando 3 sumandos).</p>
+
+</body>
+</html>
