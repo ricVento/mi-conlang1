@@ -17,7 +17,7 @@
 #let _super = abbreviation("super", "orientation SUPER")
 
 
-#let _xxx = "Aghvar"
+#let _x = "Aghvar"
 
 #let asterismo = {
   v(1em)

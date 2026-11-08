@@ -7,7 +7,7 @@
 // Portada
 #align(center)[
   #v(5cm)
-  #text(size: 26pt, weight: "bold")[Gramática de la Lengua #_xxx] \
+  #text(size: 26pt, weight: "bold")[Gramática de la Lengua #_x] \
   #v(1cm)
   #text(size: 16pt)[_Ricardo Ventosinos_]
   #align(bottom)[#text(size: 12pt)[Borrador: Octubre 2026]]
@@ -53,12 +53,13 @@
 #pagebreak()
 
 /*
+
 #include "secciones/04_adjetivos.typ"
 #pagebreak()
 
-#include "secciones/05_pronombres.typ"
-#pagebreak()
 */
 
-#include "secciones/features.typ"
+#include "secciones/05_pronombres.typ"
 #pagebreak()
+
+#include "secciones/features.typ"

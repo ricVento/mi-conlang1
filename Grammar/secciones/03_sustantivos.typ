@@ -5,16 +5,14 @@
 Muchos sustantivos tienen hasta tres raices: de _absolutivo_, de _genitivo_ y de _plural_. En un gran numero de palabras la raiz de plural y de genitivo coinciden en una misma base oblicua, pero es comun que exista un plural exclusivo para el absolutivo plural mientras que el genitivo sirva como base oblicua para formar el resto de casos en ambos números. 
 
 == Géneros y Clases
-El #_xxx distingue cuatro géneros en singular y dos en plural. Algunos sustantivos pertenecen a clases distintas según el número. Hay cuatro marcas que se asocian a la clase nominal: #_i, #_ii, #_iii y #_iv.
-
-Ref al ejemplo @pair
+El #_x distingue cuatro géneros en singular y dos en plural. Algunos sustantivos pertenecen a clases distintas según el número. Hay cuatro marcas que se asocian a la clase nominal: #_i, #_ii, #_iii y #_iv.
 
 En singular hay distincion entre seres humanos masculinos (clase #_i) y femeninos (clase #_ii), así como seres animados no humanos (clase #_iii) y objetos inanimados (clase #_iv).
 
 En plural los sustantivos se reorganizan en dos grupos: seres humanos (clase #_iii) y no humanos (clase #_iv)
 
 == Número
-En la lengua #_xxx todos los sustantivos distinguen singular y plural. Existe ademas un plural asociativo.
+En la lengua #_x todos los sustantivos distinguen singular y plural. Existe ademas un plural asociativo.
 
 La marca del plural se indica en algunos sustantivos mediante una raiz dedicada. Todos los sustantivos tiene además un sufijo de plural que varía según la semantica y morfologia de la palabra.
 
@@ -46,11 +44,11 @@ Hay seis direcciones; indica específicamente si el objeto está en movimiento y
 - Translativo: movimiento a través, atravesando; cambio o transición. 
 - Terminativo: movimiento hasta un destino final, punto de llegada, télico, finalidad. 
 
-La unión de orientaciones y direcciones da lugar a los 42 casos espaciales del #_xxx.
+La unión de orientaciones y direcciones da lugar a los 42 casos espaciales del #_x.
 
 #asterismo
 
-#example[#ex-label(<pair>)
+#example[
  - ay ʃid, ɣa-ʃa!
  - hey brother come
  'hermano, ven acá'

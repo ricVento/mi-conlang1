@@ -1,10 +1,13 @@
 // Importar todo desde config
 #import "../config.typ": *
 
-= Introducción
+= Pagina de Pruebas
 Este proyecto contiene la descripción gramatical de la lengua objeto de estudio. Es un conlang con espiritu caucásico.
 
-si uso el código 0abs1 no genera conflictos?
+#quote(block: true, attribution: "René Descartes")[
+  Esta es una cita larga que se mostrará como un bloque independiente, 
+  con márgenes hacia adentro, ideal para textos de más de tres líneas.
+]
 
 == Metodología
 Los datos fueron recolectados mediante sesiones de elicitación directa. 
@@ -36,9 +39,9 @@ Una lista anidada que no lleva numeros
 Para transformar palabras en versalitas solo hay que colocar un cero `0` delate como en `0‌abc` delante. Una funcion elimina el cero y convierte el texto en versalitas. Esta es una sigla protegida protegida: 0onu (en versalitas), en cambio esta no está protegida ONU (como en AFI arriba)
 
 == Nombre Automatico
-Este es el nombre de mi #_xxx. Se cambia en config.typ
+Este es el nombre de mi #_x. Solo debo tipear `#_x` y se cambia en config.typ
 
-= Fonología y Ejemplos Sintácticos
+=== Fonologia (parrafo)
 Para analizar este sistema vocálico se pueden adoptar dos posturas: una descriptiva, basada en los sonidos que los hablantes producen realmente, y otra analítica, enfocada en el nivel subyacente. Desde el primer punto de vista, el idioma cuenta con más de cinco vocales de superficie. Sin embargo, un análisis subyacente reduce el inventario a solo tres fonemas contrastivos por duración. Este segundo enfoque no solo resulta más económico, sino que simplifica drásticamente la descripción gramatical, ya que toda la morfología y los procesos de armonía vocálica se pueden explicar a partir de estas tres vocales básicas.
 
 #asterismo
@@ -66,30 +69,42 @@ El paquete `eggs` utiliza viñetas (`-`) para las glosas dentro de la función `
 #example[
   - Gato-s los egg-s comer-on.
   - cat-#nom #det.#pl egg-#pl eat-3#pl.#pst
-  'Los gatos comieron los huevos.' #ex-label(<gl>)
+  'Los gatos comieron los huevos.'
 ]
 
 Se deben usar dos espacios antes de `__-` en ambas glosas para que separe las palabras; entre las palabras se puede usar espacio simple.
 
 La traduccion puede ir entre `'` o `"`. Las primeras se convieren en `"` y las segundas en `«`. Tambien pueden omitirse del todo. Por comodidad y coherecia con el resto del texto se pueden preceder de dos espacios para mantener la sangría pero no es necesario.
 
+Usando `~` se puede omitir una palabra
+
+#example[
+  #ex-label(<gl>)
+  - donde esta el _t_ perro
+  - where is the ~ dog
+  'donde esta el perro?'
+]
+
 Unas glosas con dos subejemplos
 
 #example[
+   #ex-label(<pair>)
  + - Gato-s los egg-s comer-on.
    - cat-#nom #det.#pl egg-#pl eat-3#pl.#pst
-   'Los gatos comieron los huevos.' #ex-label(<gl>)
+   'Los gatos comieron los huevos.'
    #v(0.25cm)
  + - Perro el hueso come
    - perro-#sg det-#pl.#sg hueso-#abs comer-#_aor
-   'El perro come hueso' #ex-label(<gl2>)
+   'El perro come hueso'
 ]
 
 Si se quieren usar subejemplos no son necesarios los espacios dobles antes de `__-`, basta con usar `_+_-_texto` en la primera linea, luego la segunda sí exige mantener la linea de sangría.
 
-== Notas sobre morfología
-Además, puedes acceder a los ejemplos indonesio #ex-ref(<gl>) y bahasa @gl2 son referencias válidas.
+Además, puedes acceder a los ejemplos de una sola linea como @gl o a los que contienen subejemplos de forma global como #ex-ref(<pair>) con las funciones `@label` o `#ex-ref(<label>)`. Estos ultimos se pueden referenciar tambien individualmente como @pair:a y @pair:b mediante la forma `@ref:a|b`.
 
+Se pueden hacer un rango de ejemplos como en @gl[@pair] `@label[label2]` o @pair:a[@pair:b] `@label:a[@label:b]`. Todos son referencias válidas.
+
+== Notas sobre morfología
 Este ejemplo no lo entiendo bien...
 
 #example(auto-subexamples: false, auto-glosses: false)[
@@ -202,6 +217,14 @@ A continuación, se presenta la declinación de los sustantivos de la primera cl
     // Línea de cierre inferior
     table.hline(y: 6, stroke: 1pt + black),
   )
+]
+
+== Un ejemplo largo
+Este es un ejemplo mas largo
+#example[
+  - este es un ejemplo más largo donde las palabras sencillamente se tienen que cortar y seguir en una linea diferente porque no alcanza la página
+  - este es un ejemplo más largo donde las palabras sencillamente se teenen que cortar y seguir en una linea diferente porque no alcanza la página
+ 'este es un ejemplo más largo donde las palabras sencillamente se tienen que cortar y seguir en una linea diferente porque no alcanza la página'
 ]
 
 == Lista de Abreviaturas
