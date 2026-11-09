@@ -1,10 +1,10 @@
 // Importar todo desde config
 #import "../config.typ": *
 
-= Sustantivos y Flexión Nominal
+= Sustantivos
 Muchos sustantivos tienen hasta tres raices: de _absolutivo_, de _genitivo_ y de _plural_. En un gran numero de palabras la raiz de plural y de genitivo coinciden en una misma base oblicua, pero es comun que exista un plural exclusivo para el absolutivo plural mientras que el genitivo sirva como base oblicua para formar el resto de casos en ambos números. 
 
-== Géneros y Clases
+== Géneros y Clases <generosyclases>
 El #_x distingue cuatro géneros en singular y dos en plural. Algunos sustantivos pertenecen a clases distintas según el número. Hay cuatro marcas que se asocian a la clase nominal: #_i, #_ii, #_iii y #_iv.
 
 En singular hay distincion entre seres humanos masculinos (clase #_i) y femeninos (clase #_ii), así como seres animados no humanos (clase #_iii) y objetos inanimados (clase #_iv).

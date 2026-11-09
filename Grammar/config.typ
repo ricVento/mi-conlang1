@@ -30,6 +30,36 @@
   set page(
     paper: "a4",
     margin: (x: 3cm, y: 2.5cm),
+    header: context {
+      let i_pag = here().page()
+      
+      let cap_actual = query(heading.where(level: 1))
+        .find(h => h.location().page() == i_pag)
+        
+      let cap = none
+      
+      if cap_actual != none {
+        cap = cap_actual
+      } else {
+        let caps_atras = query(heading.where(level: 1).before(here()))
+        if caps_atras.len() > 0 {
+          cap = caps_atras.last()
+        }
+      }
+      
+      if cap != none {
+        if cap.body == [Índice General] or cap.body == [Table of Contents] {
+          return none
+        }
+        
+        let num = counter(heading).at(cap.location()).first()
+        
+        set align(left)
+        text(size: 9pt, fill: black)[
+          #num #cap.body
+        ]
+      }
+    }
   )
   
   set text(
@@ -40,14 +70,27 @@
   
   set heading(numbering: "1.1")
   
+  set enum(indent: 10pt, full: true)
+
+  set figure.caption(position: top)
+
+  show figure.caption: set align(left)
+  
   show regex("\b0([a-zA-Z1-9]+)\b"): coincidencia => {
 	// regexp anterior "\b0\p{L}+\b"
     let texto = coincidencia.text
     let texto-limpio = texto.slice(1) // Eliminamos el primer carácter (el "~")
     smallcaps(all: true)[#texto-limpio]
   }
-
-  set enum(indent: 10pt, full: true)
+  
+ show ref: it => {
+   let el = it.element
+   if el != none and el.func() == heading {
+     [§#counter(heading).at(el.location()).first()]
+   } else {
+     it
+   }
+ }  
 
   show:eggs.with()
   
