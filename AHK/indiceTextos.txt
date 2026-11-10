@@ -1,0 +1,26 @@
+Khwarshi						pag		Kryz				pag
+===============================================================
+nombres							59		sustantivos			33
+adjetivos						117		pron/generos		47
+adverbios						129		adj					71
+postposiciones					152		adv/post			83
+pronombres						158		interr/num/quan		99
+numerales						187		copula				115
+verbos							199		bases verbal		125	
+particulas/derivacion			274		verb indep			145
+orden/estructura (sintaxis)		295		voz					169	
+copula							318		sintag nom			181	
+tipo de oracion					321		sintag verb			189	
+coordinacion					329		sintax casos		213	
+valencia verbal					337		valencia verbal		229
+cambios de valencia				353		sintax TAM			261
+oracion relativa				368		coord/subor verb	293
+oracion completiva				378		ger/conv			323	
+oracion adverbial				409		relative			346
+oracion reflexiva				446		cohesion			373
+reciprocos						463			
+preguntas						472			
+discurso indirecto				490		
+negacion						500				
+concordancia					501				
+

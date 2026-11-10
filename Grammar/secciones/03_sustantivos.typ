@@ -50,6 +50,6 @@ La unión de orientaciones y direcciones da lugar a los 42 casos espaciales del 
 
 #example[
  - ay ʃid, ɣa-ʃa!
- - hey brother come
+ - hey brother-#_abs come
  'hermano, ven acá'
 ]

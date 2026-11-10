@@ -70,11 +70,38 @@ MinimizarRAM() {
 ::ºv::ʌ
 ::ºz::ʑ
 
+; PARA TYPST
+
 ::çç::#
 ::++::#_
 ::ññ::~
 ::ñ-::– ; en-dash
 ::ñ_::– ; em-dash
+::ñ2::@ ; at
+::ñs::\ ; scape sign
+
+; PROGRAMACION
+
+::ñb:: ; brakets
+{
+    Send("[]{Left}")
+}
+
+::ñd:: ; diamond
+{
+    Send("<>{Left}")
+}
+
+::ñp:: ; parenthesis
+{
+    Send("(){Left}")
+}
+
+::ñc:: ; curly brakets
+{
+    SendText("{}")
+    Send("{Left}")
+}
 
 #Hotstring * C ? C1
 
@@ -83,4 +110,3 @@ MinimizarRAM() {
 ; ::ch::{bs 2}ч
 
 RAlt & e::SendText("ə")
-

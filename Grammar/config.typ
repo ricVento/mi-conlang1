@@ -1,21 +1,28 @@
 // Importar el paquete oficial eggs para lingüística
 #import "@preview/eggs:0.10.0": *
-#import abbreviations: m, f, sg, pl, erg, abs, dat, gen, abl, ins, voc, nom, acc, dur, obl, loc, pst, fut, det
+#import abbreviations as abb
 
-#let _aor = abbreviation("aor", "aorist")
-#let _part = abbreviation("part", "partitive")
-#let _i = abbreviation("i", "nominal class 1")
-#let _ii = abbreviation("ii", "nominal class 2")
-#let _iii = abbreviation("iii", "nominal class 3")
-#let _iv = abbreviation("iv", "nominal class 4")
-#let _ad = abbreviation("ad", "orientation AD")
-#let _ante = abbreviation("ante", "orientation ANTE")
-#let _apud = abbreviation("apud", "orientation APUD")
-#let _in = abbreviation("in", "orientation IN")
-#let _post = abbreviation("post", "orientation POST")
-#let _sub = abbreviation("sub", "orientation SUB")
-#let _super = abbreviation("super", "orientation SUPER")
+#let _aor = abbreviation("aor", "aoristo")
+#let _prs = abbreviation("prs", "presente")
+#let _pf = abbreviation("pf", "perfecto")
+#let _ppf = abbreviation("ppf", "pluperfecto")
+#let _impf = abbreviation("impf", "imperfecto")
 
+#let _abs = abbreviation("abs", "absolutivo")
+#let _part = abbreviation("part", "partitivo")
+#let _ad = abbreviation("ad", "orientacion AD")
+#let _ante = abbreviation("ante", "orientacion ANTE")
+#let _apud = abbreviation("apud", "orientacion APUD")
+#let _in = abbreviation("in", "orientacion IN")
+#let _post = abbreviation("post", "orientacion POST")
+#let _sub = abbreviation("sub", "orientacion SUB")
+#let _super = abbreviation("super", "orientacion SUPER")
+
+#let _i = abbreviation("i", "clase nominal 1")
+#let _ii = abbreviation("ii", "clase nominal 2")
+#let _iii = abbreviation("iii", "clase nominal 3")
+#let _iv = abbreviation("iv", "clase nominal 4")
+#let _v = abbreviation("v", "clase nominal 5")
 
 #let _x = "Aghvar"
 

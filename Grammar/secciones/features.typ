@@ -58,8 +58,8 @@ La evidencia empírica de esta reducción es la ausencia absoluta de pares míni
 	  columns: (4fr,) + (1fr,) * 6,
 	  align: left,
 	  table.cell(rowspan: 2)[Gender assigment], table.cell(colspan: 3)[Singular], table.cell(colspan: 3)[Plural],
-	  [#rotate(-90deg, reflow: true)[prefix]], [#rotate(-90deg, reflow: true)[infix]], [#rotate(-90deg, reflow: true)[suffix]], [#rotate(-90deg, reflow: true)[prefix]], [#rotate(-90deg, reflow: true)[infix]], [#rotate(-90deg, reflow: true)[suffix]], [0i male human], [1], [2], [3], [4], [5],
-	  [6], [0ii female human], [7], [8], [9], [10], [11], [12], [0iii animals & inanimate objects], [13], [14], [15], [16], [17], [18], [0iv animate & inanimate objects], [19], [20], [21], [22], [23], [24], [0v inanimate objects & names of young], [25], [26], [27],  [28], [29], [30]
+	  [#rotate(-90deg, reflow: true)[prefix]], [#rotate(-90deg, reflow: true)[infix]], [#rotate(-90deg, reflow: true)[suffix]], [#rotate(-90deg, reflow: true)[prefix]], [#rotate(-90deg, reflow: true)[infix]], [#rotate(-90deg, reflow: true)[suffix]], [#_i male human], [1], [2], [3], [4], [5],
+	  [6], [#_ii female human], [7], [8], [9], [10], [11], [12], [#_iii animals & inanimate objects], [13], [14], [15], [16], [17], [18], [#_iv animate & inanimate objects], [19], [20], [21], [22], [23], [24], [#_v inanimate objects & names of young], [25], [26], [27],  [28], [29], [30]
 	)  
 )<mi-tabla1>
 
@@ -70,7 +70,7 @@ El paquete `eggs` utiliza viñetas (`-`) para las glosas dentro de la función `
 
 #example[
   - Gato-s los egg-s comer-on.
-  - cat-#nom #det.#pl egg-#pl eat-3#pl.#pst
+  - cat-#_abs #_abs.#_abs egg-#_abs eat-3#_abs.#_abs
   'Los gatos comieron los huevos.'
 ]
 
@@ -92,11 +92,11 @@ Unas glosas con dos subejemplos
 #example[
    #ex-label(<pair>)
  + - Gato-s los egg-s comer-on.
-   - cat-#nom #det.#pl egg-#pl eat-3#pl.#pst
+   - cat-#_abs #_abs.#_abs egg-#_abs eat-3#_abs.#_abs
    'Los gatos comieron los huevos.'
    #v(0.25cm)
  + - Perro el hueso come
-   - perro-#sg det-#pl.#sg hueso-#abs comer-#_aor
+   - perro-#_abs det-#_abs.#_abs hueso-#_abs comer-#_aor
    'El perro come hueso'
 ]
 
@@ -113,7 +113,7 @@ Este ejemplo no lo entiendo bien...
  + This is a proper numbered item
  - And this is a proper bullet item
   #subexample[But this is a subexample]
-  #gloss[i gloss-y][and gloss-#pl]
+  #gloss[i gloss-y][and gloss-#_abs]
 ]
 
 == Paradigmas de Declinación Nominal
@@ -139,12 +139,12 @@ A continuación, se presenta la declinación de los sustantivos de la primera cl
     table.hline(y: 1, stroke: 0.5pt + gray), // Línea divisoria del encabezado
     
     // Filas de datos (Tus mayúsculas pasan a versalitas solas)
-    [#nom], [rosa-a],   [rosa-ae],
-    [#voc], [rosa-a],   [rosa-ae],
-    [#acc], [rosa-am],  [rosa-as],
-    [#gen], [rosa-ae],  [rosa-arum],
-    [#dat], [rosa-ae],  [rosa-is],
-    [#abl], [rosa-a],   [rosa-is],
+    [#_abs], [rosa-a],   [rosa-ae],
+    [#_abs], [rosa-a],   [rosa-ae],
+    [#_abs], [rosa-am],  [rosa-as],
+    [#_abs], [rosa-ae],  [rosa-arum],
+    [#_abs], [rosa-ae],  [rosa-is],
+    [#_abs], [rosa-a],   [rosa-is],
     
     table.hline(y: 7, stroke: 1pt + black), // Línea inferior externa
   )
@@ -173,10 +173,10 @@ Fijate como hago ref a @mi-tabla1
     table.hline(y: 1, stroke: 0.5pt + gray),
     
     // FILAS DE DATOS CUSTOM
-    [#nom], [kel-u],  [kel-wi],
-    [#acc], [kel-un], [kel-win],
-    [#gen], [kel-is], [kel-bi],
-    [#dat], [kel-bi], [kel-bi],
+    [#_abs], [kel-u],  [kel-wi],
+    [#_abs], [kel-un], [kel-win],
+    [#_abs], [kel-is], [kel-bi],
+    [#_abs], [kel-bi], [kel-bi],
     
     // Línea inferior de cierre
     table.hline(y: 5, stroke: 1pt + black),
@@ -201,20 +201,20 @@ Fijate como hago ref a @mi-tabla1
     table.hline(y: 1, stroke: 0.5pt + gray),
     
     // FILAS DE DATOS
-    [#nom], [nix], [nix-es],
-    [#acc], [nix-em], [nix-es],
+    [#_abs], [nix], [nix-es],
+    [#_abs], [nix-em], [nix-es],
     
     // 1. EJEMPLO DE ROWSPAN (Fusión Vertical: toma 2 filas hacia abajo)
-    [#gen], [nix-is], table.cell(rowspan: 2, align: center + horizon)[
+    [#_abs], [nix-is], table.cell(rowspan: 2, align: center + horizon)[
       *nix-um* // \ (Forma sincretizada)
     ],
-    [#dat], [nix-i], // Esta celda queda vacía porque el Plural del #gen la invade hacia abajo
+    [#_abs], [nix-i], // Esta celda queda vacía porque el Plural del #gen la invade hacia abajo
     
     table.hline(y: 5, stroke: 0.5pt + gray),
     
     // 2. EJEMPLO DE COLSPAN (Fusión Horizontal: toma 2 columnas hacia la derecha)
     // El caso Locativo borra la distinción de número y abarca tanto Singular como Plural
-    [#loc], table.cell(colspan: 2, align: center)[
+    [#_abs], table.cell(colspan: 2, align: center)[
       *nix-i-bux* // \ (Morfema global de espacio)
     ],
     

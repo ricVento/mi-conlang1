@@ -62,4 +62,7 @@
 #include "secciones/05_pronombres.typ"
 #pagebreak()
 
+#include "secciones/06_verbos.typ"
+#pagebreak()
+
 #include "secciones/features.typ"
