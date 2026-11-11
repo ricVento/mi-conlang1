@@ -75,8 +75,8 @@ MinimizarRAM() {
 ::çç::#
 ::++::#_
 ::ññ::~
-::ñ-::– ; en-dash
-::ñ_::– ; em-dash
+::ñn::– ; en-dash
+::ñm::— ; em-dash
 ::ñ2::@ ; at
 ::ñs::\ ; scape sign
 

@@ -3,10 +3,36 @@
 #import abbreviations as abb
 
 #let _aor = abbreviation("aor", "aoristo")
-#let _prs = abbreviation("prs", "presente")
+#let _prs = abbreviation("prs", "presente, presentativo")
+#let _pst = abbreviation("pst", "pasado")
+#let _fut = abbreviation("fut", "futuro")
+#let _even = abbreviation("even", "eventual")
 #let _pf = abbreviation("pf", "perfecto")
+#let _pfv = abbreviation("pfv", "perfectivo")
 #let _ppf = abbreviation("ppf", "pluperfecto")
 #let _impf = abbreviation("impf", "imperfecto")
+#let _ipfv = abbreviation("ipfv", "imperfectivo")
+#let _enun = abbreviation("enun", "enunciativo")
+#let _invol = abbreviation("invol", "involuntario, accidental")
+
+#let _ind = abbreviation("ind", "indicativo")
+#let _evi = abbreviation("evi", "evidencial")
+#let _ded = abbreviation("ded", "deductivo")
+#let _infer = abbreviation("infer", "inferencial")
+#let _deb = abbreviation("deb", "debitivo")
+#let _oblig = abbreviation("oblig", "obligativo")
+#let _recom = abbreviation("recom", "recomendador")
+
+#let _subj = abbreviation("subj", "subjuntivo")
+#let _hip = abbreviation("hip", "hipotetico")
+#let _int = abbreviation("int", "intencional")
+#let _opt = abbreviation("opt", "optativo")
+#let _des = abbreviation("des", "desiderativo")
+#let _pot = abbreviation("pot", "potencial")
+#let _cond = abbreviation("cond", "condicional")
+#let _perm = abbreviation("perm", "permisivo")
+#let _trun = abbreviation("trun", "truncado")
+
 
 #let _abs = abbreviation("abs", "absolutivo")
 #let _part = abbreviation("part", "partitivo")
@@ -37,6 +63,8 @@
   set page(
     paper: "a4",
     margin: (x: 3cm, y: 2.5cm),
+	
+	// INSERTA MARCA DE SECCION EN ENCABEZADO DE PAGINA
     header: context {
       let i_pag = here().page()
       
@@ -79,25 +107,26 @@
   
   set enum(indent: 10pt, full: true)
 
+  // PONE TITULO DE TABLA ARRIBA IZQUIERDA
   set figure.caption(position: top)
-
   show figure.caption: set align(left)
   
-  show regex("\b0([a-zA-Z1-9]+)\b"): coincidencia => {
-	// regexp anterior "\b0\p{L}+\b"
+  // TRANSFORMA EN VERSALITAS
+  show regex("\b0(\w+)\b"): coincidencia => {
     let texto = coincidencia.text
-    let texto-limpio = texto.slice(1) // Eliminamos el primer carácter (el "~")
+    let texto-limpio = texto.slice(1) 
     smallcaps(all: true)[#texto-limpio]
   }
   
- show ref: it => {
-   let el = it.element
-   if el != none and el.func() == heading {
-     [§#counter(heading).at(el.location()).first()]
-   } else {
-     it
-   }
- }  
+  // INSERTA § EN REFERENCIA CRUZADA
+  show ref: it => {
+    let el = it.element
+    if el != none and el.func() == heading {
+      [§#counter(heading).at(el.location()).first()]
+    } else {
+      it
+    }
+  }  
 
   show:eggs.with()
   

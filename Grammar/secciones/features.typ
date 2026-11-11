@@ -38,12 +38,12 @@ Una lista anidada que no lleva numeros
 - este continua
 
 == Versalitas
-Para transformar palabras en versalitas solo hay que colocar un cero `0` delate como en `0‌abc` delante. Una funcion elimina el cero y convierte el texto en versalitas. Esta es una sigla protegida protegida: 0onu (en versalitas), en cambio esta no está protegida ONU (como en AFI arriba)
+Para transformar palabras en versalitas solo hay que colocar un cero `[0]` delate como en `0+abc`. Una funcion elimina el cero y convierte el texto en versalitas. Esta es una sigla protegida protegida: 0onu (en versalitas), en cambio esta no está protegida ONU (como en AFI arriba)
 
 == Nombre Automatico
 Este es el nombre de mi #_x. Solo debo tipear `#_x` y se cambia en config.typ
 
-=== Fonologia (parrafo)
+== Fonologia (parrafo)
 Para analizar este sistema vocálico se pueden adoptar dos posturas: una descriptiva, basada en los sonidos que los hablantes producen realmente, y otra analítica, enfocada en el nivel subyacente. Desde el primer punto de vista, el idioma cuenta con más de cinco vocales de superficie. Sin embargo, un análisis subyacente reduce el inventario a solo tres fonemas contrastivos por duración. Este segundo enfoque no solo resulta más económico, sino que simplifica drásticamente la descripción gramatical, ya que toda la morfología y los procesos de armonía vocálica se pueden explicar a partir de estas tres vocales básicas.
 
 #asterismo
@@ -51,6 +51,8 @@ Para analizar este sistema vocálico se pueden adoptar dos posturas: una descrip
 La evidencia empírica de esta reducción es la ausencia absoluta de pares mínimos con más de tres vocales distintas; es decir, cualquier raíz o morfema que comparta el mismo entorno consonántico solo es capaz de contrastar tres timbres vocálicos.
 
 == Una tabla chula
+Un parrafo para separar
+
 #figure(
   caption: [Este es el título de mi tabla mundana],
   kind: table,
@@ -66,23 +68,34 @@ La evidencia empírica de esta reducción es la ausencia absoluta de pares míni
 A pesar de las ventajas del modelo analítico, en las glosas se mantendrá la transcripción fonética. De este modo se facilita el cotejo con los audios de los hablantes nativos y se evita introducir una abstracción teórica que complique innecesariamente el diseño de una ortografía práctica para la comunidad.
 
 == Ejemplos Interlineales con Eggs
-El paquete `eggs` utiliza viñetas (`-`) para las glosas dentro de la función `#example`. He aqui algunos ejemplos prácticos.
+El paquete `eggs` utiliza viñetas `[-]` para las glosas dentro de la función `#example`. 
+
+El modelo es 
+```text
+#example[
+  - The cats ate the eggs
+  - 0art.0def gato.0sg comer.0pas 0art.0def huevo.0pl
+  'Los gatos comieron los huevos.'
+]
+```
+
+He aqui como se vería:
 
 #example[
-  - Gato-s los egg-s comer-on.
-  - cat-#_abs #_abs.#_abs egg-#_abs eat-3#_abs.#_abs
+  - The cats ate the eggs
+  - 0art.0def gato.0sg comer.0pas 0art.0def huevo.0pl
   'Los gatos comieron los huevos.'
 ]
 
-Se deben usar dos espacios antes de `__-` en ambas glosas para que separe las palabras; entre las palabras se puede usar espacio simple.
+Se deben usar dos espacios antes de `[-]` en ambas glosas para que separe las palabras; entre las palabras se puede usar espacio simple.
 
-La traduccion puede ir entre `'` o `"`. Las primeras se convieren en `"` y las segundas en `«`. Tambien pueden omitirse del todo. Por comodidad y coherecia con el resto del texto se pueden preceder de dos espacios para mantener la sangría pero no es necesario.
+La traduccion puede ir entre `[']` o `["]`. Las primeras se convieren en `"abc"` y las segundas en `«abc»`. Tambien pueden omitirse del todo. Por comodidad y coherecia con el resto del texto se pueden preceder de dos espacios para mantener la sangría pero no es necesario.
 
-Usando `~` se puede omitir una palabra
+Usando `[~]` se puede omitir una palabra dejando el espacio vacío
 
 #example[
   #ex-label(<gl>)
-  - donde esta el _t_ perro
+  - donde esta el _topic_ perro
   - where is the ~ dog
   'donde esta el perro?'
 ]
@@ -91,16 +104,16 @@ Unas glosas con dos subejemplos
 
 #example[
    #ex-label(<pair>)
- + - Gato-s los egg-s comer-on.
-   - cat-#_abs #_abs.#_abs egg-#_abs eat-3#_abs.#_abs
-   'Los gatos comieron los huevos.'
+ + - The cats ate the eggs
+  - 0art.0def gato.0sg comer.0pas 0art.0def huevo.0pl
+  'Los gatos comieron los huevos.'
    #v(0.25cm)
- + - Perro el hueso come
-   - perro-#_abs det-#_abs.#_abs hueso-#_abs comer-#_aor
-   'El perro come hueso'
+ + - The dogs ate the bones
+  - 0art.0def perro.0sg comer.0pas 0art.0def hueso.0pl
+  'Los perros comieron los huesos.'
 ]
 
-Si se quieren usar subejemplos no son necesarios los espacios dobles antes de `__-`, basta con usar `_+_-_texto` en la primera linea, luego la segunda sí exige mantener la linea de sangría.
+Si se quieren usar subejemplos no son necesarios los espacios dobles antes de `[-]`, basta con usar ` + - texto` en la primera linea, luego la segunda sí exige mantener la linea de sangría.
 
 Además, puedes acceder a los ejemplos de una sola linea como @gl o a los que contienen subejemplos de forma global como #ex-ref(<pair>) con las funciones `@label` o `#ex-ref(<label>)`. Estos ultimos se pueden referenciar tambien individualmente como @pair:a y @pair:b mediante la forma `@ref:a|b`.
 
@@ -117,7 +130,7 @@ Este ejemplo no lo entiendo bien...
 ]
 
 == Paradigmas de Declinación Nominal
-A continuación, se presenta la declinación de los sustantivos de la primera clase para el tema en _-a_:
+A continuación, se presenta la declinación de los sustantivos de la primera clase para el tema en _–a_:
 
 #align(center)[
   #table(
