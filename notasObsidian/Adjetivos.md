@@ -13,6 +13,7 @@ Dominios semánticos
 | 7. Aptitud / Estado (Human Propensity / State) | Rasgos psicológicos, emociones, salud o habilidades.      | Feliz, inteligente, enfermo, cruel, celoso.    |
 | 8. Velocidad (Speed)                           | Ritmo de movimiento o ejecución.                          | Rápido, lento, veloz, pausado, fulminante.     |
 | 9. Relación / Origen (Relational / Origin)     | Adjetivos clasificadores (procedencia, campo de estudio). | Solar, químico, francés, urbano, mensual.      |
+
 Si los reducimos a solo 5 serían los siguientes:
 
 | Dominio Semántico                   | Subcategorías Principales                                            | Ejemplos Típicos                                         | Notas Lingüísticas                                                                                                                 |

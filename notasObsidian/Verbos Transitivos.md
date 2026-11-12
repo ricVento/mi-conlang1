@@ -1,5 +1,4 @@
-Ver [[Verbos Intransitivos]] y [[Derivación]]
-
+# Transitivos
 Clasificar los verbos transitivos en grandes dominios semánticos requiere ir más allá de la noción tradicional de "acción que recae sobre un objeto". La lingüística moderna (especialmente la semántica léxica de autoras como Beth Levin y marcos como *WordNet* o *FrameNet*) agrupa los verbos según el **tipo de evento** que denotan y las relaciones que se establecen entre el sujeto (agente, experimentador, etc.) y el objeto directo (tema, paciente, etc.).
 
 A grandes rasgos, los verbos transitivos se pueden organizar en los siguientes **seis macro-dominios semánticos**:

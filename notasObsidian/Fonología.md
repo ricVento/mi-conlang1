@@ -1,5 +1,4 @@
-Para conocer el sistema ortográfico véase la sección de [[Alfabeto]].
-# Etimología
+# Fonologia
 Se teoriza que en un principio la protolengua tenía solo tres vocales `a, i, u` y reconocía consonantes oclusivas sordas bilabiales `p`, alveolares `t`, velares `k`, uvulares `q` y faringeales `ʕ`. 
 Se cree que las fricativas tambien estaban presentes pero más claramente delimitadas en el bloque alveolar y posterior.
 La sonoridad era un fenómeno disparado por posición intervocalica pero terminó pasando a contagiar el ataque silábico.
@@ -11,6 +10,7 @@ Las consonantes posteriores sometidas a la gran presión ejercida en la raiz lin
 | Velares      | `g`     | `kʰ`      | `kˀ`      | `x`       |
 | Uvulares     | `ɢ > ʁ` | `qʰ > qχ` | `qˀ > χˀ` | `χ`       |
 | Glotales     |         |           | `ʔ`       | `ħ > h`   |
+
 Las uvulares desplazaron sus puntos de articulación de manera que una hipotetica sonora `ɢ` (si la hubo alguna vez) pasó a reinterpetrarse como una fricativa `ʁ`, al igual que la eyectiva `qˀ` que se suavizó en `χˀ` o en un cierre glotal total `ʔ`. 
 La aspirada `qʰ` forzó tanto la aspiración que pasó a ser una africada franca `qχ`. 
 Desplazada por el par `x, χ`, la faringeal `ħ` se fue más atrás hasta volverse una glotal `h`.

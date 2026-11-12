@@ -1,4 +1,4 @@
-Ver [[Verbos Transitivos]] y [[Derivación]]
+# Intransitivos
 
 En la lingüística moderna y la tipología léxica, la clasificación de los verbos intransitivos va mucho más allá de la simple ausencia de un objeto directo. El enfoque contemporáneo cruza la **estructura sintáctica** (cómo se comportan los argumentos) con la **estructura de eventos (Aktionsart)** y el **control volitivo** del sujeto.
 
@@ -53,7 +53,7 @@ Aquí, el único argumento subyacente se comporta sintácticamente más como el 
 Para la lexicografía moderna, clasificar un verbo en estos dominios requiere testear sus propiedades mediante una matriz de rasgos semántico-sintácticos:
 
 |**Dominio Semántico**|**Rol del Argumento**|**Estructura Temporal (Aktionsart)**|**Diagnóstico Típico (ej. en lenguas europeas)**|
-|---|---|---|---|
+|---|---|---|----------------------|
 |**Inergativo**|Agente / Actor|Actividad (Dinámico, durativo, sin límite natural)|Selecciona auxiliar _haber_ / _tener_; no forma participios adjetivales (_un hombre caminado_ ✗).|
 |**Inacusativo**|Tema / Paciente / Experimentador|Estado o Logro (Delimitado, puntual o de transición)|Selecciona auxiliar _ser_ / _estar_ (en lenguas con selección de auxiliar); forma participios adjetivales (_una hoja caída_ ✓).|
 

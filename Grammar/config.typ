@@ -6,12 +6,12 @@
 #let _prs = abbreviation("prs", "presente, presentativo")
 #let _pst = abbreviation("pst", "pasado")
 #let _fut = abbreviation("fut", "futuro")
-#let _even = abbreviation("even", "eventual")
+#let _event = abbreviation("event", "eventual")
 #let _pf = abbreviation("pf", "perfecto")
-#let _pfv = abbreviation("pfv", "aspecto perfectivo")
+#let _pfv = abbreviation("pfv", "aspecto perfectivo \nparticipio perfecto")
 #let _ppf = abbreviation("ppf", "pluperfecto")
 #let _impf = abbreviation("impf", "imperfecto")
-#let _ipfv = abbreviation("ipfv", "aspecto imperfectivo")
+#let _ipfv = abbreviation("ipfv", "aspecto imperfectivo \nparticipio imperfecto")
 #let _enun = abbreviation("enun", "enunciativo")
 #let _invol = abbreviation("invol", "involuntario, accidental")
 
@@ -22,9 +22,10 @@
 #let _deb = abbreviation("deb", "debitivo")
 #let _oblig = abbreviation("oblig", "obligativo")
 #let _recom = abbreviation("recom", "recomendador")
+#let _hab = abbreviation("hab", "habitual")
 
 #let _subj = abbreviation("subj", "subjuntivo")
-#let _hip = abbreviation("hip", "hipotetico")
+#let _hyp = abbreviation("hypot", "hipotetico")
 #let _int = abbreviation("int", "intencional")
 #let _opt = abbreviation("opt", "optativo")
 #let _des = abbreviation("des", "desiderativo")
@@ -32,7 +33,6 @@
 #let _cond = abbreviation("cond", "condicional")
 #let _perm = abbreviation("perm", "permisivo")
 #let _trun = abbreviation("trun", "truncado")
-
 
 #let _abs = abbreviation("abs", "absolutivo")
 #let _part = abbreviation("part", "partitivo, genitivo 2")
