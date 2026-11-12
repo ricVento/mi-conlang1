@@ -246,4 +246,6 @@ Este es un ejemplo mas largo
 
 == Lista de Abreviaturas
 Se deben declarar en config.typ; se pueden crear nuevas como variables.
-#print-abbreviations()
+#columns(2, gutter: 1.5em)[
+  #print-abbreviations()
+]

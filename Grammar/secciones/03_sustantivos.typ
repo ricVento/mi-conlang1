@@ -1,7 +1,7 @@
 // Importar todo desde config
 #import "../config.typ": *
 
-= Sustantivos
+= Sustantivos <sustantivos>
 Muchos sustantivos tienen hasta tres raices: de _absolutivo_, de _genitivo_ y de _plural_. En un gran numero de palabras la raiz de plural y de genitivo coinciden en una misma base oblicua, pero es comun que exista un plural exclusivo para el absolutivo plural mientras que el genitivo sirva como base oblicua para formar el resto de casos en ambos números. 
 
 == Géneros y Clases <generosyclases>
@@ -37,12 +37,12 @@ Existen siete orientaciones; indican la posición del objeto sin hacer referenci
 - #_post: detrás de un objeto o una persona.
 
 Hay seis direcciones; indica específicamente si el objeto está en movimiento y el sentido del mismo.
-- Esivo: situado en un lugar estático, sin movimiento.
-- Lativo: movimiento con dirección orientada a un punto específico.
-- Versativo: direccion hacia un punto inespecifico, atélico o sin movimiento; un destino genérico (como _vers_ o _envers_ en francés, _towards_ en inglés).
-- Elativo: fuente, origen del movimiento, punto de partida.
-- Translativo: movimiento a través, atravesando; cambio o transición. 
-- Terminativo: movimiento hasta un destino final, punto de llegada, télico, finalidad. 
+- Esivo #_esi: situado en un lugar estático, sin movimiento.
+- Lativo #_lat: movimiento con dirección orientada a un punto específico.
+- Versativo #_vers: direccion hacia un punto inespecifico, atélico o sin movimiento; un destino genérico (como _vers_ o _envers_ en francés, _towards_ en inglés).
+- Elativo #_ela: fuente, origen del movimiento, punto de partida.
+- Translativo #_trans: movimiento a través, atravesando; cambio o transición. 
+- Terminativo #_term: movimiento hasta un destino final, punto de llegada, télico, finalidad. 
 
 La unión de orientaciones y direcciones da lugar a los 42 casos espaciales del #_x.
 

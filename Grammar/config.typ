@@ -8,14 +8,14 @@
 #let _fut = abbreviation("fut", "futuro")
 #let _even = abbreviation("even", "eventual")
 #let _pf = abbreviation("pf", "perfecto")
-#let _pfv = abbreviation("pfv", "perfectivo")
+#let _pfv = abbreviation("pfv", "aspecto perfectivo")
 #let _ppf = abbreviation("ppf", "pluperfecto")
 #let _impf = abbreviation("impf", "imperfecto")
-#let _ipfv = abbreviation("ipfv", "imperfectivo")
+#let _ipfv = abbreviation("ipfv", "aspecto imperfectivo")
 #let _enun = abbreviation("enun", "enunciativo")
 #let _invol = abbreviation("invol", "involuntario, accidental")
 
-#let _ind = abbreviation("ind", "indicativo")
+#let _ind = abbreviation("ind", "modo indicativo")
 #let _evi = abbreviation("evi", "evidencial")
 #let _ded = abbreviation("ded", "deductivo")
 #let _infer = abbreviation("infer", "inferencial")
@@ -35,22 +35,29 @@
 
 
 #let _abs = abbreviation("abs", "absolutivo")
-#let _part = abbreviation("part", "partitivo")
-#let _ad = abbreviation("ad", "orientacion AD")
-#let _ante = abbreviation("ante", "orientacion ANTE")
-#let _apud = abbreviation("apud", "orientacion APUD")
-#let _in = abbreviation("in", "orientacion IN")
-#let _post = abbreviation("post", "orientacion POST")
-#let _sub = abbreviation("sub", "orientacion SUB")
-#let _super = abbreviation("super", "orientacion SUPER")
+#let _part = abbreviation("part", "partitivo, genitivo 2")
+#let _ad = abbreviation("ad", "orientacion espacial 'en' \npunto de referencia ")
+#let _ante = abbreviation("ante", "orientacion espacial 'delante de'")
+#let _apud = abbreviation("apud", "orientacion espacial 'cerca de, al lado de'")
+#let _in = abbreviation("in", "orientacion espacial 'dentro de'")
+#let _post = abbreviation("post", "orientacion espacial 'detrás de'")
+#let _sub = abbreviation("sub", "orientacion espacial 'debajo de'")
+#let _super = abbreviation("super", "orientacion espacial 'encima de, sobre'")
 
-#let _i = abbreviation("i", "clase nominal 1")
-#let _ii = abbreviation("ii", "clase nominal 2")
-#let _iii = abbreviation("iii", "clase nominal 3")
-#let _iv = abbreviation("iv", "clase nominal 4")
-#let _v = abbreviation("v", "clase nominal 5")
+#let _esi = abbreviation("esi", "direccion espacial esivo \n'en un lugar estático'")
+#let _lat = abbreviation("lat", "direccion espacial lativo \n'hacia un destino específico'")
+#let _vers = abbreviation("vers", "direccion espacial versativo \n'hacia una dirección general'")
+#let _ela = abbreviation("ela", "direccion espacial elativo \n'desde un origen'")
+#let _trans = abbreviation("trans", "direccion espacial translativo \n'a través de'")
+#let _term = abbreviation("term", "direccion espacial terminativo \n'hasta un punto concreto'")
 
-#let _x = "Aghvar"
+#let _i = abbreviation("i", "clase nominal 1 \nmasculino humano")
+#let _ii = abbreviation("ii", "clase nominal 2 \nfemenino humano")
+#let _iii = abbreviation("iii", "clase nominal 3 \nanimado no humano")
+#let _iv = abbreviation("iv", "clase nominal 4 \ninanimado")
+#let _v = abbreviation("v", "clase nominal 5 \ninanimado")
+
+#let _x = "Aghwar"
 
 #let asterismo = {
   v(1em)
@@ -62,7 +69,7 @@
 #let configuracion_gramatica(doc) = {
   set page(
     paper: "a4",
-    margin: (x: 3cm, y: 2.5cm),
+    margin: (x: 3cm, y: 4cm),
 	
 	// INSERTA MARCA DE SECCION EN ENCABEZADO DE PAGINA
     header: context {
@@ -83,7 +90,7 @@
       }
       
       if cap != none {
-        if cap.body == [Índice General] or cap.body == [Table of Contents] {
+        if cap.body == [Contenido] or cap.body == [Ortografia] or cap.body == [Agradecimientos] {
           return none
         }
         
@@ -105,13 +112,37 @@
   
   set heading(numbering: "1.1")
   
+  show heading.where(level: 1): it => block(
+    above: 2.5em,
+    below: 1.2em,
+    text(size: 20pt, weight: "bold", it)
+  )
+  
+  show heading.where(level: 2): it => block(
+    above: 2em,
+    below: 1em,
+    text(size: 16pt, weight: "bold", it)
+  )  
+
+  show heading.where(level: 3): it => block(
+    above: 2em,
+    below: 1em,
+    text(size: 12pt, weight: "bold", it)
+  )  
+
+  show heading.where(level: 4): it => block(
+    above: 1.5em,
+    below: 1em,
+    text(style: "italic", weight: "bold", it)
+  ) 
+  
   set enum(indent: 10pt, full: true)
 
-  // PONE TITULO DE TABLA ARRIBA IZQUIERDA
+  // PONE TITULOS DE TABLAS ARRIBA-IZQUIERDA
   set figure.caption(position: top)
   show figure.caption: set align(left)
   
-  // TRANSFORMA EN VERSALITAS
+  // TRANSFORMA EN VERSALITAS SI PRECEDE 0
   show regex("\b0(\w+)\b"): coincidencia => {
     let texto = coincidencia.text
     let texto-limpio = texto.slice(1) 
