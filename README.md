@@ -18,6 +18,6 @@ Este repositorio contiene los avances en la creación de una lengua construida (
 | `AHK/`, `notasObsidian/`, `oldGrammar/` | Borradores antiguos, notas personales y pruebas históricas de referencia para el autor. | Archivo |
 
 ## Enlaces directos
-- **Sitio web del proyecto:** [https://github.com/ricVento/mi-conlang1](https://github.com/ricVento/mi-conlang1)
+- **Sitio web del proyecto:** [https://ricvento.github.io/mi-conlang1/](https://ricvento.github.io/mi-conlang1/)
 - **Gramática en PDF (última compilación):** [Ver o descargar PDF](https://github.io) \[Proximamente\]
 - **Historial de avances:** Consulta los cambios y nuevas secciones agregadas en el archivo [CHANGELOG.md](CHANGELOG.md).

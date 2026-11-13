@@ -27,8 +27,8 @@ jobs:
         run: |
           mkdir -p _site/pdfs
           # Copia los archivos de tu web (HTML, CSS, JS, imágenes) a _site
-          # Excluye las carpetas ocultas (.git, .github), _site y Grammar
-          rsync -av --exclude='WebPlay' --exclude='LexiconBuilder' --exclude='AHK' --exclude='notasObsidian' --exclude='oldGrammar' --exclude='*.md' --exclude='.git*' --exclude='_site' --exclude='Grammar' ./ _site/
+          # Excluye las carpetas ocultas (.git, .github), _site y las carpetas personales Grammar, LexiconBuilder, notasObsidian, oldGrammar, etc
+          rsync -av --exclude='AHK' --exclude='notasObsidian' --exclude='oldGrammar' --exclude='*.md' --exclude='.git*' --exclude='_site' --exclude='Grammar' ./ _site/
 
       - name: Compilar Grammar/main.typ a PDF
         run: |
