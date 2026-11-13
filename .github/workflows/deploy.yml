@@ -1,0 +1,47 @@
+name: Compilar Grammar y publicar en GitHub Pages
+
+on:
+  push:
+    branches: ["main"] # Cambia a "master" si tu rama se llama así
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Typst
+        uses: typst-community/setup-typst@v3
+
+      - name: Preparar carpeta de publicación
+        run: |
+          mkdir -p _site/pdfs
+          # Copia los archivos de tu web (HTML, CSS, JS, imágenes) a _site
+          # Excluye las carpetas ocultas (.git, .github), _site y Grammar
+          rsync -av --exclude='.git*' --exclude='_site' --exclude='Grammar' ./ _site/
+
+      - name: Compilar Grammar/main.typ a PDF
+        run: |
+          typst compile Grammar/main.typ _site/pdfs/grammar.pdf
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Subir paquete para GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_site'
+
+      - name: Publicar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
