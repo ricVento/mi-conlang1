@@ -42,7 +42,7 @@
 #align(right)[
   #box(width: 60%)[
     #set text(style: "italic", size: 12pt)
-    'Debo a la conjunción de un espejo y de una enciclopedia el descubrimiento de Uqbar' \
+    'Debo a la conjunción de un espejo y de una enciclopedia el descubrimiento de Uqbar'
     #v(0.3cm)
     #text(size: 10pt)[--- Jorge Luis Borges]
   ]
@@ -50,22 +50,30 @@
 #v(2fr)
 #pagebreak()
 
-// TABLA DE CONTENIDO AUTOMATICA
 #set page(numbering: "i")
 #counter(page).update(1)
-#outline(
-  title: "Contenido",
-  indent: 1.5em
-)
+
+// TABLA DE CONTENIDO AUTOMATICA
+#{
+  show outline.entry.where(level: 1): it => {
+    v(12pt, weak: true)
+    strong(it)
+  }
+  outline(
+    title: "Contenido",
+	indent: 1.5em
+  )
+}
 #pagebreak()
 
-// ORTOGRAFIA
-#include "secciones/ortografia.typ"
-#pagebreak()
-
-// AGRADECIMIENTO
-#include "secciones/agradecimientos.typ"
-#pagebreak()
+// ESCRITURA Y AGRADECIMIENTO
+#{
+  set heading(numbering: none)
+  include "secciones/ortografia.typ"
+  pagebreak()
+  include "secciones/agradecimientos.typ"
+  pagebreak()  
+}
 
 // SECCIONES EN ORDEN
 #set page(numbering: "1") 

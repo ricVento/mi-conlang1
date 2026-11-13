@@ -1,5 +1,22 @@
 // Importar todo desde config
 #import "../config.typ": *
 
-#heading(outlined: false, numbering: none)[Ortografia]
-The writing system used in this grammar largely follows previous works on other Dargwa varieties (Sumbatova & Mutalov 2003; Sumbatova & Lander 2014). Given below as well is the Cyrillic orthography, which I use with the Sanzhi community and which has been established in Forker & Gadzhimuradov (2017). It is almost identical to the established orthography of Standard Dargwa (plus sounds that Standard Dargwa lacks, minus sounds that do not exist in Sanzhi Dargwa). The letters given in brackets represent phonemes that occur only in loan words.
+= Sistema de Escritura
+El sistema de escritura usado en esta gramática es el mismo usado en otros trabajos sobre otras variedades de lenguas del Cáucaso. En la tabla inferior se incluye la equivalencia en alfabeto cirílico, de uso extenso en el área del #_x. Las letras entre corchetes representan sonidos que solo ocurren en préstamos.
+
+#v(0.5cm)
+
+#figure(
+	table(
+	columns: (1fr, ) * 7,
+	align: center,
+	stroke: none,
+	table.hline(y: 0, stroke: 1pt + black),
+	[*IPA*], [*Ortografía*], [*Cirilico*], [], [*IPA*], [*Ortografía*], [*Cirilico*],
+	table.hline(y: 1, stroke: 0.5pt + gray),
+	[a], [ɑ], [ɑ],  [], [e], [ə],  [ɣ],
+	[b], [ə], [ə], [], [f], [ə],  [ɬ],
+	[c], [ə], [ʊ], [], [g], [ə],  [ʷ],
+	[d], [ə], [ʃ], [], [h], [ə],  [ʂ],
+	table.hline(y: 5, stroke: 1pt + black),
+))

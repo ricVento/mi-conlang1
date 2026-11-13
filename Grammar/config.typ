@@ -90,7 +90,7 @@
       }
       
       if cap != none {
-        if cap.body == [Contenido] or cap.body == [Ortografia] or cap.body == [Agradecimientos] {
+        if cap.body == [Contenido] or cap.body == [Sistema de Escritura] or cap.body == [Agradecimientos] {
           return none
         }
         
