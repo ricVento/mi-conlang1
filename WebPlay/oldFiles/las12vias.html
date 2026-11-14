@@ -11,20 +11,30 @@
 	
 	<p>La clasificación clásica de la combinatoria agrupa los problemas en 4 casos fundamentales basados en dos criterios: si importa el orden y si se permite la repetición (o reemplazo).</p>
 	
-	<p>Las <strong>12 vías</strong> (<em>The Twelvefold Way</em> o <em>modelo de Gian-Carlo Rota</em>) extienden estos 4 casos al añadir las condiciones de si los objetos y los recipientes son distinguibles (D) o indistinguibles (I). La equivalencia exacta se da cuando tanto los objetos como los recipientes son distinguibles (Caso D → D). Este enfoque clasifica los problemas fundamentales de contar cómo colocar <strong>n objetos</strong> en <strong>k cajas</strong>. La clasificación depende de tres condiciones:</p>
+	<p>Las <strong>12 vías</strong> (<em>The Twelvefold Way</em> o <em>modelo de Gian-Carlo Rota</em>) extienden estos 4 casos al añadir las condiciones de si los objetos y los recipientes son distinguibles (D) o indistinguibles (I). La equivalencia exacta se da cuando tanto los objetos como los recipientes son distinguibles (Caso D → D).</p>
+	
+	<p> Este enfoque clasifica los problemas fundamentales de contar cómo colocar <strong>n objetos</strong> en <strong>k cajas</strong>. Dependiendo de la naturaleza de las bolas, de las cajas y de las restricciones del reparto, surgen exactamente 12 escenarios posibles. La clasificación depende de tres condiciones. Para saber en cuál de las 12 vías te encuentras, debes responder a tres preguntas:</p>
     
     <ul>
-        <li>Si los objetos son distinguibles (únicos) o indistinguibles (idénticos).</li>
-        <li>Si las cajas son distinguibles (únicas) o indistinguibles (idénticas).</li>
-        <li>La restricción en la asignación:
+        <li>¿Cómo son las bolas? Si los objetos son:
             <ul>
-                <li><strong>Cualquiera:</strong> No hay restricciones (pueden quedar cajas vacías).</li>
-                <li><strong>Inyectiva:</strong> Cada caja puede contener como máximo 1 objeto (n &le; k).</li>
-                <li><strong>Sobreyectiva:</strong> Cada caja debe contener al menos 1 objeto (n &ge; k).</li>
+               <li>Distinguibles (únicos): Tienen etiquetas o colores (como personas, letras o números)</li> 
+               <li>Indistinguibles (idénticos): Son idénticas (como canicas idénticas o electrones).</li> 
+            </ul></li> 
+        <li>¿Cómo son las cajas? Si las cajas son:</li>
+            <ul>
+                <li>Distinguibles (únicas): Tienen posiciones o nombres (como habitaciones de hotel o personas que reciben regalos)</li>
+                <li>Indistinguibles (idénticas): Son idénticas (como montones en el suelo o cajas sin marcar).</li>
+            </ul></li>
+        <li>¿Cuál es la condición del reparto? La restricción en la asignación:
+            <ul>
+                <li><strong>Cualquiera:</strong> No hay restricciones; las cajas pueden quedar vacías o tener cualquier número de objetos/bolas.</li>
+                <li><strong>Inyectiva:</strong> Cada caja puede contener como máximo 1 objeto/bola (n &le; k).</li>
+                <li><strong>Sobreyectiva:</strong> Cada caja debe contener al menos 1 objeto (n &ge; k). Ninguna caja puede quedar vacía.</li>
             </ul>
         </li>
     </ul>
-
+	
 	<p>Para encontrar la equivalencia entre el modelo clasico de cuatro vias y el de 12 vías hay un regla mnemotécnica:</p>
 	
     <ul>
