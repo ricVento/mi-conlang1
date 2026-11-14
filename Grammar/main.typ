@@ -17,22 +17,22 @@
 
     #align(top + left)[
       #text(
-	    size: 50pt,
+	    size: 58pt,
 		font: ("Arial", "Liberation Sans", "DejaVu Sans"),
-		fill: rgb("#FFF8F5")		
+		fill: rgb("#FFFFFF")		
 		)[Gramática de la Lengua #_x]
     ]
 
     #align(top + left)[
-      #text(size: 28pt,
-	  fill: rgb("#FFF8F5")
+      #text(size: 32pt,
+	  fill: rgb("#FFFFFF")
 	  )[Ricardo Ventosinos]
     ]
 	
 	#align(bottom + right)[
       #text(size: 18pt,
-	  fill: rgb("#FFF8F5")
-	  )[2026]
+	  fill: rgb("#FFFFFF")
+	  )[0.2-alpha]
     ]
   ]
 ]
